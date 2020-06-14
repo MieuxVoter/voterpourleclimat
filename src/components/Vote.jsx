@@ -4,7 +4,36 @@ import { toast, ToastContainer } from "react-toastify"
 import { Segment, Grid, Header, Responsive } from "semantic-ui-react"
 
 const BallotMobile = ({ grades, votes, onClick }) => {
-  return "Foo"
+  return (
+    <>
+      {Object.keys(votes).map((proposal, index) => (
+        <Segment>
+          <Grid.Row>
+            <label htmlFor={`proposal-${index}`}>{proposal}</label>
+          </Grid.Row>
+          <hr />
+          {grades.map((grade, gradeId) => (
+            <Grid.Row>
+              <Grid.Column key={gradeId} width={2}>
+                <input
+                  type="radio"
+                  name={`proposal-${index}`}
+                  id={`grade-${index}-${gradeId}`}
+                  value={gradeId}
+                  onClick={onClick}
+                  defaultChecked={votes[proposal] === gradeId}
+                />
+              </Grid.Column>
+
+              <Grid.Column key={gradeId} width={2}>
+                <label htmlFor={`proposal-${index}`}>{grade}</label>
+              </Grid.Column>
+            </Grid.Row>
+          ))}
+        </Segment>
+      ))}
+    </>
+  )
 }
 const BallotDesktop = ({ grades, votes, onClick }) => {
   return (
@@ -32,7 +61,7 @@ const BallotDesktop = ({ grades, votes, onClick }) => {
                   id={`grade-${index}-${gradeId}`}
                   value={gradeId}
                   onClick={onClick}
-                  defaultChecked={votes[proposal] === gradeId }
+                  defaultChecked={votes[proposal] === gradeId}
                 />
               </Grid.Column>
             ))}
