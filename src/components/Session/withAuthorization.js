@@ -1,5 +1,4 @@
 import React from 'react';
-import { navigate } from 'gatsby';
 
 import AuthUserContext from './context';
 import { withFirebase } from '../Firebase';
@@ -16,10 +15,10 @@ const withAuthorization = condition => Component => {
         this.listener = this.props.firebase.onAuthUserListener(
           authUser => {
             if (!condition(authUser)) {
-              navigate(ROUTES.SIGN_IN);
+              // FIXME
             }
           },
-          () => navigate(ROUTES.SIGN_IN),
+          () => console.log("LOGGED"), // FIXME
         );
       }
     };
