@@ -1,5 +1,4 @@
 import React  from 'react';
-import { Link } from "gatsby"
 import {
 	Segment,
 	Grid,
@@ -12,8 +11,6 @@ import Layout from '../components/layout';
 
 const LandingPage = () => (
   <Layout>
-    <Link to="/vote/">Voter</Link> <br />
-    <Link to="/share/">Partager le vote sur les reseaux sociaux</Link>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -44,8 +41,4 @@ const LandingPage = () => (
   </Layout>
 );
 
-export default () => (
-  <Layout>
-    <LandingPage />
-  </Layout>
-);
+export default LandingPage;
