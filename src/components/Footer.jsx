@@ -1,12 +1,10 @@
 import React from 'react';
 import {
-        Segment,
-        Grid,
-        Header,
-        Image, 
-        Button,
-        Container,
-        List
+  Segment,
+  Grid,
+  Header,
+  Container,
+  List
 } from 'semantic-ui-react';
 
 
