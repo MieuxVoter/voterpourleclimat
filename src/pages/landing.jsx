@@ -10,7 +10,6 @@ import Layout from '../components/layout';
 
 
 const LandingPage = () => (
-  <Layout>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -38,7 +37,6 @@ const LandingPage = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-  </Layout>
 );
 
 export default LandingPage;

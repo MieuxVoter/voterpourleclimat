@@ -29,43 +29,18 @@ export const useUser = () => {
       return () => {};
     }
 
-    const userDoc = firebase
+    const doc = firebase
       .firestore()
       .collection('user')
       .doc(auth.user.uid);
-    if(!userDoc.exists) {
-      userDoc.set({
-        uid: auth.user.uid, 
-        seNourrir: {
-          "votes": []
-        },
-        seLoger: {
-          "votes": []
-        },
-        seDeplacer: {
-          "votes": []
-        },
-        consommer: {
-          "votes": []
-        },
-        produire: {
-          "votes": []
-        },
-      })
-      console.log("CREATE USER");
+    if(!doc.exists) {
+      doc.set({uid: auth.user.uid})
     }
-
-    const unsubscribe = userDoc
+    const unsubscribe = doc
       .onSnapshot(
         doc => {
-          console.log("LOAD USER");
-          const data = doc.data()
-          console.log(" data: ", data);
-
-          setUser({...data, ...auth.user});
-          console.log("LOADED USER");
+          setUser({...doc, ...auth.user});
           setLoading(false);
-          console.log("LOADED USER");
         },
         err => setError(err),
       );
@@ -73,7 +48,7 @@ export const useUser = () => {
     return () => unsubscribe();
   }, [auth]);
 
-  
+
   return {
     error,
     loading,
@@ -113,7 +88,7 @@ export const UserProvider = (props) => {
   const { loading, user } = useUser();
 
   if (loading) {
-    return (<div>Chargement...</div>);
+    return (<div>Chargement user...</div>);
   }
 
   const { children } = props;
