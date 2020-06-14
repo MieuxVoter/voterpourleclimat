@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import Layout from '../components/layout';
 import {
   withAuthorization,
-  withEmailVerification,
 } from '../components/Session';
 import Messages from '../components/Messages';
 
@@ -20,7 +19,6 @@ const HomePageBase = () => (
 const condition = authUser => !!authUser;
 
 const HomePage = compose(
-  withEmailVerification,
   withAuthorization(condition),
 )(HomePageBase);
 

@@ -1,54 +1,31 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { AuthUserContext } from '../Session';
-import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
-import * as ROLES from '../../constants/roles';
+
 
 const Navigation = () => (
-  <AuthUserContext.Consumer>
-    {authUser =>
-      authUser ? (
-        <NavigationAuth authUser={authUser} />
-      ) : (
-        <NavigationNonAuth />
-      )
-    }
-  </AuthUserContext.Consumer>
-);
-
-const NavigationAuth = ({ authUser }) => (
   <ul>
     <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <Link to={ROUTES.LANDING}>Voter pour le climat</Link>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>Home</Link>
+      <Link to={ROUTES.SE_NOURRIR}>Se nourrir</Link>
     </li>
     <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
+      <Link to={ROUTES.SE_LOGER}>Se loger</Link>
     </li>
-    {!!authUser.roles[ROLES.ADMIN] && (
-      <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
-      </li>
-    )}
     <li>
-      <SignOutButton />
+      <Link to={ROUTES.PRODUIRE}>Produire et travailler</Link>
+    </li>
+    <li>
+      <Link to={ROUTES.CONSOMMER}>Consommer</Link>
+    </li>
+    <li>
+      <Link to={ROUTES.SE_DEPLACER}>Se deplacer</Link>
     </li>
   </ul>
 );
 
-const NavigationNonAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
-);
 
 export default Navigation;
