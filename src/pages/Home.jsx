@@ -5,8 +5,6 @@ import {
 	Header,
 	Image, 
 	Button,
-	Container,
-	List
 } from 'semantic-ui-react';
 import Heading from '../components/HomeHeading.jsx';
 
