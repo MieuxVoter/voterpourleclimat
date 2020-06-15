@@ -9,15 +9,13 @@ const SeNourrirPage = () => {
   console.log(user)
   if (!user) return <></>
 
-  console.log("SE NOURRIR")
-  const hasVoted = user.seNourrir.votes.length === 0
   return (
     <Vote
       title={TITLES.SE_NOURRIR}
-      hasVoted={hasVoted}
       proposals={PROPOSALS.SE_NOURRIR}
+      collectionName="seNourrir"
     />
   )
 }
 
-export default SeNourrirPage;
+export default SeNourrirPage
