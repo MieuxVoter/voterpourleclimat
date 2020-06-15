@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
 
+console.log("API KEY", process.env.REACT_APP_FIREBASE_API_KEY);
+
 ReactDOM.render(
     <App />,
   document.getElementById('root'),
