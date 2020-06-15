@@ -12,6 +12,11 @@ export const castVote = (votes, collectionName, uid) => {
   voteDoc.set(map)
 }
 
+export const saveInfo = (infos, uid) => {
+  /* Store info about the user in the database */
+  firebase.firestore().collection("user").doc(uid).set(infos)
+}
+
 export const loadVote = (collectionName, uid) => {
   /* Store vote in the database */
   return firebase.firestore().collection(`votes/${collectionName}`).doc(uid)

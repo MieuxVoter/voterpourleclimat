@@ -5,6 +5,12 @@ import { Segment, Grid, Header, Responsive } from "semantic-ui-react"
 import * as CONSTANTS from "../constants"
 import { castVote, loadVote } from "../services/actions"
 import { UserContext } from "../services/User"
+import ConfirmationModal from "./Modal"
+
+const canUserVote = user => {
+  /* Check if the user gives enough info to be allowed to vote */
+  return user.mail && user.name && user.zipCode && user.age
+}
 
 const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
   return (
@@ -124,7 +130,7 @@ class Vote extends React.Component {
     for (let proposalId in props.proposals) {
       votes[proposalId] = { vote: null, proposal: props.proposals[proposalId] }
     }
-    this.state = { votes: votes }
+    this.state = { votes: votes, openedModal: false }
   }
 
   handleGradeClick = event => {
@@ -137,8 +143,7 @@ class Vote extends React.Component {
     this.setState({ votes: votes })
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
+  handleSubmit = () => {
     if (!this.check()) {
       toast.error("Vous devez voter pour toutes les mesures", {
         position: toast.POSITION.TOP_CENTER,
@@ -149,6 +154,10 @@ class Vote extends React.Component {
       toast.error("Une erreur s'est produite... Merci d'essayer plus tard.", {
         position: toast.POSITION.TOP_CENTER,
       })
+      return
+    }
+    if (!canUserVote(this.context.user)) {
+      this.setState({ openedModal: true })
       return
     }
     console.log("CONTEXT USER", this.context.user.uid)
@@ -173,9 +182,17 @@ class Vote extends React.Component {
     return (
       <Segment style={{ padding: "8em 0em" }} vertical>
         <ToastContainer />
+        <ConfirmationModal
+          isOpened={this.state.openedModal}
+          close={() => this.setState({ openedModal: false })}
+          validate={() => {
+            this.handleSubmit()
+            this.setState({ openedModal: false })
+          }}
+        />
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
-            <Grid.Column width={8}>
+            <Grid.Column width={16}>
               <Header as="h3" style={{ fontSize: "2em" }}>
                 {title}
               </Header>
@@ -190,31 +207,25 @@ class Vote extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <form
-              className="ui form"
-              onSubmit={this.handleSubmit}
-              autoComplete="off"
-            >
-              <Responsive {...Responsive.onlyMobile}>
-                <BallotMobile
-                  grades={grades}
-                  votes={votes}
-                  onClick={this.handleGradeClick}
-                  handleSubmit={this.handleSubmit}
-                  valid={validBallot}
-                />
-              </Responsive>
+            <Responsive {...Responsive.onlyMobile}>
+              <BallotMobile
+                grades={grades}
+                votes={votes}
+                onClick={this.handleGradeClick}
+                handleSubmit={this.handleSubmit}
+                valid={validBallot}
+              />
+            </Responsive>
 
-              <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-                <BallotDesktop
-                  votes={votes}
-                  grades={grades}
-                  onClick={this.handleGradeClick}
-                  handleSubmit={this.handleSubmit}
-                  valid={validBallot}
-                />
-              </Responsive>
-            </form>
+            <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+              <BallotDesktop
+                votes={votes}
+                grades={grades}
+                onClick={this.handleGradeClick}
+                handleSubmit={this.handleSubmit}
+                valid={validBallot}
+              />
+            </Responsive>
           </Grid.Row>
         </Grid>
       </Segment>

@@ -1,54 +1,107 @@
 import React, { Component } from "react"
-import { Button, Header, Image, Modal } from "semantic-ui-react"
+import { Button, Header, Message, Modal, Form } from "semantic-ui-react"
+import { castVote, saveInfo } from "../services/actions"
+import { UserContext } from "../services/User"
 
-class ConformingVote extends Component {
-  state = { open: false }
+class RequestInfo extends Component {
+  static contextType = UserContext
 
-  show = dimmer => () => this.setState({ dimmer, open: true })
-  close = () => this.setState({ open: false })
+  static state = {
+    name: "",
+    mail: "",
+    age: "",
+    zipCode: "",
+  }
+
+  handleSubmit = () => {
+    if (!this.check()) {
+      return
+    }
+    saveInfo(this.state, this.context.user.uid)
+    this.props.validate()
+  }
+
+  check() {
+    // TODO: add error message
+    return (
+      this.state.name !== "" &&
+      this.state.mail !== "" &&
+      this.state.age !== "" &&
+      this.state.zipCode !== ""
+    )
+  }
+
+  handleChange = event => {
+    const target = event.target
+    const value = target.value
+    const name = target.name
+    this.setState({
+      [name]: value,
+    })
+  }
 
   render() {
-    const { open, dimmer } = this.state
+    const { isOpened, close } = this.props
 
     return (
-      <div>
-        <Button onClick={this.show(true)}>Default</Button>
-        <Button onClick={this.show("inverted")}>Inverted</Button>
-        <Button onClick={this.show("blurring")}>Blurring</Button>
+      <Modal dimmer="blurring" open={isOpened} onClose={close}>
+        <Modal.Header>
+          Oups... Il nous manque quelques informations pour vous identifier
+        </Modal.Header>
 
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
-          <Modal.Header>Select a Photo</Modal.Header>
-          <Modal.Content image>
-            <Image
-              wrapped
-              size="medium"
-              src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
+        <Modal.Content>
+          <Message
+            header="Pourquoi collectons-nous ces donnees ?"
+            content="Nous avons besoin de verifier que vous ne votez qu'une seule fois. Nous vous demandons egalement votre age et votre code postal pour limiter les biais sociologiques de ce vote."
+          />
+          <Form>
+            <Form.Input
+              fluid
+              label="Nom"
+              placeholder="Veuillez ajouter votre nom"
+              id="form-input-name"
+              name="name"
+              onChange={this.handleChange}
             />
-            <Modal.Description>
-              <Header>Default Profile Image</Header>
-              <p>
-                We've found the following gravatar image associated with your
-                e-mail address.
-              </p>
-              <p>Is it okay to use this photo?</p>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button color="black" onClick={this.close}>
-              Nope
-            </Button>
-            <Button
-              positive
-              icon="checkmark"
-              labelPosition="right"
-              content="Yep, that's me"
-              onClick={this.close}
+            <Form.Input
+              fluid
+              label="Courriel"
+              name="mail"
+              placeholder="Veuillez ajouter votre courriel"
+              onChange={this.handleChange}
             />
-          </Modal.Actions>
-        </Modal>
-      </div>
+            <Form.Input
+              fluid
+              label="Age"
+              name="age"
+              placeholder="Veuillez ajouter votre age"
+              id="form-input-name"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              fluid
+              label="Code postal"
+              name="zipCode"
+              placeholder="Veuillez ajouter votre code postal ou ecrire 00000 si vous residez a l'etranger"
+              onChange={this.handleChange}
+            />
+          </Form>
+        </Modal.Content>
+        <Modal.Actions>
+          <Button color="black" onClick={close}>
+            Fermer
+          </Button>
+          <Button
+            positive
+            icon="checkmark"
+            labelPosition="right"
+            content="Valider mon vote"
+            onClick={this.handleSubmit}
+          />
+        </Modal.Actions>
+      </Modal>
     )
   }
 }
 
-export default ModalDimmer
+export default RequestInfo
