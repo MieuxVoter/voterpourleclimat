@@ -1,6 +1,6 @@
 import React from "react"
 import { useUser } from "../services/User"
-import Vote from "../components/Vote"
+import Ballot from "../components/Ballot"
 import * as TITLES from "../constants/titles"
 import * as PROPOSALS from "../constants/proposals"
 
@@ -10,11 +10,11 @@ const SeDeplacerPage = () => {
   if (!user) return <></>
 
   console.log("SE DEPLACER")
-  const hasVoted = user.seDeplacer.votes.length === 0
+  const hasBallotd = user.seDeplacer.votes.length === 0
   return (
-    <Vote
+    <Ballot
       title={TITLES.SE_DEPLACER}
-      hasVoted={hasVoted}
+      hasBallotd={hasBallotd}
       proposals={PROPOSALS.SE_DEPLACER}
     />
   )

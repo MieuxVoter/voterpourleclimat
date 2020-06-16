@@ -1,8 +1,10 @@
 import firebase from "./Firebase"
 import { useUser, useAuth } from "./User"
 
+/**
+ * Store vote in the database
+ */
 export const castVote = (votes, collectionName, uid) => {
-  /* Store vote in the database */
   console.log(collectionName, uid, votes)
   const voteDoc = firebase.firestore().collection(collectionName).doc(uid)
   const map = {}
@@ -12,12 +14,16 @@ export const castVote = (votes, collectionName, uid) => {
   voteDoc.set(map)
 }
 
+/*
+ * Store info about the user in the database
+ */
 export const saveInfo = (infos, uid) => {
-  /* Store info about the user in the database */
   firebase.firestore().collection("user").doc(uid).set(infos)
 }
 
+/*
+ * Store vote in the database
+ */
 export const loadVote = (collectionName, uid) => {
-  /* Store vote in the database */
-  return firebase.firestore().collection(`votes/${collectionName}`).doc(uid)
+  return firebase.firestore().collection(collectionName).doc(uid).get()
 }

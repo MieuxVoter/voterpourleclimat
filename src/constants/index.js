@@ -4,4 +4,5 @@ export const grades = [
   { name: "Assez bien", color: "yellow", value: 3 },
   { name: "Passable", color: "orange", value: 2 },
   { name: "Insuffisant", color: "red", value: 1 },
+  { name: "Pas d'avis", color: "grey", value: -1 },
 ]

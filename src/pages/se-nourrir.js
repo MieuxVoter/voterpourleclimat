@@ -1,6 +1,6 @@
 import React from "react"
 import { useUser } from "../services/User"
-import Vote from "../components/Vote"
+import Ballot from "../components/Ballot"
 import * as TITLES from "../constants/titles"
 import * as PROPOSALS from "../constants/proposals"
 
@@ -10,7 +10,7 @@ const SeNourrirPage = () => {
   if (!user) return <></>
 
   return (
-    <Vote
+    <Ballot
       title={TITLES.SE_NOURRIR}
       proposals={PROPOSALS.SE_NOURRIR}
       collectionName="seNourrir"

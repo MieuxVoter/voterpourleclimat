@@ -1,6 +1,6 @@
 import React from "react"
 import { useUser } from "../services/User"
-import Vote from "../components/Vote"
+import Ballot from "../components/Ballot"
 import * as TITLES from "../constants/titles"
 import * as PROPOSALS from "../constants/proposals"
 
@@ -9,11 +9,11 @@ const ProduirePage = () => {
   console.log(user)
   if (!user) return <></>
 
-  const hasVoted = user.seLoger.votes.length === 0
+  const hasBallotd = user.seLoger.votes.length === 0
   return (
-    <Vote
+    <Ballot
       title={TITLES.PRODUIRE}
-      hasVoted={hasVoted}
+      hasBallotd={hasBallotd}
       proposals={PROPOSALS.PRODUIRE}
     />
   )
