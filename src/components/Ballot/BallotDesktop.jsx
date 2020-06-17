@@ -48,7 +48,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
       <Grid container className="ui padded" stackable verticalAlign="middle">
         <Grid.Column width={6}></Grid.Column>
         <Grid.Column width={10} onClick={handleSubmit}>
-          <Button className={`fluid ${valid ? null : "disabled"}`}>
+          <Button className={`fluid ${valid ? "primary" : "disabled"}`}>
             Valider
           </Button>
         </Grid.Column>

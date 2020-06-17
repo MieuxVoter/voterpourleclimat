@@ -24,51 +24,35 @@ export const useUser = () => {
   const auth = useAuth()
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(auth.user)
 
   useEffect(() => {
+    if (!loading) {
+      return () => {}
+    }
     if (auth.loading) {
       return () => {}
     }
 
     const userDoc = firebase.firestore().collection("user").doc(auth.user.uid)
-    if (!userDoc.exists) {
-      userDoc.set({
-        uid: auth.user.uid,
-        seNourrir: {
-          votes: [],
-        },
-        seLoger: {
-          votes: [],
-        },
-        seDeplacer: {
-          votes: [],
-        },
-        consommer: {
-          votes: [],
-        },
-        produire: {
-          votes: [],
-        },
+    userDoc
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          console.log("RECEIVED")
+          setUser({ ...doc.data(), ...auth.user })
+          setLoading(false)
+          console.log("LOADED USER")
+        } else {
+          console.log("IT NOT EXISTS")
+          console.log(auth.user.uid)
+          setLoading(false)
+          setUser({ ...auth.user })
+        }
       })
-      console.log("CREATE USER")
-    }
+      .catch(err => setError(err))
 
-    const unsubscribe = userDoc.onSnapshot(
-      doc => {
-        console.log("LOAD USER")
-        const data = doc.data()
-        console.log(" data: ", data)
-
-        setUser({ ...data, ...auth.user })
-        console.log("LOADED USER")
-        setLoading(false)
-        console.log("LOADED USER")
-      },
-      err => setError(err)
-    )
-
-    return () => unsubscribe()
+    return () => {}
   }, [auth])
 
   return {

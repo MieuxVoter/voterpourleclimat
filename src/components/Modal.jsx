@@ -23,6 +23,7 @@ class RequestInfo extends Component {
 
   check() {
     // TODO: add error message
+    // TODO: check carefully each field is OK
     return (
       this.state.name !== "" &&
       this.state.mail !== "" &&
@@ -46,13 +47,14 @@ class RequestInfo extends Component {
     return (
       <Modal dimmer="blurring" open={isOpened} onClose={close}>
         <Modal.Header>
-          Oups... Il nous manque quelques informations pour vous identifier
+          Afin de valider votre vote, nous vous invitons à remplir les
+          informations suivantes
         </Modal.Header>
 
         <Modal.Content>
           <Message
-            header="Pourquoi collectons-nous ces donnees ?"
-            content="Nous avons besoin de verifier que vous ne votez qu'une seule fois. Nous vous demandons egalement votre age et votre code postal pour limiter les biais sociologiques de ce vote."
+            header="Pourquoi collectons-nous ces données ?"
+            content="Afin que notre voix citoyenne soit entendue, nous utilisons ces données pour construire des résultats représentatifs."
           />
           <Form>
             <Form.Input
@@ -74,7 +76,7 @@ class RequestInfo extends Component {
               fluid
               label="Age"
               name="age"
-              placeholder="Veuillez ajouter votre age"
+              placeholder="Veuillez ajouter votre âge"
               id="form-input-name"
               onChange={this.handleChange}
             />
@@ -82,10 +84,13 @@ class RequestInfo extends Component {
               fluid
               label="Code postal"
               name="zipCode"
-              placeholder="Veuillez ajouter votre code postal ou ecrire 00000 si vous residez a l'etranger"
+              placeholder="Veuillez ajouter votre code postal ou écrire 00000 si vous résidez a l'étranger"
               onChange={this.handleChange}
             />
           </Form>
+          {
+            // TODO add terms of policy
+          }
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={close}>

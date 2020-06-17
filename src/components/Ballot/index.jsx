@@ -35,6 +35,69 @@ const shuffle = a => {
   return a
 }
 
+class SuccessMessage extends React.Component {
+  state = { visible: false }
+
+  constructor(props) {
+    super(props)
+    const { visible, onHide } = props
+    this.state = { visible: visible }
+
+    setTimeout(() => {
+      console.log("TIMEOUT")
+      // this.setState({ visible: false })
+      // onHide()
+    }, 3000)
+  }
+
+  render() {
+    if (this.state.visible) {
+      return (
+        <Message positive>
+          <Message.Header>
+            Félicitations ! Votre vote a bien été pris en compte !
+          </Message.Header>
+          <p>Vous pouvez cependant continuer de voter.</p>
+        </Message>
+      )
+    }
+    return null
+  }
+}
+
+const LoadingMessage = () => {
+  return (
+    <div class="ui icon message">
+      <i class="notched circle loading icon"></i>
+      <div class="content">
+        <div class="header">Juste une seconde</div>
+        <p>Nous chargeons votre bulletin de vote.</p>
+      </div>
+    </div>
+  )
+}
+
+const MessageDone = () => {
+  return (
+    <Segment vertical>
+      <Grid container stackable verticalAlign="middle">
+        <Grid.Row>
+          <Message positive>
+            <Message.Header>
+              Félicitations ! Vous avez voté pour toutes les propositions de
+              cette thématique !
+            </Message.Header>
+            <p>
+              Vous pouvez cependant continuer de voter dans les autres
+              thématiques.
+            </p>
+          </Message>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+  )
+}
+
 class Ballot extends React.Component {
   static contextType = UserContext
 
@@ -53,39 +116,51 @@ class Ballot extends React.Component {
     grades: CONSTANTS.grades,
   }
 
-  state = { votes: [], openedModal: false, loading: true, success: false }
+  constructor(props) {
+    super(props)
+    this.state = {
+      votes: [],
+      openedModal: false,
+      loading: true,
+      success: false,
+    }
+    this.allVotes = []
+  }
+
+  setBallot() {
+    let counter = 0
+    let votes = []
+    for (const vote of this.allVotes) {
+      if (counter == this.props.displayProposals) break
+      if (vote.vote === null) {
+        votes.push(vote)
+        counter += 1
+      }
+    }
+    this.setState({ votes, loading: false })
+  }
 
   componentDidMount() {
     loadVote(this.props.collectionName, this.context.user.uid).then(doc => {
-      const allVotes = []
+      this.allVotes = []
       for (let proposalId in this.props.proposals) {
-        allVotes[proposalId] = {
+        this.allVotes.push({
           vote: null,
           proposal: this.props.proposals[proposalId],
-        }
+        })
       }
-      shuffle(allVotes)
-      console.log("ALL VOTES", allVotes)
-      const data = doc.data()
-      let votes = []
-      let counter = 0
+
       if (doc.exists) {
-        for (let voteId in allVotes) {
-          if (counter == this.props.displayProposals) break
-          const proposal = allVotes[voteId].proposal
-          if (!data.proposal) {
-            votes.push({
-              vote: null,
-              proposal: proposal,
-            })
-            counter += 1
+        const data = doc.data()
+        for (let voteId in this.allVotes) {
+          const proposal = this.allVotes[voteId].proposal
+          if (data[proposal]) {
+            this.allVotes[voteId].vote = data[proposal]
           }
         }
-      } else {
-        votes = allVotes.slice(0, this.props.displayProposals)
       }
-      console.log("VOTES", votes)
-      this.setState({ votes, loading: false })
+      shuffle(this.allVotes)
+      this.setBallot()
     })
   }
 
@@ -118,7 +193,7 @@ class Ballot extends React.Component {
     }
     castVote(this.state.votes, this.props.collectionName, this.context.user.uid)
     this.setState({ loading: true, success: true })
-    // this.loadVote()
+    this.setBallot()
   }
 
   check() {
@@ -135,6 +210,8 @@ class Ballot extends React.Component {
     const { votes, loading, success } = this.state
     const { title, grades } = this.props
     const validBallot = this.check()
+
+    if (votes.length === 0) return <MessageDone />
 
     return (
       <Segment vertical>
@@ -156,31 +233,12 @@ class Ballot extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            {success ? (
-              <Transition
-                visible={true}
-                onHide={() => {
-                  this.setState({ success: false })
-                }}
-                animation="scale"
-                duration={500}
-              >
-                <Message positive>
-                  <Message.Header>
-                    Félicitations ! Votre vote a bien été pris en compte !
-                  </Message.Header>
-                  <p>Vous pouvez cependant continuer de voter.</p>
-                </Message>
-              </Transition>
-            ) : null}
+            <SuccessMessage
+              visible={success}
+              onHide={() => this.setState({ success: false })}
+            />
             {loading ? (
-              <div class="ui icon message">
-                <i class="notched circle loading icon"></i>
-                <div class="content">
-                  <div class="header">Juste une seconde</div>
-                  <p>Nous chargeons votre bulletin de vote.</p>
-                </div>
-              </div>
+              <LoadingMessage />
             ) : (
               <>
                 <Responsive maxWidth={Responsive.onlyTablet.maxWidth}>

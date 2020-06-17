@@ -89,7 +89,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
       </Grid.Row>
       <Grid.Row>
         <Button
-          className={valid ? "" : "disabled"}
+          className={valid ? "primary" : "disabled"}
           fluid
           onClick={handleSubmit}
         >
