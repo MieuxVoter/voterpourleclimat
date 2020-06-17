@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, Button } from "semantic-ui-react"
+import { Card, Segment, Button, Grid } from "semantic-ui-react"
 
 const displayGrade = (
   vote,
@@ -39,52 +39,64 @@ const displayGrade = (
 
 const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
   return (
-    <Card.Group>
-      {votes.map((vote, index) => (
-        <Card key={index}>
-          <Card.Content>
-            <Card.Description>
-              <Card.Header>{vote.proposal} </Card.Header>
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Button.Group className="attached mini top three">
-              {grades.map((grade, gradeId) => {
-                if (gradeId > 2) return
-                return displayGrade(
-                  vote,
-                  index,
-                  grade,
-                  gradeId,
-                  onClick,
-                  gradeId === 2
-                )
-              })}
-            </Button.Group>
-            <Button.Group className="attached mini bottom three">
-              {grades.map((grade, gradeId) => {
-                if (gradeId < 3) return
-                return displayGrade(
-                  vote,
-                  index,
-                  grade,
-                  gradeId,
-                  onClick,
-                  gradeId === 5
-                )
-              })}
-            </Button.Group>
-          </Card.Content>
-        </Card>
-      ))}
-      <button
-        type="button"
-        className={valid ? "ui button" : "ui button disabled"}
-        onClick={handleSubmit}
-      >
-        Valider
-      </button>
-    </Card.Group>
+    <Grid
+      container
+      padded
+      className="ui padded"
+      stackable
+      verticalAlign="middle"
+    >
+      <Grid.Row>
+        <Card.Group>
+          {votes.map((vote, index) => (
+            <Card fluid key={index}>
+              <Card.Content>
+                <Card.Description>
+                  <Card.Header>{vote.proposal} </Card.Header>
+                </Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <Button.Group className="attached mini top three">
+                  {grades.map((grade, gradeId) => {
+                    if (gradeId > 2) return
+                    return displayGrade(
+                      vote,
+                      index,
+                      grade,
+                      gradeId,
+                      onClick,
+                      gradeId === 2
+                    )
+                  })}
+                </Button.Group>
+                <Button.Group className="attached mini bottom three">
+                  {grades.map((grade, gradeId) => {
+                    if (gradeId < 3) return
+                    return displayGrade(
+                      vote,
+                      index,
+                      grade,
+                      gradeId,
+                      onClick,
+                      gradeId === 5
+                    )
+                  })}
+                </Button.Group>
+              </Card.Content>
+            </Card>
+          ))}
+        </Card.Group>
+      </Grid.Row>
+      <Grid.Row>
+        <Button
+          className={valid ? "" : "disabled"}
+          fluid
+          onClick={handleSubmit}
+        >
+          Valider
+        </Button>
+      </Grid.Row>
+    </Grid>
   )
 }
 

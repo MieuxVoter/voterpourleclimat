@@ -183,7 +183,7 @@ class Ballot extends React.Component {
               </div>
             ) : (
               <>
-                <Responsive {...Responsive.onlyMobile}>
+                <Responsive maxWidth={Responsive.onlyTablet.maxWidth}>
                   <BallotMobile
                     grades={grades}
                     votes={votes}
@@ -193,7 +193,7 @@ class Ballot extends React.Component {
                   />
                 </Responsive>
 
-                <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                <Responsive minWidth={Responsive.onlyComputer.minWidth}>
                   <BallotDesktop
                     votes={votes}
                     grades={grades}
