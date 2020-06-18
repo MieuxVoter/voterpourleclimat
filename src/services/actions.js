@@ -11,7 +11,7 @@ export const castVote = (votes, collectionName, uid) => {
   for (const vote of votes) {
     map[vote.proposal] = vote.vote
   }
-  voteDoc.set(map)
+  return voteDoc.set(map)
 }
 
 /*

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { toast, ToastContainer } from "react-toastify"
+import { SemanticToastContainer, toast } from "react-semantic-toasts"
+import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
 import { castVote, loadVote } from "../../services/actions"
@@ -185,9 +186,32 @@ class Ballot extends React.Component {
       this.setState({ openedModal: true })
       return
     }
-    castVote(this.state.votes, this.props.collectionName, this.context.user.uid)
-    this.setState({ loading: true, success: true })
-    this.setBallot()
+    castVote(this.allVotes, this.props.collectionName, this.context.user.uid)
+      .then(() => {
+        toast({
+          type: "success",
+          icon: "vote yea",
+          title: "Vote enregistré",
+          description:
+            "Félicitations ! Votre vote a bien été pris en compte ! Vous pouvez cependant continuer de voter.",
+          animation: "bounce",
+          time: 5000,
+        })
+        this.setBallot()
+      })
+      .catch(error => {
+        console.log(error)
+        toast({
+          type: "error",
+          icon: "bug",
+          title: "Erreur de l'enregistrement",
+          description:
+            "Merci de contacter notre équipe sur contact@voterpourleclimat.fr",
+          animation: "bounce",
+          time: 5000,
+        })
+      })
+    this.setState({ loading: true })
   }
 
   check() {
@@ -209,7 +233,7 @@ class Ballot extends React.Component {
 
     return (
       <Segment vertical>
-        <ToastContainer />
+        <SemanticToastContainer />
         <ConfirmationModal
           isOpened={this.state.openedModal}
           close={() => this.setState({ openedModal: false })}

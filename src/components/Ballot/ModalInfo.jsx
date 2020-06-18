@@ -37,9 +37,9 @@ const ModalInfo = ({
       <div className="right aligned floating ui teal label">
         {[...Array(3).keys()].map(i => {
           if (i < score) {
-            return <em data-emoji="blossom"></em>
+            return <em data-emoji="cloud"></em>
           } else {
-            return <em className="disabled" data-emoji="blossom"></em>
+            return <em className="disabled" data-emoji="cloud"></em>
           }
         })}
         Impact GES
