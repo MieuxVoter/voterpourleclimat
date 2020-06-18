@@ -1,5 +1,6 @@
-import React from "react"
-import { Card, Segment, Button, Grid } from "semantic-ui-react"
+import React, { useState } from "react"
+import { Icon, Card, Button, Label, Grid } from "semantic-ui-react"
+import ModalInfo from "./ModalInfo"
 
 const displayGrade = (
   vote,
@@ -38,6 +39,16 @@ const displayGrade = (
 }
 
 const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
+  const [state, setState] = useState({ modal: false })
+
+  const closeModal = () => {
+    setState({ modal: false })
+  }
+
+  const openModal = vote => {
+    setState({ modal: true, title: vote.proposal })
+  }
+
   return (
     <Grid
       container
@@ -46,6 +57,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
       stackable
       verticalAlign="middle"
     >
+      <ModalInfo open={state.modal} close={closeModal} title={state.title} />
       <Grid.Row>
         <Card.Group>
           {votes.map((vote, index) => (
@@ -53,6 +65,17 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
               <Card.Content>
                 <Card.Description>
                   <Card.Header>{vote.proposal} </Card.Header>
+                  <Label
+                    onClick={() => openModal(vote)}
+                    className="top right attached teal"
+                  >
+                    <Icon
+                      inverted
+                      circular
+                      className="teal"
+                      name="chevron down"
+                    />
+                  </Label>
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>

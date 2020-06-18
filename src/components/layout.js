@@ -1,19 +1,19 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Navigation from './Navigation';
-import Footer from './Footer';
-import { UserProvider } from '../services/User';
-
+import React from "react"
+import { BrowserRouter } from "react-router-dom"
+import Navigation from "./Navigation"
+import Footer from "./Footer"
+import { UserProvider } from "../services/User"
 
 const Layout = ({ children }) => (
   <BrowserRouter>
-    <UserProvider>
+    <>
       <Navigation />
-      <hr />
-      {children}
+      <div className="site-content">
+        <UserProvider>{children}</UserProvider>
+      </div>
       <Footer />
-    </UserProvider>
+    </>
   </BrowserRouter>
-);
+)
 
-export default Layout;
+export default Layout

@@ -1,20 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { toast, ToastContainer } from "react-toastify"
-import {
-  Segment,
-  Grid,
-  Header,
-  Responsive,
-  Transition,
-  Message,
-} from "semantic-ui-react"
+import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
 import { castVote, loadVote } from "../../services/actions"
 import { UserContext } from "../../services/User"
 import ConfirmationModal from "../Modal"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
+import "./index.css"
 
 /**
  * Check if the user gives enough info to be allowed to vote

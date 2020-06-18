@@ -16,3 +16,14 @@ code {
 .inline {
   display: inline-block;
 }
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
