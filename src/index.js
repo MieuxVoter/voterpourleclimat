@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "fomantic-ui-css/semantic.css"
+import "./assets/fomantic/build/semantic.css"
 import "semantic-ui-css/components/rating.css"
 import "./index.css"
 

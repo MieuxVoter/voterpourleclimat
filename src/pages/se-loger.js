@@ -9,13 +9,11 @@ const SeLogerPage = () => {
   console.log(user)
   if (!user) return <></>
 
-  console.log("SE LOGER")
-  const hasBallotd = user.seLoger.votes.length === 0
   return (
     <Ballot
       title={TITLES.SE_LOGER}
-      hasBallotd={hasBallotd}
       proposals={PROPOSALS.SE_LOGER}
+      collectionName="seLoger"
     />
   )
 }

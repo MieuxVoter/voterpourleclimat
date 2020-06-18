@@ -1,13 +1,14 @@
 import React from "react"
 import { BrowserRouter } from "react-router-dom"
 import Navigation from "./Navigation"
+import Banner from "./Banner"
 import Footer from "./Footer"
 import { UserProvider } from "../services/User"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, banner = true }) => (
   <BrowserRouter>
     <>
-      <Navigation />
+      {banner ? <Banner /> : <Navigation />}
       <div className="site-content">
         <UserProvider>{children}</UserProvider>
       </div>

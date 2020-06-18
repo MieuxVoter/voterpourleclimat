@@ -30,44 +30,10 @@ const shuffle = a => {
   return a
 }
 
-class SuccessMessage extends React.Component {
-  state = { visible: false }
-
-  constructor(props) {
-    super(props)
-    const { visible, onHide } = props
-    this.state = { visible: visible }
-
-    setTimeout(() => {
-      console.log("TIMEOUT")
-      // this.setState({ visible: false })
-      // onHide()
-    }, 3000)
-  }
-
-  render() {
-    if (this.state.visible) {
-      return (
-        <Message positive>
-          <Message.Header>
-            Félicitations ! Votre vote a bien été pris en compte !
-          </Message.Header>
-          <p>Vous pouvez cependant continuer de voter.</p>
-        </Message>
-      )
-    }
-    return null
-  }
-}
-
 const LoadingMessage = () => {
   return (
-    <div class="ui icon message">
-      <i class="notched circle loading icon"></i>
-      <div class="content">
-        <div class="header">Juste une seconde</div>
-        <p>Nous chargeons votre bulletin de vote.</p>
-      </div>
+    <div class="ui active inverted">
+      <div class="ui text loader">Chargement du bulletin de vote</div>
     </div>
   )
 }
@@ -117,7 +83,6 @@ class Ballot extends React.Component {
       votes: [],
       openedModal: false,
       loading: true,
-      success: false,
     }
     this.allVotes = []
   }
@@ -225,11 +190,11 @@ class Ballot extends React.Component {
   }
 
   render() {
-    const { votes, loading, success } = this.state
+    const { votes, loading } = this.state
     const { title, grades } = this.props
     const validBallot = this.check()
 
-    if (votes.length === 0) return <MessageDone />
+    if (votes.length === 0 && !loading) return <MessageDone />
 
     return (
       <Segment vertical>
@@ -251,10 +216,6 @@ class Ballot extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <SuccessMessage
-              visible={success}
-              onHide={() => this.setState({ success: false })}
-            />
             {loading ? (
               <LoadingMessage />
             ) : (

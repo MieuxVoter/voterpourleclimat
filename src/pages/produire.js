@@ -9,14 +9,13 @@ const ProduirePage = () => {
   console.log(user)
   if (!user) return <></>
 
-  const hasBallotd = user.seLoger.votes.length === 0
   return (
     <Ballot
       title={TITLES.PRODUIRE}
-      hasBallotd={hasBallotd}
+      collectionName="produire"
       proposals={PROPOSALS.PRODUIRE}
     />
   )
 }
 
-export default ProduirePage;
+export default ProduirePage

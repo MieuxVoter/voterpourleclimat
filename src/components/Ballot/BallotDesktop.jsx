@@ -31,8 +31,8 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
             <Grid.Column width={5} className="right aligned">
               {vote.proposal}
             </Grid.Column>
-            <Grid.Column width={10}>
-              <div className="ui tiny buttons">
+            <Grid.Column fluid width={10}>
+              <div className="ui fluid buttons">
                 {grades.map((grade, gradeId) => {
                   let className = "ui button"
                   if (vote.vote === null) {

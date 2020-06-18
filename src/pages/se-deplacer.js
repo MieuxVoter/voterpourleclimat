@@ -9,15 +9,13 @@ const SeDeplacerPage = () => {
   console.log(user)
   if (!user) return <></>
 
-  console.log("SE DEPLACER")
-  const hasBallotd = user.seDeplacer.votes.length === 0
   return (
     <Ballot
       title={TITLES.SE_DEPLACER}
-      hasBallotd={hasBallotd}
+      collectionName="seDeplacer"
       proposals={PROPOSALS.SE_DEPLACER}
     />
   )
 }
 
-export default SeDeplacerPage;
+export default SeDeplacerPage

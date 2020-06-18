@@ -9,14 +9,13 @@ const ConsommerPage = () => {
   console.log(user)
   if (!user) return <></>
 
-  const hasBallotd = user.consommer.votes.length === 0
   return (
     <Ballot
       title={TITLES.CONSOMMER}
-      hasBallotd={hasBallotd}
+      collectionName="consommer"
       proposals={PROPOSALS.CONSOMMER}
     />
   )
 }
 
-export default ConsommerPage;
+export default ConsommerPage
