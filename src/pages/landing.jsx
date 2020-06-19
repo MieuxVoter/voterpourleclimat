@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { Segment, Image, Grid, Header, Icon, Button } from "semantic-ui-react"
 import styled from "styled-components"
@@ -30,8 +30,10 @@ const Big = styled.p`
 const twoDigits = number => number.toString().padStart(2, "0")
 
 const Timer = () => {
+  const [time, setTime] = useState(new Date());
   const end = new Date(1594684799000)
-  const remaining = new Date(end - new Date())
+  const remaining = new Date(end - time)
+  setTimeout( () => setTime(new Date()), 1000)
 
   return (
     <>
