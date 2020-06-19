@@ -7,6 +7,8 @@ import "../index.css"
 import megaphone from "../assets/images/megaphone.png"
 import barChart from "../assets/images/bar-chart.png"
 import timeLeft from "../assets/images/time-left.png"
+import Social from "../components/Social"
+import Partners from "../components/Partners"
 
 const themes = [
   { name: "Se nourrir", icon: "utensils", to: ROUTES.SE_NOURRIR },
@@ -120,7 +122,7 @@ const LandingPage = () => (
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: "10em", backgroundColor: "#eaeaea" }} vertical>
+    <Segment style={{ padding: "10em", backgroundColor: "#e3e3e3" }} vertical>
       <Grid container stackable>
         <Grid.Row>
           <Grid.Column width={2}>
@@ -148,14 +150,24 @@ const LandingPage = () => (
               ! Invitez vos connaissances à rejoindre le préférendun.{" "}
             </Big>
             <Big>
-              <Button className="teal basic">
-                <Icon name="facebook" /> Facebook
-              </Button>
-              <Button className="teal basic">
-                <Icon name="twitter" /> Twitter
-              </Button>
+              <Social />
             </Big>
           </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
+    <Segment vertical style={{ margin: "5em 0" }}>
+      <Grid container stackable verticalAlign="middle">
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              Le groupement associatif
+            </Header>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Partners />
         </Grid.Row>
       </Grid>
     </Segment>

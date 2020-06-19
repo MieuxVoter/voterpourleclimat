@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import {
   Segment,
   Button,
@@ -8,6 +9,8 @@ import {
   Container,
   List,
 } from "semantic-ui-react"
+import Social from "./Social"
+import * as ROUTES from "../constants/routes"
 
 const Footer = () => (
   <Segment inverted vertical style={{ padding: "5em 0em" }}>
@@ -44,16 +47,32 @@ const Footer = () => (
               </List.Item>
             </List>
           </Grid.Column>
+          <Grid.Column width={3}>
+            <Header inverted as="h4" content="Consultations" />
+            <List link inverted>
+              <List.Item></List.Item>
+              <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
+                Se nourrir
+              </List.Item>
+              <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
+                Se loger
+              </List.Item>
+              <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
+                Se déplacer
+              </List.Item>
+              <List.Item as={Link} to={ROUTES.PRODUIRE}>
+                Produire
+              </List.Item>
+              <List.Item as={Link} to={ROUTES.CONSOMMER}>
+                Consommer
+              </List.Item>
+            </List>
+          </Grid.Column>
           <Grid.Column width={7}>
             <Header as="h4" inverted>
               Partager le vote
             </Header>
-            <Button className="teal basic">
-              <Icon name="facebook" /> Facebook
-            </Button>
-            <Button className="teal basic">
-              <Icon name="twitter" /> Twitter
-            </Button>
+            <Social />
             <p style={{ marginTop: "1em" }}>
               Soyons les plus nombreux possibles pour donner une légitimité
               démocratique aux mesures de la Convention Citoyenne pour le
