@@ -49,6 +49,35 @@ const Timer = () => {
   )
 }
 
+const VotesCounter = ({ nbVotes }) => {
+  const [displayedNbVotes, setDisplayedNbVotes] = useState(0);
+
+  const delta = Math.floor(nbVotes/400);
+  setTimeout( () =>
+    setDisplayedNbVotes(displayedNbVotes >= nbVotes ?
+     nbVotes
+     :
+     displayedNbVotes + delta
+     , 10)
+   )
+
+  const nbVotesFormated = new Intl.NumberFormat('fr-FR')
+    .format(displayedNbVotes)
+
+  return (
+    <>
+      <Big>
+        <Em className="ui teal text">{nbVotesFormated}</Em>
+      </Big>
+      <Big>Votes ont été enregistrés. Et vous ?</Big>
+      <Big>
+        Rejoignez cet élan démocratique et faites entendre la voix
+        citoyenne !
+      </Big>
+    </>
+  )
+}
+
 const LandingPage = () => (
   <>
     <Segment style={{ padding: "8em 0em", fontSize: "1.33em" }} vertical>
@@ -71,12 +100,12 @@ const LandingPage = () => (
             </p>
             <a href="https://www.conventioncitoyennepourleclimat.fr">
               <Button className="teal" size="huge">
-                Détails sur la Convention Citoyenne
+                En savoir plus sur la Convention Citoyenne
               </Button>
             </a>
           </Grid.Column>
           <Grid.Column floated="right" width={5}>
-            <p>Evaluez les propositions par domaine.</p>
+            <p>Évaluez les propositions par domaine.</p>
             {themes.map((theme, index) => (
               <div key={index} style={{ marginTop: "1em" }}>
                 <Button
@@ -131,14 +160,7 @@ const LandingPage = () => (
             <Image src={barChart} className="teal large" />
           </Grid.Column>
           <Grid.Column width={6}>
-            <Big>
-              <Em className="ui teal text">XXX XXX</Em>
-            </Big>
-            <Big>Votes ont été enregistrés. Et vous ?</Big>
-            <Big>
-              Rejoignez cet élan démocratique et faites entendre la voix
-              citoyenne !
-            </Big>
+            <VotesCounter nbVotes={10212} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image src={megaphone} className="teal large" />
@@ -148,7 +170,7 @@ const LandingPage = () => (
               <Em className="ui teal text">PARLEZ-EN !</Em>
             </Big>
             <Big>
-              A nous de porter notre voix toujours plus haut, toujours plus fort
+              À nous de porter notre voix toujours plus haut, toujours plus fort
               ! Invitez vos connaissances à rejoindre le préférendun.{" "}
             </Big>
             <Big>
