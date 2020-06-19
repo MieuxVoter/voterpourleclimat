@@ -197,7 +197,7 @@ class Ballot extends React.Component {
     if (votes.length === 0 && !loading) return <MessageDone />
 
     return (
-      <Segment vertical>
+      <Segment vertical style={{ margin: "5em 0" }}>
         <SemanticToastContainer />
         <ConfirmationModal
           isOpened={this.state.openedModal}

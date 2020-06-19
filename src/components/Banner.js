@@ -7,15 +7,15 @@ import tree from "../assets/images/tree.png"
 const Banner = () => (
   <Segment className="teal" inverted vertical>
     <Container>
-      <Grid divided inverted stackable>
-        <Grid.Row>
-          <Grid.Column width={8}>
+      <Grid inverted stackable>
+        <Grid.Row style={{ paddingBottom: 0 }}>
+          <Grid.Column width={8} textAlign="center">
             <Link to="/">
-              <Image verticalAlign="middle" src={logo} size="large" />
+              <Image verticalAlign="bottom" src={logo} size="large" />
             </Link>
           </Grid.Column>
           <Grid.Column width={8}>
-            <Image verticalAlign="bottom" src={tree} size="small" />
+            <Image verticalAlign="bottom" src={tree} size="medium" />
           </Grid.Column>
         </Grid.Row>
       </Grid>

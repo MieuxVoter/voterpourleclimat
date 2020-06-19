@@ -24,7 +24,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                 inverted
                 circular
                 className="teal"
-                name="chevron down"
+                name="question"
                 onClick={() => openModal(vote)}
               />
             </Grid.Column>
