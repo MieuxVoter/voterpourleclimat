@@ -11,10 +11,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg2"
-   width="900"
+   width="1000"
    height="1000"
-   viewBox="0 0 900.00001 1000"
-   sodipodi:docname="logo_extinction_rebellion_vertical.svg"
+   viewBox="0 0 1000 1000"
+   sodipodi:docname="xr.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata8">
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,12 +39,12 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="713"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.36"
-     inkscape:cx="443.64745"
+     inkscape:cx="-111.90811"
      inkscape:cy="462.5956"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -82,7 +82,7 @@
   </g>
   <g
      id="g899"
-     transform="translate(-116.92911,-66.929132)">
+     transform="translate(-54.92911,-66.929132)">
     <g
        id="g837"
        style="fill:#000000;fill-opacity:1"
