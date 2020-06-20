@@ -18,7 +18,7 @@ const Footer = () => (
       <Grid divided inverted stackable>
         <Grid.Row>
           <Grid.Column width={3}>
-            <Header inverted as="h4" content="About" />
+            <Header inverted as="h4" content="À propos" />
             <List link inverted>
               <List.Item as="a" href="mailto:app@mieuxvoter.fr">
                 Nous contacter

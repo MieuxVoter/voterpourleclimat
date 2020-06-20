@@ -54,61 +54,74 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
       container
       padded
       className="ui padded"
-      stackable
       verticalAlign="middle"
     >
       <ModalInfo open={state.modal} close={closeModal} title={state.title} />
       <Grid.Row>
-        <Card.Group>
-          {votes.map((vote, index) => (
-            <Card fluid key={index}>
-              <Card.Content>
-                <Card.Description>
-                  <Card.Header>{vote.proposal} </Card.Header>
-                  <Label
-                    onClick={() => openModal(vote)}
-                    className="top right attached teal"
-                  >
-                    <Icon
-                      inverted
-                      circular
+        <Grid.Column>
+          <Card.Group>
+            {votes.map((vote, index) => (
+              <Card fluid key={index}>
+                <Card.Content>
+                  <Card.Description>
+                    <Card.Header>
+                      {vote.proposal}
+                    </Card.Header>
+                    <Button
+                      onClick={() => openModal(vote)}
                       className="teal"
-                      name="chevron down"
-                    />
-                  </Label>
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <Button.Group className="attached mini top three">
-                  {grades.map((grade, gradeId) => {
-                    if (gradeId > 2) return
-                    return displayGrade(
-                      vote,
-                      index,
-                      grade,
-                      gradeId,
-                      onClick,
-                      gradeId === 2
-                    )
-                  })}
-                </Button.Group>
-                <Button.Group className="attached mini bottom three">
-                  {grades.map((grade, gradeId) => {
-                    if (gradeId < 3) return
-                    return displayGrade(
-                      vote,
-                      index,
-                      grade,
-                      gradeId,
-                      onClick,
-                      gradeId === 5
-                    )
-                  })}
-                </Button.Group>
-              </Card.Content>
-            </Card>
-          ))}
-        </Card.Group>
+                      size="small"
+                      style={{ marginTop: "1em"}}
+                    >
+                    En savoir plus sur la mesure
+                    </Button>
+                  </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <Button.Group className="attached mini top two">
+                    {grades.map((grade, gradeId) => {
+                      if (gradeId >= 2) return
+                      return displayGrade(
+                        vote,
+                        index,
+                        grade,
+                        gradeId,
+                        onClick,
+                        gradeId === 1
+                      )
+                    })}
+                  </Button.Group>
+                  <Button.Group className="attached mini bottom two">
+                    {grades.map((grade, gradeId) => {
+                      if (gradeId < 2 || gradeId >= 4) return
+                      return displayGrade(
+                        vote,
+                        index,
+                        grade,
+                        gradeId,
+                        onClick,
+                        gradeId === 3
+                      )
+                    })}
+                  </Button.Group>
+                  <Button.Group className="attached mini bottom two">
+                    {grades.map((grade, gradeId) => {
+                      if (gradeId < 4) return
+                      return displayGrade(
+                        vote,
+                        index,
+                        grade,
+                        gradeId,
+                        onClick,
+                        gradeId === 5
+                      )
+                    })}
+                  </Button.Group>
+                </Card.Content>
+              </Card>
+            ))}
+          </Card.Group>
+        </Grid.Column>
       </Grid.Row>
       <Grid.Row>
         <Button

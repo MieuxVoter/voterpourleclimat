@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { Segment, Image, Grid, Header, Icon, Button } from "semantic-ui-react"
 import styled from "styled-components"
@@ -15,7 +15,7 @@ const themes = [
   { name: "Se loger", icon: "home", to: ROUTES.SE_LOGER },
   { name: "Se déplacer", icon: "truck pickup", to: ROUTES.SE_DEPLACER },
   { name: "Consommer", icon: "shopping cart", to: ROUTES.CONSOMMER },
-  { name: "Produire", icon: "industry", to: ROUTES.PRODUIRE },
+  { name: "Produire et travailler", icon: "industry", to: ROUTES.PRODUIRE },
 ]
 
 const Em = styled.span`
@@ -30,8 +30,10 @@ const Big = styled.p`
 const twoDigits = number => number.toString().padStart(2, "0")
 
 const Timer = () => {
+  const [time, setTime] = useState(new Date());
   const end = new Date(1594684799000)
-  const remaining = new Date(end - new Date())
+  const remaining = new Date(end - time)
+  setTimeout( () => setTime(new Date()), 1000)
 
   return (
     <>
@@ -47,18 +49,48 @@ const Timer = () => {
   )
 }
 
+const VotesCounter = ({ nbVotes }) => {
+  const [displayedNbVotes, setDisplayedNbVotes] = useState(0);
+
+  const delta = Math.floor(nbVotes/400);
+  setTimeout( () =>
+    setDisplayedNbVotes(displayedNbVotes >= nbVotes ?
+     nbVotes
+     :
+     displayedNbVotes + delta
+     , 10)
+   )
+
+  const nbVotesFormated = new Intl.NumberFormat('fr-FR')
+    .format(displayedNbVotes)
+
+  return (
+    <>
+      <Big>
+        <Em className="ui teal text">{nbVotesFormated}</Em>
+      </Big>
+      <Big>Votes ont été enregistrés. Et vous ?</Big>
+      <Big>
+        Rejoignez cet élan démocratique et faites entendre la voix
+        citoyenne !
+      </Big>
+    </>
+  )
+}
+
 const LandingPage = () => (
   <>
-    <Segment style={{ padding: "8em 0em", fontSize: "1.33em" }} vertical>
+    <Segment style={{ padding: "5em 0em", fontSize: "1.33em" }} vertical>
       <Grid container stackable>
         <Grid.Row>
-          <Grid.Column width={10}>
+          <Grid.Column width={9}>
             <Header as="h3">
               La Convention Citoyenne pour le climat est un groupe de 150
               citoyen·nes français·es, tiré·es au sort.
             </Header>
             <p>
-              Ce panel représentatif a défini une série de mesures visant à
+              Après huit mois de travail, d'échanges et de débat, ce panel
+              représentatif a défini une série de mesures visant à
               réduire les émissions françaises de gaz à effet de serre de 40 %
               d'ici 2030 dans un esprit de justice social.
             </p>
@@ -67,14 +99,20 @@ const LandingPage = () => (
               mesures. Soyons les plus nombreux possibles à voter pour donner
               une légitimité démocratique à cette série de mesures.
             </p>
-            <a href="https://www.conventioncitoyennepourleclimat.fr">
-              <Button className="teal" size="huge">
-                Détails sur la Convention Citoyenne
+            <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
+              <Button style={{ marginTop: "1em"}} className="teal" size="huge">
+                Lire les 150 propositions
               </Button>
             </a>
+            <a href="https://www.conventioncitoyennepourleclimat.fr">
+              <Button style={{ marginTop: "1em"}} className="teal" size="huge">
+                En savoir plus sur la Convention Citoyenne
+              </Button>
+            </a>
+
           </Grid.Column>
-          <Grid.Column floated="right" width={5}>
-            <p>Evaluez les propositions par domaine.</p>
+          <Grid.Column floated="right" width={6}>
+            <p>Évaluez les propositions par domaine.</p>
             {themes.map((theme, index) => (
               <div key={index} style={{ marginTop: "1em" }}>
                 <Button
@@ -83,10 +121,11 @@ const LandingPage = () => (
                   as={Link}
                   to={theme.to}
                   icon
+                  size='huge'
                 >
                   <Grid>
                     <Grid.Row>
-                      <Grid.Column width={6} style={{ textAlign: "left" }}>
+                      <Grid.Column width={3} style={{ textAlign: "left" }}>
                         <Icon name="chevron right" />
                       </Grid.Column>
                       <Icon name={theme.icon} /> {theme.name}
@@ -129,14 +168,7 @@ const LandingPage = () => (
             <Image src={barChart} className="teal large" />
           </Grid.Column>
           <Grid.Column width={6}>
-            <Big>
-              <Em className="ui teal text">XXX XXX</Em>
-            </Big>
-            <Big>Votes ont été enregistrés. Et vous ?</Big>
-            <Big>
-              Rejoignez cet élan démocratique et faites entendre la voix
-              citoyenne !
-            </Big>
+            <VotesCounter nbVotes={10212} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image src={megaphone} className="teal large" />
@@ -146,7 +178,7 @@ const LandingPage = () => (
               <Em className="ui teal text">PARLEZ-EN !</Em>
             </Big>
             <Big>
-              A nous de porter notre voix toujours plus haut, toujours plus fort
+              À nous de porter notre voix toujours plus haut, toujours plus fort
               ! Invitez vos connaissances à rejoindre le préférendun.{" "}
             </Big>
             <Big>
