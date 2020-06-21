@@ -148,7 +148,11 @@ class Ballot extends React.Component {
     const value = parseInt(event.currentTarget.getAttribute("data-grade-value"))
     const votes = [...this.state.votes]
     votes[proposalId].vote = value
-    this.setState({ votes: votes })
+    const done = this.state.votes.filter(vote => vote.vote).length
+    this.setState({
+      votes: votes,
+      progress: Math.floor((done / this.allVotes.length) * 100),
+    })
   }
 
   handleSubmit = () => {
@@ -233,12 +237,12 @@ class Ballot extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
+            <Grid.Column width={14}>
+              <P>{description}</P>
+              <Header>{title}</Header>
+            </Grid.Column>
             <Grid.Column width={2}>
               <Progress value={progress} />
-            </Grid.Column>
-            <Grid.Column width={12}>
-              <P>{description}</P>
-              <P>{title}</P>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

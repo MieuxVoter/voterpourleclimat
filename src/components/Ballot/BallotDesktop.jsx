@@ -32,7 +32,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
               {vote.proposal}
             </Grid.Column>
             <Grid.Column fluid width={10}>
-              <div className="ui fluid buttons">
+              <Button.Group fluid>
                 {grades.map((grade, gradeId) => {
                   let className = "ui button"
                   if (vote.vote === null) {
@@ -59,7 +59,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                     </React.Fragment>
                   )
                 })}
-              </div>
+              </Button.Group>
             </Grid.Column>
           </Grid.Row>
         ))}

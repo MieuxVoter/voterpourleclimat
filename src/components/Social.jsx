@@ -7,12 +7,15 @@ const Social = () => (
       as="a"
       href="https://www.facebook.com/sharer/sharer.php?u=voterpourleclimat.fr"
       className="teal basic"
+      target="_blank"
     >
       <Icon name="facebook" /> Facebook
     </Button>
+    {"  "}
     <Button
       className="teal basic"
       as="a"
+      target="_blank"
       href="https://twitter.com/intent/tweet?text=Soyons les plus nombreux possibles pour donner une légitimité démocratique aux mesures de la Convention Citoyenne pour le Climat.&url=voterpourleclimat.fr"
     >
       <Icon name="twitter" /> Twitter

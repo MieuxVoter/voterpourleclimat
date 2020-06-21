@@ -10,11 +10,11 @@ import CPLC from "../assets/images/cplc.png"
 const partnersList = [
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
   { name: "On Est Prêt", site: "https://www.onestpret.com/", logo: OnEstPret },
-  {
-    name: "Extinction Rebellion",
-    site: "https://extinctionrebellion.fr/",
-    logo: XR,
-  },
+  //  {
+  //    name: "Extinction Rebellion",
+  //    site: "https://extinctionrebellion.fr/",
+  //    logo: XR,
+  //  },
   {
     name: "Citoyens pour le Climat",
     site: "https://citoyenspourleclimat.org/",
@@ -24,11 +24,6 @@ const partnersList = [
     name: "Réseau Action Climat",
     site: "https://reseauactionclimat.org/",
     logo: RAC,
-  },
-  {
-    name: "The Green Global Project",
-    site: "https://www.facebook.com/TheGreenGlobalProject/",
-    logo: GreenGlobal,
   },
   {
     name: "Le vent se lève",
