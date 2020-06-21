@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
-import "react-circular-progressbar/dist/styles.css"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
@@ -12,6 +10,7 @@ import { UserContext } from "../../services/User"
 import PersoModal from "./ModalPerso"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
+import Progress from "../Progress"
 import "./index.css"
 
 const P = styled.div`
@@ -235,18 +234,7 @@ class Ballot extends React.Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={2}>
-              <CircularProgressbar
-                value={progress}
-                text={`${progress}%`}
-                background
-                backgroundPadding={6}
-                styles={buildStyles({
-                  backgroundColor: "#03B37F",
-                  textColor: "#fff",
-                  pathColor: "#fff",
-                  trailColor: "transparent",
-                })}
-              />
+              <Progress value={progress} />
             </Grid.Column>
             <Grid.Column width={12}>
               <P>{description}</P>
