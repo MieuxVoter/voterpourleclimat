@@ -9,7 +9,9 @@ const SeNourrirPage = () => {
       name={theme.name}
       description={theme.description}
       proposals={theme.proposals}
+      objectives={theme.objectives}
       collectionName={theme.collection}
+      groupUrl={theme.groupUrl}
     />
   )
 }

@@ -1,8 +1,7 @@
 import React from "react"
 import { useUser } from "../services/User"
 import Ballot from "../components/Ballot"
-import * as TITLES from "../constants/titles"
-import * as PROPOSALS from "../constants/proposals"
+import { PRODUIRE as theme } from "../constants/themes"
 
 const ProduirePage = () => {
   const { user } = useUser()
@@ -11,9 +10,13 @@ const ProduirePage = () => {
 
   return (
     <Ballot
-      title={TITLES.PRODUIRE}
-      collectionName="produire"
-      proposals={PROPOSALS.PRODUIRE}
+      title={theme.title}
+      name={theme.name}
+      description={theme.description}
+      proposals={theme.proposals}
+      objectives={theme.objectives}
+      collectionName={theme.collection}
+      groupUrl={theme.groupUrl}
     />
   )
 }

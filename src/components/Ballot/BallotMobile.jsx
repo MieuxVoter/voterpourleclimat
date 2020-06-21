@@ -66,9 +66,15 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
                   <Card.Description>
                     <Card.Header>
                       {vote.proposal}
+                      <p style={{
+                        color: "#03b37f",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                        fontSize: "small"
+                      }}><b>Objectif : </b> { vote.objective.label } </p>
                     </Card.Header>
                     <Button
-                      onClick={() => openModal(vote)}
+                      href={ vote.objective.url } target="_blank"
                       className="teal"
                       size="small"
                       style={{ marginTop: "1em"}}

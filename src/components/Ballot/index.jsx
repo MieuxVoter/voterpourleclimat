@@ -5,7 +5,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
-import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
+import { Segment, Grid, Header, Responsive, Message, Button } from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
 import { castVote, loadVote } from "../../services/actions"
 import { UserContext } from "../../services/User"
@@ -74,6 +74,7 @@ class Ballot extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     proposals: PropTypes.array.isRequired,
+    objectives: PropTypes.array.isRequired,
     collectionName: PropTypes.string.isRequired,
     numGrades: PropTypes.number,
     grades: PropTypes.array,
@@ -122,9 +123,11 @@ class Ballot extends React.Component {
     loadVote(this.props.collectionName, this.context.user.uid).then(doc => {
       this.allVotes = []
       for (let proposalId in this.props.proposals) {
+        const proposal = this.props.proposals[proposalId]
         this.allVotes.push({
           vote: null,
-          proposal: this.props.proposals[proposalId],
+          proposal: proposal.proposal,
+          objective: this.props.objectives[proposal.objectiveId]
         })
       }
 
@@ -209,7 +212,7 @@ class Ballot extends React.Component {
 
   render() {
     const { votes, loading, progress } = this.state
-    const { title, name, description, grades } = this.props
+    const { title, name, description, grades, ambition, groupUrl } = this.props
     const validBallot = this.check()
 
     if (votes.length === 0 && !loading) return <MessageDone />
@@ -225,32 +228,38 @@ class Ballot extends React.Component {
             this.setState({ openedModal: false })
           }}
         />
-        <Grid container stackable verticalAlign="middle">
+        <Grid container stackable centered verticalAlign="middle">
           <Grid.Row>
             <Grid.Column width={16}>
-              <Header as="h3" style={{ fontSize: "2em" }}>
+              <Header as="h2" style={
+                { fontSize: "4em",
+                  color: "#03b37f",
+                  borderBottom: "2px solid rgb(3, 179, 127)"
+                }}>
                 {name}
               </Header>
+              <p>{description}</p>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={2}>
-              <CircularProgressbar
-                value={progress}
-                text={`${progress}%`}
-                background
-                backgroundPadding={6}
-                styles={buildStyles({
-                  backgroundColor: "#03B37F",
-                  textColor: "#fff",
-                  pathColor: "#fff",
-                  trailColor: "transparent",
-                })}
-              />
-            </Grid.Column>
-            <Grid.Column width={12}>
-              <P>{description}</P>
-              <P>{title}</P>
+            <Grid.Column width={10}>
+<Button
+  fluid
+  as="a"
+  href={groupUrl}
+  target="_blank"
+  className="basic teal"
+  size="huge"
+>
+  Lire les objectifs sur le site de la convention
+</Button>
+
+
+</Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={16}>
+              <p style={{ fontSize: "2em" }}>Quel est votre avis sur les mesures suivantes, sélectionnées aléatoirement parmi toutes les mesures du groupe ?</p>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
