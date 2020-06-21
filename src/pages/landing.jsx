@@ -80,14 +80,16 @@ const LandingPage = () => (
           <Grid.Column width={3}></Grid.Column>
           <Grid.Column width={10}>
             <p>
-              <em>Voter pour Le Climat</em> est une plateforme de consultation
-              sur les propositions de la{" "}
+              La Convention Citoyenne pour le Climat vient de rendre public ses{" "}
               <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
-                Convention Citoyenne pour le Climat
-              </a>
-              , un groupe de 150 français tirés au sort. Ces propositions visent
-              à réduire les émissions françaises de gaz à effet de serre de 40 %
-              d'ici 2030, dans un esprit de justice sociale
+                propositions
+              </a>{" "}
+              afin de réduire les émissions françaises de gaz à effet de serre
+              de 40 % d'ici 2030 dans un esprit de justice sociale !
+            </p>
+            <p>
+              Prenez part à cet élan démocratique, premier du type, et donnez
+              une légitimité citoyenne à cette série de mesures !
             </p>
             <Grid>
               <Grid.Row>

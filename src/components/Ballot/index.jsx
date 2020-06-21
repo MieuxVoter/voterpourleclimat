@@ -1,11 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {
-  CircularProgressbar,
-  CircularProgressbarWithChildren,
-  buildStyles,
-} from "react-circular-progressbar"
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
@@ -13,7 +9,7 @@ import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
 import { castVote, loadVote } from "../../services/actions"
 import { UserContext } from "../../services/User"
-import ConfirmationModal from "../Modal"
+import PersoModal from "./ModalPerso"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
 import "./index.css"
@@ -103,15 +99,23 @@ class Ballot extends React.Component {
 
   setBallot() {
     let counter = 0
+    let done = 0
     let votes = []
     for (const vote of this.allVotes) {
-      if (counter == this.props.displayProposals) break
       if (vote.vote === null) {
-        votes.push(vote)
-        counter += 1
+        if (counter < this.props.displayProposals) {
+          votes.push(vote)
+          counter += 1
+        }
+      } else {
+        done += 1
       }
     }
-    this.setState({ votes, loading: false })
+    this.setState({
+      votes,
+      loading: false,
+      progress: Math.floor((done / this.allVotes.length) * 100),
+    })
   }
 
   componentDidMount() {
@@ -213,7 +217,7 @@ class Ballot extends React.Component {
     return (
       <Segment vertical style={{ margin: "5em 0" }}>
         <SemanticToastContainer />
-        <ConfirmationModal
+        <PersoModal
           isOpened={this.state.openedModal}
           close={() => this.setState({ openedModal: false })}
           validate={() => {

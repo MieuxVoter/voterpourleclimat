@@ -56,6 +56,7 @@ export const useUser = () => {
     error,
     loading,
     user,
+    setUser,
   }
 }
 
@@ -87,7 +88,7 @@ export const useAuth = () => {
 }
 
 export const UserProvider = props => {
-  const { loading, user } = useUser()
+  const { loading, error, user, setUser } = useUser()
 
   console.log(loading, user)
   if (loading) {
@@ -100,12 +101,14 @@ export const UserProvider = props => {
 
   const { children } = props
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ loading, error, user, setUser }}>
+      {children}
+    </UserContext.Provider>
   )
 }
 
 export const withUser = Component => props => (
   <UserContext.Consumer>
-    {user => <Component {...props} user={user} />}
+    {value => <Component {...props} {...value} />}
   </UserContext.Consumer>
 )

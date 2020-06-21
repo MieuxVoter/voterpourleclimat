@@ -16,12 +16,12 @@ const JeVotePage = () => (
       <Grid.Row>
         <Header as="h2">Evaluez les propositions par domaine</Header>
       </Grid.Row>
-      {Object(themes)
-        .keys()
-        .map((theme, index) => (
+      {Object.keys(themes).map(themeIndex => {
+        const theme = themes[themeIndex]
+        return (
           <Grid.Row>
             <Grid.Column
-              key={index}
+              key={themeIndex}
               style={{ marginTop: "0.3em", padding: "0 0.5rem" }}
             >
               <Button
@@ -46,7 +46,8 @@ const JeVotePage = () => (
               <P>{theme.description}</P>
             </Grid.Column>
           </Grid.Row>
-        ))}
+        )
+      })}
     </Grid>
   </Segment>
 )
