@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { Segment, Image, Grid, Header, Icon, Button } from "semantic-ui-react"
+import { Segment, Image, Grid, Header, Button } from "semantic-ui-react"
 import styled from "styled-components"
 import * as ROUTES from "../constants/routes.js"
 import "../index.css"
@@ -9,14 +9,6 @@ import barChart from "../assets/images/bar-chart.png"
 import timeLeft from "../assets/images/time-left.png"
 import Social from "../components/Social"
 import Partners from "../components/Partners"
-
-const themes = [
-  { name: "Se nourrir", icon: "utensils", to: ROUTES.SE_NOURRIR },
-  { name: "Se loger", icon: "home", to: ROUTES.SE_LOGER },
-  { name: "Se déplacer", icon: "truck pickup", to: ROUTES.SE_DEPLACER },
-  { name: "Consommer", icon: "shopping cart", to: ROUTES.CONSOMMER },
-  { name: "Produire et travailler", icon: "industry", to: ROUTES.PRODUIRE },
-]
 
 const Em = styled.span`
   text-transform: uppercase;
@@ -30,10 +22,10 @@ const Big = styled.p`
 const twoDigits = number => number.toString().padStart(2, "0")
 
 const Timer = () => {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(new Date())
   const end = new Date(1594684799000)
   const remaining = new Date(end - time)
-  setTimeout( () => setTime(new Date()), 1000)
+  setTimeout(() => setTime(new Date()), 1000)
 
   return (
     <>
@@ -50,19 +42,19 @@ const Timer = () => {
 }
 
 const VotesCounter = ({ nbVotes }) => {
-  const [displayedNbVotes, setDisplayedNbVotes] = useState(0);
+  const [displayedNbVotes, setDisplayedNbVotes] = useState(0)
 
-  const delta = Math.floor(nbVotes/400);
-  setTimeout( () =>
-    setDisplayedNbVotes(displayedNbVotes >= nbVotes ?
-     nbVotes
-     :
-     displayedNbVotes + delta
-     , 10)
-   )
+  const delta = Math.floor(nbVotes / 400)
+  setTimeout(() =>
+    setDisplayedNbVotes(
+      displayedNbVotes >= nbVotes ? nbVotes : displayedNbVotes + delta,
+      10
+    )
+  )
 
-  const nbVotesFormated = new Intl.NumberFormat('fr-FR')
-    .format(displayedNbVotes)
+  const nbVotesFormated = new Intl.NumberFormat("fr-FR").format(
+    displayedNbVotes
+  )
 
   return (
     <>
@@ -71,8 +63,7 @@ const VotesCounter = ({ nbVotes }) => {
       </Big>
       <Big>Votes ont été enregistrés. Et vous ?</Big>
       <Big>
-        Rejoignez cet élan démocratique et faites entendre la voix
-        citoyenne !
+        Rejoignez cet élan démocratique et faites entendre la voix citoyenne !
       </Big>
     </>
   )
@@ -80,60 +71,49 @@ const VotesCounter = ({ nbVotes }) => {
 
 const LandingPage = () => (
   <>
-    <Segment style={{ padding: "5em 0em", fontSize: "1.33em" }} vertical>
+    <Segment
+      style={{ padding: "3em 0em", textAlign: "justify", fontSize: "1.33em" }}
+      vertical
+    >
       <Grid container stackable>
         <Grid.Row>
-          <Grid.Column width={9}>
-            <Header as="h3">
-              La Convention Citoyenne pour le climat est un groupe de 150
-              citoyen·nes français·es, tiré·es au sort.
-            </Header>
+          <Grid.Column width={3}></Grid.Column>
+          <Grid.Column width={10}>
             <p>
-              Après huit mois de travail, d'échanges et de débat, ce panel
-              représentatif a défini une série de mesures visant à
-              réduire les émissions françaises de gaz à effet de serre de 40 %
-              d'ici 2030 dans un esprit de justice social.
+              <em>Voter pour Le Climat</em> est une plateforme de consultation
+              sur les propositions de la{" "}
+              <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
+                Convention Citoyenne pour le Climat
+              </a>
+              , un groupe de 150 français tirés au sort. Ces propositions visent
+              à réduire les émissions françaises de gaz à effet de serre de 40 %
+              d'ici 2030, dans un esprit de justice sociale
             </p>
-            <p>
-              Nous vous proposons sur ce site de donner votre avis sur ces
-              mesures. Soyons les plus nombreux possibles à voter pour donner
-              une légitimité démocratique à cette série de mesures.
-            </p>
-            <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
-              <Button style={{ marginTop: "1em"}} className="teal" size="huge">
-                Lire les 150 propositions
-              </Button>
-            </a>
-            <a href="https://www.conventioncitoyennepourleclimat.fr">
-              <Button style={{ marginTop: "1em"}} className="teal" size="huge">
-                En savoir plus sur la Convention Citoyenne
-              </Button>
-            </a>
-
-          </Grid.Column>
-          <Grid.Column floated="right" width={6}>
-            <p>Évaluez les propositions par domaine.</p>
-            {themes.map((theme, index) => (
-              <div key={index} style={{ marginTop: "1em" }}>
-                <Button
-                  fluid
-                  className="dashed teal basic"
-                  as={Link}
-                  to={theme.to}
-                  icon
-                  size='huge'
-                >
-                  <Grid>
-                    <Grid.Row>
-                      <Grid.Column width={3} style={{ textAlign: "left" }}>
-                        <Icon name="chevron right" />
-                      </Grid.Column>
-                      <Icon name={theme.icon} /> {theme.name}
-                    </Grid.Row>
-                  </Grid>
-                </Button>
-              </div>
-            ))}
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={7}>
+                  <Button
+                    as="a"
+                    href="https://www.propositions.conventioncitoyennepourleclimat.fr"
+                    className="basic teal"
+                    size="huge"
+                  >
+                    Lire les 150 propositions
+                  </Button>
+                </Grid.Column>
+                <Grid.Column width={9}>
+                  <Button
+                    as={Link}
+                    fluid
+                    to={ROUTES.JE_VOTE}
+                    className="teal"
+                    size="huge"
+                  >
+                    Je vote
+                  </Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -161,7 +141,7 @@ const LandingPage = () => (
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: "10em", backgroundColor: "#e3e3e3" }} vertical>
+    <Segment style={{ padding: "10em", backgroundColor: "#eaeaea" }} vertical>
       <Grid container stackable>
         <Grid.Row>
           <Grid.Column width={2}>
@@ -179,7 +159,7 @@ const LandingPage = () => (
             </Big>
             <Big>
               À nous de porter notre voix toujours plus haut, toujours plus fort
-              ! Invitez vos connaissances à rejoindre le préférendun.{" "}
+              ! Invitez vos connaissances à rejoindre le préférendum.{" "}
             </Big>
             <Big>
               <Social />
@@ -194,7 +174,7 @@ const LandingPage = () => (
         <Grid.Row>
           <Grid.Column width={16}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              Le groupement associatif
+              Les partenaires de la consultation
             </Header>
           </Grid.Column>
         </Grid.Row>

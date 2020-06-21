@@ -8,14 +8,12 @@ const DesktopBanner = () => (
   <Segment className="teal" inverted vertical>
     <Container>
       <Grid inverted stackable>
-        <Grid.Row style={{ paddingBottom: 0 }}>
-          <Grid.Column width={8} textAlign="center">
-            <Link to="/">
-              <Image verticalAlign="bottom" src={logo} size="medium" />
-            </Link>
+        <Grid.Row style={{ padding: 0 }}>
+          <Grid.Column width={8} style={{ paddingBottom: 0, paddingTop: "1em" }} textAlign="center">
+              <Image verticalAlign="middle" as={Link} to="/" src={logo} size="large" />
           </Grid.Column>
-          <Grid.Column width={8} style={{ paddingBottom: 0 }}>
-            <Image verticalAlign="bottom" src={tree} size="small" />
+          <Grid.Column width={8} style={{ paddingBottom: 0, paddingTop: "5.5em" }}>
+            <Image verticalAlign="bottom" src={tree} size="small" style={{"width": "180px"}} />
           </Grid.Column>
         </Grid.Row>
       </Grid>

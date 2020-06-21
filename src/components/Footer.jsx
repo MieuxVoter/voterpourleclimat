@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react"
 import Social from "./Social"
 import * as ROUTES from "../constants/routes"
+import partners from "../constants/partners"
 
 const Footer = () => (
   <Segment inverted vertical style={{ padding: "5em 0em" }}>
@@ -36,15 +37,12 @@ const Footer = () => (
             <Header inverted as="h4" content="Partenaires" />
             <List link inverted>
               <List.Item as="a"></List.Item>
-              <List.Item as="a" href="https://www.mieuxvoter.fr">
-                Mieux Voter
-              </List.Item>
-              <List.Item as="a" href="https://www.onestpret.com">
-                On est prêt
-              </List.Item>
-              <List.Item as="a" href="https://reseauactionclimat.org">
-                Réseau Action Climat
-              </List.Item>
+
+              {partners.map(partner => (
+                <List.Item as="a" href={partner.site}>
+                  {partner.name}
+                </List.Item>
+              ))}
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
@@ -54,10 +52,10 @@ const Footer = () => (
               <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
                 Se nourrir
               </List.Item>
-              <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
+              <List.Item as={Link} to={ROUTES.SE_LOGER}>
                 Se loger
               </List.Item>
-              <List.Item as={Link} to={ROUTES.SE_NOURRIR}>
+              <List.Item as={Link} to={ROUTES.SE_DEPLACER}>
                 Se déplacer
               </List.Item>
               <List.Item as={Link} to={ROUTES.PRODUIRE}>
@@ -74,9 +72,8 @@ const Footer = () => (
             </Header>
             <Social />
             <p style={{ marginTop: "1em" }}>
-              Soyons les plus nombreux possibles pour donner une légitimité
-              démocratique aux mesures de la Convention Citoyenne pour le
-              Climat.
+              À nous de porter notre voix toujours plus haut, toujours plus fort
+              ! Invitez vos connaissances à rejoindre le préférendum.
             </p>
           </Grid.Column>
         </Grid.Row>

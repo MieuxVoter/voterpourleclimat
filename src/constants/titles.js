@@ -1,10 +1,10 @@
 export const SE_LOGER =
-  "Quelles mesures souhaiteriez-vous rendre prioritaires pour le groupe se loger ?"
+  "Quelles mesures trouvez-vous prioritaires parmi les propositions dans ce domaine ?"
 export const SE_NOURRIR =
-  "Quelles mesures souhaiteriez-vous rendre prioritaires pour le groupe se nourrir ?"
+  "Quelles mesures trouvez-vous prioritaires parmi les propositions dans ce domaine ?"
 export const SE_DEPLACER =
-  "Quelles mesures souhaiteriez-vous rendre prioritaires pour le groupe se deplacer ?"
+  "Quelles mesures trouvez-vous prioritaires parmi les propositions dans ce domaine ?"
 export const CONSOMMER =
-  "Quelles mesures souhaiteriez-vous rendre prioritaires pour le groupe consommer ?"
+  "Quelles mesures trouvez-vous prioritaires parmi les propositions dans ce domaine ?"
 export const PRODUIRE =
-  "Quelles mesures souhaiteriez-vous rendre prioritaires pour le groupe produire et travailler ?"
+  "Quelles mesures trouvez-vous prioritaires parmi les propositions dans ce domaine ?"
