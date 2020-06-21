@@ -39,15 +39,12 @@ export const useUser = () => {
       .get()
       .then(doc => {
         if (doc.exists) {
-          console.log("RECEIVED")
           setUser({ ...doc.data(), ...auth.user })
           setLoading(false)
-          console.log("LOADED USER")
         } else {
-          console.log("IT NOT EXISTS")
           console.log(auth.user.uid)
-          setLoading(false)
           setUser({ ...auth.user })
+          setLoading(false)
         }
       })
       .catch(err => setError(err))
@@ -92,6 +89,7 @@ export const useAuth = () => {
 export const UserProvider = props => {
   const { loading, user } = useUser()
 
+  console.log(loading, user)
   if (loading) {
     return (
       <div class="ui active inverted">

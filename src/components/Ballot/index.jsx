@@ -1,5 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar"
+import "react-circular-progressbar/dist/styles.css"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Segment, Grid, Header, Responsive, Message } from "semantic-ui-react"
@@ -10,6 +17,12 @@ import ConfirmationModal from "../Modal"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
 import "./index.css"
+
+const P = styled.div`
+  font-size: 1rem;
+  text-align: justify;
+  margin: 1em;
+`
 
 /**
  * Check if the user gives enough info to be allowed to vote
@@ -83,6 +96,7 @@ class Ballot extends React.Component {
       votes: [],
       openedModal: false,
       loading: true,
+      progress: 0,
     }
     this.allVotes = []
   }
@@ -190,8 +204,8 @@ class Ballot extends React.Component {
   }
 
   render() {
-    const { votes, loading } = this.state
-    const { title, grades } = this.props
+    const { votes, loading, progress } = this.state
+    const { title, name, description, grades } = this.props
     const validBallot = this.check()
 
     if (votes.length === 0 && !loading) return <MessageDone />
@@ -211,8 +225,28 @@ class Ballot extends React.Component {
           <Grid.Row>
             <Grid.Column width={16}>
               <Header as="h3" style={{ fontSize: "2em" }}>
-                {title}
+                {name}
               </Header>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={2}>
+              <CircularProgressbar
+                value={progress}
+                text={`${progress}%`}
+                background
+                backgroundPadding={6}
+                styles={buildStyles({
+                  backgroundColor: "#03B37F",
+                  textColor: "#fff",
+                  pathColor: "#fff",
+                  trailColor: "transparent",
+                })}
+              />
+            </Grid.Column>
+            <Grid.Column width={12}>
+              <P>{description}</P>
+              <P>{title}</P>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
