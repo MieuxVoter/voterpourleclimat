@@ -5,7 +5,7 @@ import OnEstPret from "../assets/images/onestpret.png"
 import XR from "../assets/images/xr.svg"
 import RAC from "../assets/images/rac.png"
 import More from "../assets/images/more.png"
-import GreenGlobal from "../assets/images/green-global.png"
+import GreenGlobal from "../assets/images/the-green-global-project.png"
 import Lvsl from "../assets/images/LVSL-violet.png"
 
 const partnersList = [
@@ -22,8 +22,8 @@ const partnersList = [
     logo: RAC,
   },
   {
-    name: "Green Global",
-    site: "https://www.globalgreen.org/",
+    name: "The Green Global Project",
+    site: "https://www.facebook.com/TheGreenGlobalProject/",
     logo: GreenGlobal,
   },
   {
