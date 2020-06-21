@@ -42,7 +42,6 @@ export const useUser = () => {
           setUser({ ...doc.data(), ...auth.user })
           setLoading(false)
         } else {
-          console.log(auth.user.uid)
           setUser({ ...auth.user })
           setLoading(false)
         }
@@ -90,7 +89,6 @@ export const useAuth = () => {
 export const UserProvider = props => {
   const { loading, error, user, setUser } = useUser()
 
-  console.log(loading, user)
   if (loading) {
     return (
       <div class="ui active inverted">
