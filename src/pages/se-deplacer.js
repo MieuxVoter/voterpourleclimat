@@ -1,8 +1,7 @@
 import React from "react"
 import { useUser } from "../services/User"
 import Ballot from "../components/Ballot"
-import * as TITLES from "../constants/titles"
-import * as PROPOSALS from "../constants/proposals"
+import { SE_DEPLACER as theme } from "../constants/themes"
 
 const SeDeplacerPage = () => {
   const { user } = useUser()
@@ -11,9 +10,13 @@ const SeDeplacerPage = () => {
 
   return (
     <Ballot
-      title={TITLES.SE_DEPLACER}
-      collectionName="seDeplacer"
-      proposals={PROPOSALS.SE_DEPLACER}
+      title={theme.title}
+      name={theme.name}
+      description={theme.description}
+      proposals={theme.proposals}
+      objectives={theme.objectives}
+      collectionName={theme.collection}
+      groupUrl={theme.groupUrl}
     />
   )
 }

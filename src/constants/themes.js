@@ -1,6 +1,7 @@
 import * as ROUTES from "../constants/routes.js"
 import * as TITLES from "../constants/titles"
 import * as PROPOSALS from "../constants/proposals"
+import * as OBJECTIVES from "../constants/objectives"
 
 export const SE_NOURRIR = {
   name: "Se nourrir",
@@ -9,8 +10,10 @@ export const SE_NOURRIR = {
   to: ROUTES.SE_NOURRIR,
   title: TITLES.SE_NOURRIR,
   proposals: PROPOSALS.SE_NOURRIR,
+  objectives: OBJECTIVES.SE_NOURRIR,
   description:
-    "19 % des émissions de GES en France sont dues à l’agriculture. Les engrais azotés constituent plus de 40 % des émissions de gaz à effet de serre de l’agriculture. Ils ont également un impact important en termes de pollution de l’air, avec un effet sur la santé.",
+    "Se nourrir est un besoin vital qui génère de nombreuses émissions de gaz à effet de serre. Comment réinventer un système alimentaire durable et accessible à tous d’ici 2030 ?",
+  groupUrl: "https://propositions.conventioncitoyennepourleclimat.fr/se-nourrir-2/"
 }
 
 export const SE_LOGER = {
@@ -20,8 +23,10 @@ export const SE_LOGER = {
   collection: "seLoger",
   title: TITLES.SE_LOGER,
   proposals: PROPOSALS.SE_LOGER,
+  objectives: OBJECTIVES.SE_LOGER,
   description:
-    "19 % des émissions de gaz à effet de serre en France sont dues à la mauvaise isolation des bâtiments.",
+    "Pour réduire les émissions de gaz à effet de serre dans l’habitat, il faut revoir les bâtiments dans leur ensemble. Comment se loger dans une ville végétalisée, rénovée et moins polluante ?",
+  groupUrl: "https://propositions.conventioncitoyennepourleclimat.fr/se-loger-2/"
 }
 
 export const SE_DEPLACER = {
@@ -31,8 +36,10 @@ export const SE_DEPLACER = {
   collection: "seDeplacer",
   title: TITLES.SE_DEPLACER,
   proposals: PROPOSALS.SE_DEPLACER,
+  objectives: OBJECTIVES.SE_DEPLACER,
   description:
-    "31 % des émissions de gaz à effet de serre en France sont dues au transport.",
+    "Les déplacements représentent aujourd’hui 30% des émissions de gaz à effet de serre en France. Mieux se déplacer personnellement et transporter autrement les marchandises est essentiel.",
+  groupUrl: "https://propositions.conventioncitoyennepourleclimat.fr/se-deplacer-2/"
 }
 
 export const CONSOMMER = {
@@ -42,8 +49,10 @@ export const CONSOMMER = {
   collection: "consommer",
   title: TITLES.CONSOMMER,
   proposals: PROPOSALS.CONSOMMER,
+  objectives: OBJECTIVES.CONSOMMER,
   description:
-    "Les dépenses de publicité et de communication du secteur automobile ont représenté en 2019 en France 4,3 milliards d’euros pour promouvoir l'usage d'énergies fossiles.",
+    "Nos habitudes de consommation voire de surconsommation, ont un fort impact sur l’environnement. Une consommation plus sobre et vertueuse est possible quel que soit son pouvoir d’achat.",
+  groupUrl: "https://propositions.conventioncitoyennepourleclimat.fr/consommer//"
 }
 
 export const PRODUIRE = {
@@ -53,6 +62,8 @@ export const PRODUIRE = {
   collection: "produire",
   title: TITLES.PRODUIRE,
   proposals: PROPOSALS.PRODUIRE,
+  objectives: OBJECTIVES.PRODUIRE,
   description:
-    "En France, les études des scénarios de transition écologique calculent un potentiel de 280 000 à 400 000 créations d’emplois d’ici 2030.",
+    "Le passage à une société décarbonée implique de transformer pleinement l’appareil de production et les métiers. Travailler et produire différemment s’impose.",
+  groupUrl: "https://propositions.conventioncitoyennepourleclimat.fr/produire-et-travailler/"
 }
