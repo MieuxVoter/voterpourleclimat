@@ -88,14 +88,13 @@ const LandingPage = () => (
               afin de réduire les émissions françaises de gaz à effet de serre
               de 40 % d'ici 2030 dans un esprit de justice sociale.
             </p>
-            <p>
-              Prenez part à cet élan démocratique, premier du type, et donnez
-              une légitimité citoyenne à cette série de mesures !
-            </p>
+            <Header>
+              VOTEZ sur ces propositions pour faire entendre votre voix
+            </Header>
           </Grid.Column>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={6}>
-            <p>Donnez votre avis dans l'une de ces thématiques :</p>
+            <p>Choisissez une thématique</p>
 
             {Object.keys(themes).map(themeIndex => {
               const theme = themes[themeIndex]

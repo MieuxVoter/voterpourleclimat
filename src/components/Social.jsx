@@ -8,11 +8,12 @@ const Social = () => (
       href="https://www.facebook.com/sharer/sharer.php?u=voterpourleclimat.fr"
       className="teal basic"
       target="_blank"
+      style={{ margin: "5px" }}
     >
       <Icon name="facebook" /> Facebook
     </Button>
-    {"  "}
     <Button
+      style={{ margin: "5px" }}
       className="teal basic"
       as="a"
       target="_blank"
