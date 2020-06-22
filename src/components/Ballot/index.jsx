@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
-import "react-circular-progressbar/dist/styles.css"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Segment, Grid, Header, Responsive, Message, Button } from "semantic-ui-react"
@@ -12,6 +10,7 @@ import { UserContext } from "../../services/User"
 import PersoModal from "./ModalPerso"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
+import Progress from "../Progress"
 import "./index.css"
 
 const P = styled.div`
@@ -152,7 +151,11 @@ class Ballot extends React.Component {
     const value = parseInt(event.currentTarget.getAttribute("data-grade-value"))
     const votes = [...this.state.votes]
     votes[proposalId].vote = value
-    this.setState({ votes: votes })
+    const done = this.state.votes.filter(vote => vote.vote).length
+    this.setState({
+      votes: votes,
+      progress: Math.floor((done / this.allVotes.length) * 100),
+    })
   }
 
   handleSubmit = () => {
@@ -258,8 +261,12 @@ class Ballot extends React.Component {
 </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={16}>
-              <p style={{ fontSize: "2em" }}>Quel est votre avis sur les mesures suivantes, sélectionnées aléatoirement parmi toutes les mesures du groupe ?</p>
+            <Grid.Column width={14}>
+              <p style={{ fontSize: "2em" }}>{title}</p>
+</Grid.Column>
+            <Grid.Column width={2}>
+              <Progress value={progress} />
+
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

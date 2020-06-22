@@ -8,18 +8,21 @@ import SeDeplacer from "../pages/se-deplacer"
 import SeLoger from "../pages/se-loger"
 import Consommer from "../pages/consommer"
 import Produire from "../pages/produire"
+import PrivatePolicy from "../pages/policy"
+import * as ROUTES from "../constants/routes"
 
 function App() {
   return (
     <Layout>
-      <Route exact path="/" component={Landing} />
+      <Route exact path={ROUTES.LANDING} component={Landing} />
 
-      <Route path="/je-vote" component={JeVote} />
-      <Route path="/se-nourrir" component={SeNourrir} />
-      <Route path="/se-deplacer" component={SeDeplacer} />
-      <Route path="/se-loger" component={SeLoger} />
-      <Route path="/consommer" component={Consommer} />
-      <Route path="/produire" component={Produire} />
+      <Route path={ROUTES.JE_VOTE} component={JeVote} />
+      <Route path={ROUTES.PRIVACY_POLICY} component={PrivatePolicy} />
+      <Route path={ROUTES.SE_NOURRIR} component={SeNourrir} />
+      <Route path={ROUTES.SE_DEPLACER} component={SeDeplacer} />
+      <Route path={ROUTES.SE_LOGER} component={SeLoger} />
+      <Route path={ROUTES.CONSOMMER} component={Consommer} />
+      <Route path={ROUTES.PRODUIRE} component={Produire} />
     </Layout>
   )
 }

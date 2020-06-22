@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { Segment, Image, Grid, Header, Button } from "semantic-ui-react"
+import { Icon, Segment, Image, Grid, Header, Button } from "semantic-ui-react"
 import styled from "styled-components"
 import * as ROUTES from "../constants/routes.js"
 import "../index.css"
@@ -9,6 +9,7 @@ import barChart from "../assets/images/bar-chart.png"
 import timeLeft from "../assets/images/time-left.png"
 import Social from "../components/Social"
 import Partners from "../components/Partners"
+import * as themes from "../constants/themes"
 
 const Em = styled.span`
   text-transform: uppercase;
@@ -77,45 +78,53 @@ const LandingPage = () => (
     >
       <Grid container stackable>
         <Grid.Row>
-          <Grid.Column width={3}></Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column width={8}>
+            <Header>150 citoyens, 150 propositions émises</Header>
             <p>
               La Convention Citoyenne pour le Climat vient de rendre public ses{" "}
               <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
                 propositions
               </a>{" "}
               afin de réduire les émissions françaises de gaz à effet de serre
-              de 40 % d'ici 2030 dans un esprit de justice sociale !
+              de 40 % d'ici 2030 dans un esprit de justice sociale.
             </p>
             <p>
               Prenez part à cet élan démocratique, premier du type, et donnez
               une légitimité citoyenne à cette série de mesures !
             </p>
-            <Grid>
-              <Grid.Row>
-                <Grid.Column width={7}>
-                  <Button
-                    as="a"
-                    href="https://www.propositions.conventioncitoyennepourleclimat.fr"
-                    className="basic teal"
-                    size="huge"
-                  >
-                    Lire les 150 propositions
-                  </Button>
-                </Grid.Column>
-                <Grid.Column width={9}>
-                  <Button
-                    as={Link}
-                    fluid
-                    to={ROUTES.JE_VOTE}
-                    className="teal"
-                    size="huge"
-                  >
-                    Je vote
-                  </Button>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+          </Grid.Column>
+          <Grid.Column width={2}></Grid.Column>
+          <Grid.Column width={6}>
+            <p>Donnez votre avis dans l'une de ces thématiques :</p>
+
+            {Object.keys(themes).map(themeIndex => {
+              const theme = themes[themeIndex]
+              return (
+                <Button
+                  fluid
+                  className="dashed teal basic"
+                  as={Link}
+                  to={theme.to}
+                  icon
+                  size="huge"
+                  style={{ marginBottom: "10px" }}
+                >
+                  <Grid>
+                    <Grid.Row>
+                      <Grid.Column width={1} style={{ textAlign: "left" }}>
+                        <Icon name="chevron right" />
+                      </Grid.Column>
+                      <Grid.Column
+                        width={14}
+                        style={{ textAlign: "center", fontWeight: "bolder" }}
+                      >
+                        <Icon name={theme.icon} /> {theme.name}
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Button>
+              )
+            })}
           </Grid.Column>
         </Grid.Row>
       </Grid>

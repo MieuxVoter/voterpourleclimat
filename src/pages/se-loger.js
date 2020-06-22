@@ -3,11 +3,7 @@ import { useUser } from "../services/User"
 import Ballot from "../components/Ballot"
 import { SE_LOGER as theme } from "../constants/themes"
 
-const SeLogerPage = () => {
-  const { user } = useUser()
-  if (!user) return <></>
-
-  return (
+const SeLogerPage = (
     <Ballot
       title={theme.title}
       name={theme.name}
@@ -18,6 +14,5 @@ const SeLogerPage = () => {
       groupUrl={theme.groupUrl}
     />
   )
-}
 
 export default SeLogerPage
