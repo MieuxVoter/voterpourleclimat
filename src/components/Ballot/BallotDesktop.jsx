@@ -8,13 +8,13 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
       <Grid container className="ui padded" stackable verticalAlign="middle">
         <Card.Group>
           {votes.map((vote, index) => (
-            <Card fluid>
+            <Card fluid key={index}>
               <Card.Content>
                 <Card.Header style={{ marginBottom: "1em" }}>
                   <Grid>
                     <Grid.Column width={8}>
                       {vote.objective.ges && vote.objective.ges > 1 ? (
-                        <Label color="basic teal" ribbon>
+                        <Label className="basic teal" ribbon>
                           <span style={{ fontSize: "1.3em" }}>
                             Impact gaz à effet de serre
                           </span>
@@ -46,7 +46,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
               </Card.Content>
               <Card.Content extra>
                 <Grid.Row key={2 * index}>
-                  <Grid.Column fluid width={16}>
+                  <Grid.Column width={16}>
                     <Button.Group fluid className="six">
                       {grades.map((grade, gradeId) => {
                         let className = "ui button"
@@ -57,7 +57,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                         }
                         let or = null
                         if (gradeId !== grades.length - 1) {
-                          or = <div class="or"></div>
+                          or = <div className="or"></div>
                         }
 
                         return (

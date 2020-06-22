@@ -50,8 +50,8 @@ const shuffle = a => {
 
 const LoadingMessage = () => {
   return (
-    <div class="ui active inverted">
-      <div class="ui text loader">Chargement du bulletin de vote</div>
+    <div className="ui active inverted">
+      <div className="ui text loader">Chargement du bulletin de vote</div>
     </div>
   )
 }
@@ -83,7 +83,7 @@ class Ballot extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     proposals: PropTypes.array.isRequired,
-    objectives: PropTypes.array.isRequired,
+    objectives: PropTypes.any.isRequired,
     collectionName: PropTypes.string.isRequired,
     numGrades: PropTypes.number,
     grades: PropTypes.array,
@@ -104,48 +104,54 @@ class Ballot extends React.Component {
       loading: true,
       progress: 0,
     }
-    this.allVotes = []
+    this.allVotes = {}
   }
 
   setBallot() {
     let counter = 0
-    let done = 0
     let votes = []
-    for (const vote of this.allVotes) {
+    for (const proposal of Object.keys(this.allVotes)) {
+      const vote = this.allVotes[proposal]
       if (vote.vote === null) {
         if (counter < this.props.displayProposals) {
           votes.push(vote)
           counter += 1
         }
-      } else {
-        done += 1
       }
     }
     this.setState({
       votes,
       loading: false,
-      progress: Math.floor((done / this.allVotes.length) * 100),
     })
+  }
+
+  done() {
+    return Object.keys(this.allVotes).filter(
+      proposal => this.allVotes[proposal].vote
+    )
+  }
+
+  numProposal() {
+    return Object.keys(this.allVotes).length
   }
 
   componentDidMount() {
     loadVote(this.props.collectionName, this.context.user.uid).then(doc => {
-      this.allVotes = []
+      this.allVotes = {}
       for (let proposalId in this.props.proposals) {
         const proposal = this.props.proposals[proposalId]
-        this.allVotes.push({
+        this.allVotes[proposal.proposal] = {
           vote: null,
           proposal: proposal.proposal,
           objective: this.props.objectives[proposal.objectiveId],
-        })
+        }
       }
 
       if (doc.exists) {
         const data = doc.data()
-        for (let voteId in this.allVotes) {
-          const proposal = this.allVotes[voteId].proposal
+        for (const proposal of Object.keys(this.allVotes)) {
           if (data[proposal]) {
-            this.allVotes[voteId].vote = data[proposal]
+            this.allVotes[proposal].vote = data[proposal]
           }
         }
       }
@@ -161,10 +167,12 @@ class Ballot extends React.Component {
     const value = parseInt(event.currentTarget.getAttribute("data-grade-value"))
     const votes = [...this.state.votes]
     votes[proposalId].vote = value
-    const done = this.state.votes.filter(vote => vote.vote).length
+    const proposal = Object.keys(this.allVotes)[proposalId]
+    this.allVotes[proposal].vote = value
+    const numDones = this.done().length
     this.setState({
       votes: votes,
-      progress: Math.floor((done / this.allVotes.length) * 100),
+      progress: Math.floor((numDones / this.numProposal()) * 100),
     })
   }
 
@@ -185,7 +193,15 @@ class Ballot extends React.Component {
       this.setState({ openedModal: true })
       return
     }
-    castVote(this.allVotes, this.props.collectionName, this.context.user.uid)
+
+    const toStore = {}
+    for (const proposal of Object.keys(this.allVotes)) {
+      if (this.allVotes[proposal].vote) {
+        toStore[proposal] = this.allVotes[proposal].vote
+      }
+    }
+
+    castVote(toStore, this.props.collectionName, this.context.user.uid)
       .then(() => {
         toast({
           type: "success",
@@ -227,15 +243,7 @@ class Ballot extends React.Component {
     const { votes, loading, progress } = this.state
     if (votes.length === 0 && !loading) return <MessageDone />
 
-    const {
-      title,
-      name,
-      description,
-      grades,
-      ambition,
-      icon,
-      groupUrl,
-    } = this.props
+    const { name, description, grades, icon, groupUrl } = this.props
 
     const validBallot = this.check()
 
@@ -253,7 +261,7 @@ class Ballot extends React.Component {
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
             <Grid.Column width={8}>
-              <Breadcrumb size="big" icon="right angle">
+              <Breadcrumb size="big">
                 <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
                   Voter pour le climat
                 </Breadcrumb.Section>

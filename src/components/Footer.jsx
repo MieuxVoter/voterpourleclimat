@@ -38,8 +38,8 @@ const Footer = () => (
             <List link inverted>
               <List.Item as="a"></List.Item>
 
-              {partners.map(partner => (
-                <List.Item as="a" href={partner.site}>
+              {partners.map((partner, partnerId) => (
+                <List.Item as="a" href={partner.site} key={partnerId}>
                   {partner.name}
                 </List.Item>
               ))}

@@ -91,8 +91,8 @@ export const UserProvider = props => {
 
   if (loading) {
     return (
-      <div class="ui active inverted">
-        <div class="ui text loader">Chargement</div>
+      <div className="ui active inverted">
+        <div className="ui text loader">Chargement</div>
       </div>
     )
   }

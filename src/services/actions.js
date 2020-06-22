@@ -7,11 +7,7 @@ import { useUser, useAuth } from "./User"
 export const castVote = (votes, collectionName, uid) => {
   console.log(collectionName, uid, votes)
   const voteDoc = firebase.firestore().collection(collectionName).doc(uid)
-  const map = {}
-  for (const vote of votes) {
-    map[vote.proposal] = vote.vote
-  }
-  return voteDoc.set(map)
+  return voteDoc.set(votes)
 }
 
 /*
