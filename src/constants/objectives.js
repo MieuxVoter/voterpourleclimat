@@ -1,87 +1,203 @@
-
 export const SE_NOURRIR = {
   sn1: {
-      label: "Engager la restauration collective vers des pratiques plus vertueuses",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/engager-la-restauration-collective-vers-des-pratiques-plus-vertueuses/",
+    label:
+      "Engager la restauration collective vers des pratiques plus vertueuses",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/engager-la-restauration-collective-vers-des-pratiques-plus-vertueuses/",
+    ges: 2,
   },
   sn2: {
-      label: "Rendre les négociations tripartites plus transparentes et plus justes pour les agriculteurs",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/rendre-les-negociations-tripartites-plus-transparentes-et-plus-justes-pour-les-agriculteurs/",
+    label:
+      "Rendre les négociations tripartites plus transparentes et plus justes pour les agriculteurs",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/rendre-les-negociations-tripartites-plus-transparentes-et-plus-justes-pour-les-agriculteurs/",
+    ges: 2,
   },
   sn3: {
-      label: "Développer les circuits courts",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-les-circuits-courts/",
+    label: "Développer les circuits courts",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-les-circuits-courts/",
+    ges: 2,
   },
   sn4: {
-      label: "Poursuivre les efforts sur la réduction du gaspillage alimentaire en restauration collective et au niveau individuel",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/poursuivre-les-efforts-sur-la-reduction-du-gaspillage-alimentaire-en-restauration-collective-et-au-niveau-individuel/",
+    label:
+      "Poursuivre les efforts sur la réduction du gaspillage alimentaire en restauration collective et au niveau individuel",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/poursuivre-les-efforts-sur-la-reduction-du-gaspillage-alimentaire-en-restauration-collective-et-au-niveau-individuel/",
+    ges: 3,
   },
   sn5: {
-      label: "Développer les pratiques agroécologiques",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-les-pratiques-agroecologiques/",
+    label: "Développer les pratiques agroécologiques",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-les-pratiques-agroecologiques/",
+    ges: 2,
   },
   sn6: {
-      label: "Réformer l'enseignement et la formation agricole",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reformer-lenseignement-et-la-formation-agricole/",
+    label: "Réformer l'enseignement et la formation agricole",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reformer-lenseignement-et-la-formation-agricole/",
+    ges: 2,
   },
   sn7: {
-      label: "Tenir une position ambitieuse de la France pour la négociation de la PAC (Politique Agricole Commune)",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/tenir-une-position-ambitieuse-de-la-france-pour-la-negociation-de-la-pac-politique-agricole-commune/",
+    label:
+      "Tenir une position ambitieuse de la France pour la négociation de la PAC (Politique Agricole Commune)",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/tenir-une-position-ambitieuse-de-la-france-pour-la-negociation-de-la-pac-politique-agricole-commune/",
+    ges: 2,
   },
   sn8: {
-      label: "La PAC comme levier de transformation au niveau national",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/la-pac-comme-levier-de-transformation-au-niveau-national/",
+    label: "La PAC comme levier de transformation au niveau national",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/la-pac-comme-levier-de-transformation-au-niveau-national/",
+    ges: 2,
   },
   sn9: {
-      label: "Inciter au développement d’une pêche à faible émission",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/inciter-au-developpement-dune-peche-a-faible-emission/",
+    label: "Inciter au développement d’une pêche à faible émission",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/inciter-au-developpement-dune-peche-a-faible-emission/",
+    ges: 1,
   },
   sn10: {
-      label: "Réfléchir sur un modèle de politique commerciale d’avenir soucieux d’encourager une alimentation saine et une agriculture faible en émissions de gaz à effet de serre en France",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reflechir-sur-un-modele-de-politique-commerciale-davenir-soucieux-dencourager-une-alimentation-saine-et-une-agriculture-faible-en-emissions-de-gaz-a-effet-de-serre-en-france/",
+    label:
+      "Réfléchir sur un modèle de politique commerciale d’avenir soucieux d’encourager une alimentation saine et une agriculture faible en émissions de gaz à effet de serre en France",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reflechir-sur-un-modele-de-politique-commerciale-davenir-soucieux-dencourager-une-alimentation-saine-et-une-agriculture-faible-en-emissions-de-gaz-a-effet-de-serre-en-france/",
+    ges: 2,
   },
   sn11: {
-      label: "Mieux informer les consommateurs",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/mieux-informer-les-consommateurs/",
+    label: "Mieux informer les consommateurs",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/mieux-informer-les-consommateurs/",
+    ges: 1,
   },
   sn12: {
-      label: "Réformer le fonctionnement des labels",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reformer-le-fonctionnement-des-labels/",
+    label: "Réformer le fonctionnement des labels",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reformer-le-fonctionnement-des-labels/",
+    ges: 2,
   },
   sn13: {
-      label: "Réglementer la production, l’importation et l’usage des auxiliaires techniques et additifs alimentaires",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reglementer-la-production-limportation-et-lusage-des-auxiliaires-techniques-et-additifs-alimentaires/",
+    label:
+      "Réglementer la production, l’importation et l’usage des auxiliaires techniques et additifs alimentaires",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reglementer-la-production-limportation-et-lusage-des-auxiliaires-techniques-et-additifs-alimentaires/",
+    ges: 1,
   },
   sn14: {
-      label: "Légiférer sur le crime d’écocide",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
-  }
+    label: "Légiférer sur le crime d’écocide",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+    ges: 2,
+  },
 }
 
 export const SE_DEPLACER = {
   sd1: {
-      label: "Se déplacer objectif 1",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
-  }
+    label:
+      "Développer les autres modes de transport que la voiture individuelle",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-les-autres-modes-de-transport-que-la-voiture-individuelle/",
+    ges: 2.5,
+  },
+  sd2: {
+    label:
+      "Aménager les voies publiques pour permettre de nouvelles habitudes de déplacement",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/amenager-les-voies-publiques-pour-permettre-de-nouvelles-habitudes-de-deplacement/",
+    ges: 2.5,
+  },
+  sd3: {
+    label:
+      "Réduire les émissions des gaz à effet de serre sur les autoroutes et les voies rapides",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/",
+    ges: 2,
+  },
+  sd4: {
+    label:
+      "Créer les conditions d’un retour fort à l’usage du train au-delà des voies à grande vitesse",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/creer-les-conditions-dun-retour-fort-a-lusage-du-train-au-dela-des-voies-a-grande-vitesse/",
+    ges: 2.5,
+  },
+  sd5: {
+    label:
+      "Réduire la circulation des poids lourds émetteurs de gaz à effet de serre sur de longues distances, en permettant un report modal vers le ferroviaire ou le fluvial",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-la-circulation-des-poids-lourds-emetteurs-de-gaz-a-effet-de-serre-sur-de-longues-distances-en-permettant-un-report-modal-vers-le-ferroviaire-ou-le-fluvial/",
+    ges: 2.5,
+  },
+  sd6: {
+    label:
+      "Réduire à zéro les émissions des navires lors de leurs opérations dans les ports (embarquement et débarquement de passagers ou de marchandises)",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-a-zero-les-emissions-des-navires-lors-de-leurs-operations-dans-les-ports-embarquement-et-debarquement-de-passagers-ou-de-marchandises/",
+    ges: 2,
+  },
+  sd7: {
+    label:
+      "Agir sur la réglementation et aider à la transition vers un parc de véhicules propres",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/agir-sur-la-reglementation-et-aider-a-la-transition-vers-un-parc-de-vehicules-propres/",
+    ges: 3,
+  },
+  sd8: {
+    label:
+      "Impliquer les entreprises et les administrations pour penser et mieux organiser les déplacements de leurs salariés ou agents",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/impliquer-les-entreprises-et-les-administrations-pour-penser-et-mieux-organiser-les-deplacements-de-leurs-salaries-ou-agents/",
+    ges: 0,
+  },
+  sd9: {
+    label:
+      "Mettre en place un portail unique, permettant d’avoir toutes les informations sur les dispositifs et moyens de transport sur un territoire",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/mettre-en-place-un-portail-unique-permettant-davoir-toutes-les-informations-sur-les-dispositifs-et-moyens-de-transport-sur-un-territoire/",
+    ges: 1,
+  },
+  sd10: {
+    label:
+      "Inclure des citoyens dans la gouvernance des mobilités au niveau local comme au niveau national",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/inclure-des-citoyens-dans-la-gouvernance-des-mobilites-au-niveau-local-comme-au-niveau-national/",
+    ges: 1,
+  },
+  sd11: {
+    label: "Limiter les effets néfastes du transport aérien",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/limiter-les-effets-nefastes-du-transport-aerien/",
+    ges: 2,
+  },
 }
 
 export const PRODUIRE = {
   pt1: {
-      label: "Produire et travailler objectif 1",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
-  }
+    label: "Produire et travailler objectif 1",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+  },
 }
 
 export const CONSOMMER = {
   c1: {
-      label: "Consommer objectif 1",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
-  }
+    label: "Consommer objectif 1",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+  },
 }
 
 export const SE_LOGER = {
   sl1: {
-      label: "Consommer se loger 1",
-      url: "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
-  }
+    label: "Consommer se loger 1",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+  },
+}
+
+export const CONSTITUTION = {
+  ct1: {
+    label: "",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/propositions-de-revision-de-la-constitution/",
+  },
 }

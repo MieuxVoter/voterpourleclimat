@@ -1,10 +1,20 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
-import { Segment, Grid, Header, Responsive, Message, Button } from "semantic-ui-react"
+import {
+  Segment,
+  Grid,
+  Breadcrumb,
+  Icon,
+  Responsive,
+  Message,
+  Button,
+} from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
+import * as ROUTES from "../../constants/routes"
 import { castVote, loadVote } from "../../services/actions"
 import { UserContext } from "../../services/User"
 import PersoModal from "./ModalPerso"
@@ -126,7 +136,7 @@ class Ballot extends React.Component {
         this.allVotes.push({
           vote: null,
           proposal: proposal.proposal,
-          objective: this.props.objectives[proposal.objectiveId]
+          objective: this.props.objectives[proposal.objectiveId],
         })
       }
 
@@ -215,13 +225,22 @@ class Ballot extends React.Component {
 
   render() {
     const { votes, loading, progress } = this.state
-    const { title, name, description, grades, ambition, groupUrl } = this.props
-    const validBallot = this.check()
-
     if (votes.length === 0 && !loading) return <MessageDone />
 
+    const {
+      title,
+      name,
+      description,
+      grades,
+      ambition,
+      icon,
+      groupUrl,
+    } = this.props
+
+    const validBallot = this.check()
+
     return (
-      <Segment vertical style={{ margin: "5em 0" }}>
+      <Segment vertical style={{ margin: "2em 0" }}>
         <SemanticToastContainer />
         <PersoModal
           isOpened={this.state.openedModal}
@@ -231,42 +250,50 @@ class Ballot extends React.Component {
             this.setState({ openedModal: false })
           }}
         />
-        <Grid container stackable centered verticalAlign="middle">
+        <Grid container stackable verticalAlign="middle">
           <Grid.Row>
-            <Grid.Column width={16}>
-              <Header as="h2" style={
-                { fontSize: "4em",
-                  color: "#03b37f",
-                  borderBottom: "2px solid rgb(3, 179, 127)"
-                }}>
-                {name}
-              </Header>
-              <p>{description}</p>
+            <Grid.Column width={8}>
+              <Breadcrumb size="big" icon="right angle">
+                <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
+                  Voter pour le climat
+                </Breadcrumb.Section>
+                <Breadcrumb.Divider icon="right chevron" />
+                <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
+                  Thèmes
+                </Breadcrumb.Section>
+                <Breadcrumb.Divider icon="right chevron" />
+                <Breadcrumb.Section active>
+                  <Icon name={icon} className="teal" />
+                  {"  "}
+                  <span className="ui teal text">{name}</span>
+                </Breadcrumb.Section>
+              </Breadcrumb>
+            </Grid.Column>
+            <Grid.Column width={8} textAlign="right">
+              <Button
+                as="a"
+                href={groupUrl}
+                target="_blank"
+                className="basic teal"
+                size="large"
+              >
+                Lire les objectifs sur le site de la convention
+              </Button>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={10}>
-<Button
-  fluid
-  as="a"
-  href={groupUrl}
-  target="_blank"
-  className="basic teal"
-  size="huge"
->
-  Lire les objectifs sur le site de la convention
-</Button>
-
-
-</Grid.Column>
+            <Grid.Column width={16}>
+              <p style={{ fontSize: "2em" }}>
+                Votez sur les mesures du groupe {name}
+              </p>
+            </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={14}>
-              <p style={{ fontSize: "2em" }}>{title}</p>
-</Grid.Column>
+              <blockquote>{description}</blockquote>
+            </Grid.Column>
             <Grid.Column width={2}>
               <Progress value={progress} />
-
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

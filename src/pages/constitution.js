@@ -1,8 +1,8 @@
 import React from "react"
 import Ballot from "../components/Ballot"
-import { CONSOMMER as theme } from "../constants/themes"
+import { CONSTITUTION as theme } from "../constants/themes"
 
-const ConsommerPage = () => {
+const ConstitutionPage = () => {
   return (
     <Ballot
       title={theme.title}
@@ -17,4 +17,4 @@ const ConsommerPage = () => {
   )
 }
 
-export default ConsommerPage
+export default ConstitutionPage

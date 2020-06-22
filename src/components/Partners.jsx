@@ -7,7 +7,7 @@ import partners from "../constants/partners"
 // </div>
 
 const Partners = () => (
-  <div class="ui six column grid">
+  <div class="ui stackable six column centered grid">
     {partners.map((partner, partnerId) => (
       <div class="column" data-tooltip={partner.name} key={partnerId}>
         <a href={partner.site}>

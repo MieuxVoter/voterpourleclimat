@@ -151,17 +151,28 @@ const LandingPage = () => (
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: "10em", backgroundColor: "#eaeaea" }} vertical>
+    <Segment
+      style={{ padding: "5em 1em", backgroundColor: "#eaeaea" }}
+      vertical
+    >
       <Grid container stackable>
         <Grid.Row>
           <Grid.Column width={2}>
-            <Image src={barChart} className="teal large" />
+            <Image
+              src={barChart}
+              style={{ maxWidth: "40%" }}
+              className="teal large"
+            />
           </Grid.Column>
           <Grid.Column width={6}>
             <VotesCounter nbVotes={10212} />
           </Grid.Column>
           <Grid.Column width={2}>
-            <Image src={megaphone} className="teal large" />
+            <Image
+              src={megaphone}
+              style={{ maxWidth: "40%" }}
+              className="teal large"
+            />
           </Grid.Column>
           <Grid.Column width={6}>
             <Big>

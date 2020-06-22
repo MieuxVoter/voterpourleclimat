@@ -6,6 +6,7 @@ const SeNourrirPage = () => {
   return (
     <Ballot
       title={theme.title}
+      icon={theme.icon}
       name={theme.name}
       description={theme.description}
       proposals={theme.proposals}

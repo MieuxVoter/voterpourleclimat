@@ -97,12 +97,12 @@ class RequestInfo extends Component {
 
           <Message
             header="Pourquoi collectons-nous ces données ?"
-            content="Afin que notre voix citoyenne soit entendue, nous utilisons ces données pour construire des résultats représentatifs."
+            content="Afin que notre voix citoyenne soit entendue, nous utilisons ces données pour construire des résultats représentatifs. Nous vous enverrons les résultats par courriel."
           />
           <Form>
             <Form.Input
               fluid
-              label="Nom"
+              label="Nom complet"
               placeholder="Veuillez ajouter votre nom"
               id="form-input-name"
               name="name"
@@ -131,10 +131,10 @@ class RequestInfo extends Component {
               placeholder="Veuillez écrire votre code postal ou 00000 si vous résidez a l'étranger"
               onChange={this.handleChange}
             />
+
             <p>
               Lire la <Link to="/privacy">politique de confidentialité</Link>
             </p>
-
             <Form.Checkbox
               name="terms"
               label="J'accepte la politique de confidentialité"
@@ -144,7 +144,7 @@ class RequestInfo extends Component {
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={close}>
-            Fermer
+            Annuler
           </Button>
           <Button
             positive

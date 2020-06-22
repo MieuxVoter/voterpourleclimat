@@ -8,6 +8,7 @@ import SeDeplacer from "../pages/se-deplacer"
 import SeLoger from "../pages/se-loger"
 import Consommer from "../pages/consommer"
 import Produire from "../pages/produire"
+import Constitution from "../pages/constitution"
 import PrivatePolicy from "../pages/policy"
 import * as ROUTES from "../constants/routes"
 
@@ -23,6 +24,7 @@ function App() {
       <Route path={ROUTES.SE_LOGER} component={SeLoger} />
       <Route path={ROUTES.CONSOMMER} component={Consommer} />
       <Route path={ROUTES.PRODUIRE} component={Produire} />
+      <Route path={ROUTES.CONSTITUTION} component={Constitution} />
     </Layout>
   )
 }
