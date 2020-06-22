@@ -235,17 +235,53 @@ export const PRODUIRE = {
 
 export const CONSOMMER = {
   c1: {
-    label: "Consommer objectif 1",
+    label: "Créer une obligation d'affichage de l'impact carbone des produits et services",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/creer-une-obligation-daffichage-de-limpact-carbone-des-produits-et-services/",
+    ges: 1,
+  },
+  c2: {
+    label: "Réguler la publicité pour réduire les incitations à la surconsommation",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reguler-la-publicite-pour-reduire-les-incitations-a-la-surconsommation/",
+    ges: 1,
+  },
+  c3: {
+    label: "Limiter le suremballage et l'utilisation du plastique à usage unique en développant le vrac et les consignes dans les lieux de distribution",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/limiter-le-suremballage-et-lutilisation-du-plastique-a-usage-unique-en-developpant-le-vrac-et-les-consignes-dans-les-lieux-de-distribution/",
+    ges: 1,
+  },
+  c4: {
+    label: "Faire de l'éducation, de la formation et de la sensibilisation des leviers d'action de la consommation responsable",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/faire-de-leducation-de-la-formation-et-de-la-sensibilisation-des-leviers-daction-de-la-consommation-responsable/",
+  },
+  c5: {
+    label: "Assurer une meilleure application des politiques publiques environnementales et les évaluer pour les rendre plus efficaces",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/assurer-une-meilleure-application-des-politiques-publiques-et-les-evaluer-pour-les-rendre-plus-efficaces/",
   },
 }
 
 export const SE_LOGER = {
   sl1: {
-    label: "Consommer se loger 1",
+    label: "Rendre obligatoire la rénovation énergétique globale des bâtiments d'ici 2040",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/rendre-obligatoire-la-renovation-energetique-globale-des-batiments-dici-2040/",
+    ges: 3,
+  },
+  sl2: {
+    label: "Limiter de manière significative la consommation d'énergie dans les lieux publics, privés et les industries",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/limiter-de-maniere-significative-la-consommation-denergie-dans-les-lieux-publics-prives-et-les-industries/",
+    ges: 2,
+  },
+  sl3: {
+    label: "Lutter contre l'artificialisation des sols et l'étalement urbain en rendant attractive la vie dans les villes et les villages",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/lutter-contre-lartificialisation-des-sols-et-letalement-urbain-en-rendant-attractive-la-vie-dans-les-villes-et-les-villages/",
+    ges: 3,
   },
 }
 
