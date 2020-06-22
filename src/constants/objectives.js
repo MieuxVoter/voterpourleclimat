@@ -172,9 +172,54 @@ export const SE_DEPLACER = {
 
 export const PRODUIRE = {
   pt1: {
-    label: "Produire et travailler objectif 1",
+    label: "Favoriser une production plus responsable, développer les filières de réparation, de recyclage et de gestion des déchets",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/favoriser-une-production-plus-responsable-developper-les-filieres-de-reparation-de-recyclage-et-de-gestion-des-dechets/",
+  },
+  pt2: {
+    label: "Développer et soutenir l'innovation de la transition",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-et-soutenir-linnovation-de-la-transition/",
+  },
+  pt3: {
+    label: "Organiser et soutenir le financement de la transformation de l'outil de production des entreprises dans le cadre de la transition écologique",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/organiser-et-soutenir-le-financement-de-la-transformation-de-loutil-de-production-des-entreprises-dans-le-cadre-de-la-transition-ecologique/",
+  },
+  pt4: {
+    label: "Accompagner la reconversion des entreprises et la transformation des métiers au niveau régional",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-la-reconversion-des-entreprises-et-la-transformation-des-metiers-au-niveau-regional/",
+  },
+  pt5: {
+    label: "Ajouter un bilan carbone dans le bilan comptable de toutes les structures qui doivent produire un bilan",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/ajouter-un-bilan-carbone-dans-le-bilan-comptable-de-toutes-les-structures-qui-doivent-produire-un-bilan/",
+  },
+  pt6: {
+    label: "Renforcer les clauses environnementales dans les marchés publics",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/renforcer-les-clauses-environnementales-dans-les-marches-publics/",
+  },
+  pt7: {
+    label: "Évaluer les impacts des effets sur le climat en amont de notre système de production et de travail et modifier en vue de protéger l’écosystème et la biodiversité",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/protection-des-ecosystemes-et-de-la-biodiversite/",
+  },
+  pt8: {
+    label: "Mieux prendre en compte les émissions de gaz à effet de serre liées aux importations dans les pollutions européennes",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/mieux-prendre-en-compte-les-emissions-de-gaz-a-effet-de-serre-liees-aux-importations-dans-les-pollutions-europeennes/",
+  },
+  pt9: {
+    label: "Production, stockage et redistribution d'énergie pour et par tous",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/production-stockage-et-redistribution-denergie-pour-et-par-tous/",
+  },
+  pt10: {
+    label: "Accompagner l'évolution du numérique pour réduire ses impacts environnementaux",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/",
   },
 }
 
