@@ -1,9 +1,10 @@
 import MieuxVoter from "../assets/images/mieux-voter.png"
 import OnEstPret from "../assets/images/onestpret.png"
-import XR from "../assets/images/xr.svg"
+import COP2 from "../assets/images/cop2.png"
 import RAC from "../assets/images/rac.png"
 import More from "../assets/images/more.png"
 import GreenGlobal from "../assets/images/the-green-global-project.png"
+import CliMates from "../assets/images/climates.png"
 import Lvsl from "../assets/images/LVSL-violet.png"
 import CPLC from "../assets/images/cplc.png"
 
@@ -16,9 +17,24 @@ const partnersList = [
     logo: CPLC,
   },
   {
-    name: "Réseau Action Climat",
-    site: "https://reseauactionclimat.org/",
-    logo: RAC,
+    name: "CliMates",
+    site: "https://www.weareclimates.org/",
+    logo: CliMates,
+  },
+  //  {
+  //    name: "Réseau Action Climat",
+  //    site: "https://reseauactionclimat.org/",
+  //    logo: RAC,
+  //  },
+  {
+    name: "COP2 étudiante",
+    site: "https://cop2etudiante.org/",
+    logo: COP2,
+  },
+  {
+    name: "Global Green Project",
+    site: "https://www.facebook.com/TheGreenGlobalProject",
+    logo: GreenGlobal,
   },
   {
     name: "Le vent se lève",
