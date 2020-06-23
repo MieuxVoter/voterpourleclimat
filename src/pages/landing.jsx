@@ -81,7 +81,7 @@ const LandingPage = () => (
           <Grid.Column width={8}>
             <Header>150 citoyens, 149 propositions émises</Header>
             <p>
-              La Convention Citoyenne pour le Climat vient de rendre publique
+              La Convention Citoyenne pour le Climat vient de rendre publiques
               ses{" "}
               <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
                 propositions
