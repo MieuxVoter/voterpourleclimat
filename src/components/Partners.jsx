@@ -10,7 +10,7 @@ const Partners = () => (
   <div class="ui stackable six column centered grid">
     {partners.map((partner, partnerId) => (
       <div class="column" data-tooltip={partner.name} key={partnerId}>
-        <a href={partner.site}>
+        <a href={partner.site} target="_blank">
           <Image size="small" src={partner.logo} />
         </a>
       </div>
