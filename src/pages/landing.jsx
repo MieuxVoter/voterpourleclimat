@@ -81,13 +81,22 @@ const LandingPage = () => (
           <Grid.Column width={8}>
             <Header>150 citoyens, 150 propositions émises</Header>
             <p>
-              La Convention Citoyenne pour le Climat vient de rendre public ses{" "}
+              La Convention Citoyenne pour le Climat vient de rendre publique
+              ses{" "}
               <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
                 propositions
               </a>{" "}
               afin de réduire les émissions françaises de gaz à effet de serre
-              de 40 % d'ici 2030 dans un esprit de justice sociale.
+              d'au moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de
+              justice sociale.
             </p>
+            <blockquote>
+              L’enjeu, c’est que le débat qui a eu lieu à 150 se diffuse à 44
+              millions d’électeurs.{" "}
+              <a href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764">
+                Cyril Dion
+              </a>
+            </blockquote>
             <Header>
               VOTEZ sur ces propositions pour faire entendre votre voix
             </Header>
@@ -160,7 +169,7 @@ const LandingPage = () => (
           <Grid.Column width={2}>
             <Image
               src={barChart}
-              style={{ maxWidth: "40%" }}
+              style={{ maxWidth: "60%" }}
               className="teal large"
             />
           </Grid.Column>
@@ -170,7 +179,7 @@ const LandingPage = () => (
           <Grid.Column width={2}>
             <Image
               src={megaphone}
-              style={{ maxWidth: "40%" }}
+              style={{ maxWidth: "60%" }}
               className="teal large"
             />
           </Grid.Column>
