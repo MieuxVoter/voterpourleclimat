@@ -473,10 +473,6 @@ export const SE_DEPLACER = [
     objectiveId: "sd1",
   },
   {
-    proposal: "Inciter à utiliser des moyens de transports doux ou partagés.",
-    objectiveId: "sd1",
-  },
-  {
     proposal: "Créer des parkings relais",
     objectiveId: "sd2",
   },
