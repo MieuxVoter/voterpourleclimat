@@ -261,7 +261,7 @@ class Ballot extends React.Component {
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
             <Grid.Column width={8}>
-              <Breadcrumb size="big">
+              <Breadcrumb size="large">
                 <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
                   Voter pour le climat
                 </Breadcrumb.Section>

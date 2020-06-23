@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Icon, Card, Button, Label, Grid } from "semantic-ui-react"
+import { Segment, Label, Rating, Grid, Button, Card } from "semantic-ui-react"
 import ModalInfo from "./ModalInfo"
 
 const displayGrade = (
@@ -50,12 +50,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
   }
 
   return (
-    <Grid
-      container
-      padded
-      className="ui padded"
-      verticalAlign="middle"
-    >
+    <Grid container padded className="ui padded" verticalAlign="middle">
       <ModalInfo open={state.modal} close={closeModal} title={state.title} />
       <Grid.Row>
         <Grid.Column>
@@ -63,25 +58,37 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => {
             {votes.map((vote, index) => (
               <Card fluid key={index}>
                 <Card.Content>
-                  <Card.Description>
-                    <Card.Header>
-                      {vote.proposal}
-                      <p style={{
-                        color: "#03b37f",
-                        textTransform: "uppercase",
-                        fontWeight: 600,
-                        fontSize: "small"
-                      }}><b>Objectif : </b> { vote.objective.label } </p>
-                    </Card.Header>
-                    <Button
-                      href={ vote.objective.url } target="_blank"
-                      className="teal"
-                      size="small"
-                      style={{ marginTop: "1em"}}
-                    >
-                    En savoir plus sur la mesure
-                    </Button>
-                  </Card.Description>
+                  <Card.Header style={{ marginBottom: "1em" }}>
+                    <Grid>
+                      <Grid.Column width={8}>
+                        {vote.objective.ges && vote.objective.ges >= 1 ? (
+                          <Label className="basic teal">
+                            <span style={{ fontSize: "1.3em" }}>Impact</span>
+
+                            <Rating
+                              icon="star"
+                              defaultRating={vote.objective.ges}
+                              maxRating={3}
+                              style={{ marginLeft: "1em", color: "white" }}
+                            />
+                          </Label>
+                        ) : null}
+                      </Grid.Column>
+                      <Grid.Column textAlign="right" width={8}>
+                        <Button
+                          href={vote.objective.url}
+                          target="_blank"
+                          className="basic teal"
+                          size="medium"
+                          as="a"
+                        >
+                          Plus d'infos
+                        </Button>
+                      </Grid.Column>
+                    </Grid>
+                  </Card.Header>
+                  <Card.Meta>{vote.objective.label}</Card.Meta>
+                  <Card.Description>{vote.proposal}</Card.Description>
                 </Card.Content>
                 <Card.Content extra>
                   <Button.Group className="attached mini top two">

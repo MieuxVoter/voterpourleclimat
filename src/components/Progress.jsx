@@ -28,7 +28,7 @@ const ProgressBar = ({ value }) => {
       </Responsive>
 
       <Responsive {...Responsive.onlyMobile}>
-        <Progress value={value} total="5" indicating progress="percent" />
+        <Progress value={value} total="100" indicating />
       </Responsive>
     </>
   )

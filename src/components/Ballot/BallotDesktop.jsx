@@ -13,7 +13,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                 <Card.Header style={{ marginBottom: "1em" }}>
                   <Grid>
                     <Grid.Column width={8}>
-                      {vote.objective.ges && vote.objective.ges > 1 ? (
+                      {vote.objective.ges && vote.objective.ges >= 1 ? (
                         <Label className="basic teal" ribbon>
                           <span style={{ fontSize: "1.3em" }}>
                             Impact gaz à effet de serre
