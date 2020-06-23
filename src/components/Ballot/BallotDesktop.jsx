@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Segment, Label, Rating, Grid, Button, Card } from "semantic-ui-react"
+import { Segment, Label, Grid, Button, Card } from "semantic-ui-react"
+import Rating from "../Rating"
 import ModalInfo from "./ModalInfo"
 
 const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
@@ -15,34 +16,32 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                     <Grid.Column width={8}>
                       {vote.objective.ges && vote.objective.ges >= 1 ? (
                         <Label className="basic teal" ribbon>
-                          <span style={{ fontSize: "1.3em" }}>
+                          <span
+                            style={{ fontsize: "1.3em", fontweight: "normal" }}
+                          >
                             Impact gaz à effet de serre
                           </span>
 
-                          <Rating
-                            icon="star"
-                            defaultRating={vote.objective.ges}
-                            maxRating={3}
-                            style={{ marginLeft: "1em", color: "white" }}
-                          />
+                          <Rating value={vote.objective.ges} />
                         </Label>
                       ) : null}
                     </Grid.Column>
-                    <Grid.Column textAlign="right" width={8}>
-                      <Button
-                        href={vote.objective.url}
-                        target="_blank"
-                        className="basic teal"
-                        size="medium"
-                        as="a"
-                      >
-                        En savoir plus sur la mesure
-                      </Button>
-                    </Grid.Column>
                   </Grid>
                 </Card.Header>
-                <Card.Meta>{vote.objective.label}</Card.Meta>
-                <Card.Description>{vote.proposal}</Card.Description>
+                <Card.Meta>
+                  {vote.objective.label}
+                  {".  "}
+                  <a
+                    href={vote.objective.url}
+                    target="_blank"
+                    style={{ color: "#03B37F" }}
+                  >
+                    En savoir plus sur l'objectif.
+                  </a>
+                </Card.Meta>
+                <Card.Description style={{ fontWeight: "bold" }}>
+                  {vote.proposal}
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>
                 <Grid.Row key={2 * index}>
