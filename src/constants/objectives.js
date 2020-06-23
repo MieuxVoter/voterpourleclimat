@@ -172,25 +172,116 @@ export const SE_DEPLACER = {
 
 export const PRODUIRE = {
   pt1: {
-    label: "Produire et travailler objectif 1",
+    label: "Favoriser une production plus responsable, développer les filières de réparation, de recyclage et de gestion des déchets",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/favoriser-une-production-plus-responsable-developper-les-filieres-de-reparation-de-recyclage-et-de-gestion-des-dechets/",
+    ges: 1,
+  },
+  pt2: {
+    label: "Développer et soutenir l'innovation de la transition",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/developper-et-soutenir-linnovation-de-la-transition/",
+    ges: 1.5,
+  },
+  pt3: {
+    label: "Organiser et soutenir le financement de la transformation de l'outil de production des entreprises dans le cadre de la transition écologique",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/organiser-et-soutenir-le-financement-de-la-transformation-de-loutil-de-production-des-entreprises-dans-le-cadre-de-la-transition-ecologique/",
+      ges: 2,
+  },
+  pt4: {
+    label: "Accompagner la reconversion des entreprises et la transformation des métiers au niveau régional",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-la-reconversion-des-entreprises-et-la-transformation-des-metiers-au-niveau-regional/",
+      ges: 1,
+  },
+  pt5: {
+    label: "Ajouter un bilan carbone dans le bilan comptable de toutes les structures qui doivent produire un bilan",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/ajouter-un-bilan-carbone-dans-le-bilan-comptable-de-toutes-les-structures-qui-doivent-produire-un-bilan/",
+      ges: 2,
+  },
+  pt6: {
+    label: "Renforcer les clauses environnementales dans les marchés publics",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/renforcer-les-clauses-environnementales-dans-les-marches-publics/",
+      ges: 2,
+  },
+  pt7: {
+    label: "Évaluer les impacts des effets sur le climat en amont de notre système de production et de travail et modifier en vue de protéger l’écosystème et la biodiversité",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/protection-des-ecosystemes-et-de-la-biodiversite/",
+      ges: 1,
+  },
+  pt8: {
+    label: "Mieux prendre en compte les émissions de gaz à effet de serre liées aux importations dans les pollutions européennes",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/mieux-prendre-en-compte-les-emissions-de-gaz-a-effet-de-serre-liees-aux-importations-dans-les-pollutions-europeennes/",
+      ges: 3,
+  },
+  pt9: {
+    label: "Production, stockage et redistribution d'énergie pour et par tous",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/production-stockage-et-redistribution-denergie-pour-et-par-tous/",
+      ges: 2,
+  },
+  pt10: {
+    label: "Accompagner l'évolution du numérique pour réduire ses impacts environnementaux",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/",
+      ges: 1,
   },
 }
 
 export const CONSOMMER = {
   c1: {
-    label: "Consommer objectif 1",
+    label: "Créer une obligation d'affichage de l'impact carbone des produits et services",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/creer-une-obligation-daffichage-de-limpact-carbone-des-produits-et-services/",
+    ges: 1,
+  },
+  c2: {
+    label: "Réguler la publicité pour réduire les incitations à la surconsommation",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reguler-la-publicite-pour-reduire-les-incitations-a-la-surconsommation/",
+    ges: 1,
+  },
+  c3: {
+    label: "Limiter le suremballage et l'utilisation du plastique à usage unique en développant le vrac et les consignes dans les lieux de distribution",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/limiter-le-suremballage-et-lutilisation-du-plastique-a-usage-unique-en-developpant-le-vrac-et-les-consignes-dans-les-lieux-de-distribution/",
+    ges: 1,
+  },
+  c4: {
+    label: "Faire de l'éducation, de la formation et de la sensibilisation des leviers d'action de la consommation responsable",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/faire-de-leducation-de-la-formation-et-de-la-sensibilisation-des-leviers-daction-de-la-consommation-responsable/",
+  },
+  c5: {
+    label: "Assurer une meilleure application des politiques publiques environnementales et les évaluer pour les rendre plus efficaces",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/assurer-une-meilleure-application-des-politiques-publiques-et-les-evaluer-pour-les-rendre-plus-efficaces/",
   },
 }
 
 export const SE_LOGER = {
   sl1: {
-    label: "Consommer se loger 1",
+    label: "Rendre obligatoire la rénovation énergétique globale des bâtiments d'ici 2040",
     url:
-      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/legiferer-sur-le-crime-decocide/",
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/rendre-obligatoire-la-renovation-energetique-globale-des-batiments-dici-2040/",
+    ges: 3,
+  },
+  sl2: {
+    label: "Limiter de manière significative la consommation d'énergie dans les lieux publics, privés et les industries",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/limiter-de-maniere-significative-la-consommation-denergie-dans-les-lieux-publics-prives-et-les-industries/",
+    ges: 2,
+  },
+  sl3: {
+    label: "Lutter contre l'artificialisation des sols et l'étalement urbain en rendant attractive la vie dans les villes et les villages",
+    url:
+      "https://propositions.conventioncitoyennepourleclimat.fr/objectif/lutter-contre-lartificialisation-des-sols-et-letalement-urbain-en-rendant-attractive-la-vie-dans-les-villes-et-les-villages/",
+    ges: 3,
   },
 }
 
