@@ -79,7 +79,7 @@ const LandingPage = () => (
       <Grid container stackable>
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header>150 citoyens, 150 propositions émises</Header>
+            <Header>150 citoyens, 149 propositions émises</Header>
             <p>
               La Convention Citoyenne pour le Climat vient de rendre publique
               ses{" "}
