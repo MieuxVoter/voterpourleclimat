@@ -37,13 +37,14 @@ const canUserVote = user => {
 }
 
 /**
- * Shuffles array in place. ES6 version
+ * Shuffles object in place. ES6 version
  * @param {Array} a items An array containing the items.
  */
 const shuffle = a => {
-  for (let i = a.length - 1; i > 0; i--) {
+  const keys = Object.keys(a)
+  for (let i = keys.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+    ;[a[keys[i]], a[keys[j]]] = [a[keys[j]], a[keys[i]]]
   }
   return a
 }
