@@ -120,7 +120,11 @@ class Ballot extends React.Component {
         }
       }
     }
+
+    const numDones = this.done().length
+
     this.setState({
+      progress: Math.floor((numDones / this.numProposal()) * 100),
       votes,
       loading: false,
     })
@@ -158,6 +162,13 @@ class Ballot extends React.Component {
       }
       shuffle(this.allVotes)
       this.setBallot()
+    })
+  }
+
+  setProgress() {
+    const numDones = this.done().length
+    this.setState({
+      progress: Math.floor((numDones / this.numProposal()) * 100),
     })
   }
 
