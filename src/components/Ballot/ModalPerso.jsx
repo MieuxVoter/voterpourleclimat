@@ -135,7 +135,7 @@ class RequestInfo extends Component {
 
             <p>
               Lire la{" "}
-              <Link to={ROUTES.PRIVACY_POLICY}>
+              <Link to={ROUTES.PRIVACY_POLICY} target="_blank">
                 politique de confidentialité
               </Link>
             </p>

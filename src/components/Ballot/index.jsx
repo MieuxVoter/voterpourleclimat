@@ -279,7 +279,7 @@ class Ballot extends React.Component {
                 </Breadcrumb.Section>
                 <Breadcrumb.Divider icon="right chevron" />
                 <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
-                  Thèmes
+                  Tous les thèmes
                 </Breadcrumb.Section>
                 <Breadcrumb.Divider icon="right chevron" />
                 <Breadcrumb.Section active>
@@ -294,6 +294,7 @@ class Ballot extends React.Component {
                 as="a"
                 href={groupUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="basic teal"
                 size="large"
               >

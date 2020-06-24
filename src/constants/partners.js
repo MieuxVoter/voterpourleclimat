@@ -7,6 +7,8 @@ import GreenGlobal from "../assets/images/the-green-global-project.png"
 import CliMates from "../assets/images/climates.png"
 import Lvsl from "../assets/images/LVSL-violet.png"
 import CPLC from "../assets/images/cplc.png"
+import Humeco from "../assets/images/humeco.png"
+import T4E from "../assets/images/t4e.png"
 
 const partnersList = [
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
@@ -32,7 +34,17 @@ const partnersList = [
     logo: COP2,
   },
   {
-    name: "Global Green Project",
+    name: "Together 4 Earth",
+    site: "https://www.together-for-earth.org/",
+    logo: T4E,
+  },
+  {
+    name: "HUMECO",
+    site: "http://humeco.fr/",
+    logo: Humeco,
+  },
+  {
+    name: "The Global Green Project",
     site: "https://www.facebook.com/TheGreenGlobalProject",
     logo: GreenGlobal,
   },
