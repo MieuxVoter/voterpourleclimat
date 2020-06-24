@@ -174,7 +174,7 @@ const LandingPage = () => (
             />
           </Grid.Column>
           <Grid.Column width={6}>
-            <VotesCounter nbVotes={3121} />
+            <VotesCounter nbVotes={25210} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image
