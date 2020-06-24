@@ -24,7 +24,9 @@ const Footer = () => (
               <List.Item as="a" href="mailto:app@mieuxvoter.fr">
                 Nous contacter
               </List.Item>
-              <List.Item as="a">Mentions légales</List.Item>
+              <List.Item as={Link} to={ROUTES.TERMS}>
+                Mentions légales
+              </List.Item>
               <List.Item
                 as="a"
                 href="https://github.com/MieuxVoter/voterpourleclimat"

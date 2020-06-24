@@ -10,6 +10,7 @@ import Consommer from "../pages/consommer"
 import Produire from "../pages/produire"
 import Constitution from "../pages/constitution"
 import PrivatePolicy from "../pages/policy"
+import Terms from "../pages/legal"
 import * as ROUTES from "../constants/routes"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
       <Route path={ROUTES.JE_VOTE} component={JeVote} />
       <Route path={ROUTES.PRIVACY_POLICY} component={PrivatePolicy} />
+      <Route path={ROUTES.TERMS} component={Terms} />
       <Route path={ROUTES.SE_NOURRIR} component={SeNourrir} />
       <Route path={ROUTES.SE_DEPLACER} component={SeDeplacer} />
       <Route path={ROUTES.SE_LOGER} component={SeLoger} />

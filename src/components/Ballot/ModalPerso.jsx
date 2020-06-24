@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Form, Button, Message, Modal, Label } from "semantic-ui-react"
 import { saveInfo } from "../../services/actions"
+import * as ROUTES from "../../constants/routes"
 import { withUser } from "../../services/User"
 
 class RequestInfo extends Component {
@@ -133,7 +134,10 @@ class RequestInfo extends Component {
             />
 
             <p>
-              Lire la <Link to="/privacy">politique de confidentialité</Link>
+              Lire la{" "}
+              <Link to={ROUTES.PRIVACY_POLICY}>
+                politique de confidentialité
+              </Link>
             </p>
             <Form.Checkbox
               name="terms"

@@ -1,5 +1,6 @@
 export const LANDING = "/"
-export const PRIVACY_POLICY = "/privacy"
+export const PRIVACY_POLICY = "/politique-confidentialite"
+export const TERMS = "/mentions-legales"
 export const JE_VOTE = "/je-vote"
 export const PROPOSITIONS = "/propositions"
 export const SE_LOGER = "/se-loger"

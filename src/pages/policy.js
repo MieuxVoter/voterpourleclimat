@@ -54,7 +54,7 @@ const PrivatePolicy = () => (
           <p>
             Nous utilisons cependant un cookie de Firebase pour s'assurer que
             chaque participant ne vote qu'une seule fois. Celui-ci ne contient
-            que les informations que personnelles collectées directement.{" "}
+            que les informations que vous nous avez transmises directement.{" "}
           </p>
           <p>
             Vous avez le droit de consultation, demande de modification ou
