@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { Icon, Segment, Image, Grid, Header, Button } from "semantic-ui-react"
 import styled from "styled-components"
-import * as ROUTES from "../constants/routes.js"
 import "../index.css"
 import megaphone from "../assets/images/megaphone.png"
 import barChart from "../assets/images/bar-chart.png"
@@ -174,7 +173,7 @@ const LandingPage = () => (
             />
           </Grid.Column>
           <Grid.Column width={6}>
-            <VotesCounter nbVotes={25210} />
+            <VotesCounter nbVotes={125231} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image

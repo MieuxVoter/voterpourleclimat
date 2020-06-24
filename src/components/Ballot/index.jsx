@@ -21,6 +21,7 @@ import PersoModal from "./ModalPerso"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
 import Progress from "../Progress"
+import { shuffle } from "../../utils"
 import "./index.css"
 
 const P = styled.div`
@@ -34,19 +35,6 @@ const P = styled.div`
  */
 const canUserVote = user => {
   return user.mail && user.name && user.zipCode && user.age
-}
-
-/**
- * Shuffles object in place. ES6 version
- * @param {Array} a items An array containing the items.
- */
-const shuffle = a => {
-  const keys = Object.keys(a)
-  for (let i = keys.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[keys[i]], a[keys[j]]] = [a[keys[j]], a[keys[i]]]
-  }
-  return a
 }
 
 const LoadingMessage = () => {
