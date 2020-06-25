@@ -84,7 +84,7 @@ const LandingPage = () => (
             <p>
               La Convention Citoyenne pour le Climat vient de rendre publiques
               ses{" "}
-              <a href="https://www.propositions.conventioncitoyennepourleclimat.fr">
+              <a href="https://propositions.conventioncitoyennepourleclimat.fr">
                 propositions
               </a>{" "}
               afin de réduire les émissions françaises de gaz à effet de serre
