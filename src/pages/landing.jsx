@@ -9,6 +9,7 @@ import timeLeft from "../assets/images/time-left.png"
 import Social from "../components/Social"
 import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
+import { shuffleOutPlace } from "../utils"
 
 const Em = styled.span`
   text-transform: uppercase;
@@ -18,6 +19,7 @@ const Em = styled.span`
 const Big = styled.p`
   font-size: 1.4em;
 `
+const randomThemes = shuffleOutPlace(themes)
 
 const twoDigits = number => number.toString().padStart(2, "0")
 
@@ -104,8 +106,8 @@ const LandingPage = () => (
           <Grid.Column width={6}>
             <p>Choisissez une thématique</p>
 
-            {Object.keys(themes).map(themeIndex => {
-              const theme = themes[themeIndex]
+            {Object.keys(randomThemes).map(themeIndex => {
+              const theme = randomThemes[themeIndex]
               return (
                 <Button
                   fluid

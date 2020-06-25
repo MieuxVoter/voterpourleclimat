@@ -1,7 +1,6 @@
-import React, { useState } from "react"
-import { Segment, Label, Grid, Button, Card } from "semantic-ui-react"
+import React from "react"
+import { Label, Grid, Button, Card } from "semantic-ui-react"
 import Rating from "../Rating"
-import ModalInfo from "./ModalInfo"
 
 const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
   return (

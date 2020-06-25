@@ -9,6 +9,7 @@ import Lvsl from "../assets/images/LVSL-violet.png"
 import CPLC from "../assets/images/cplc.png"
 import Humeco from "../assets/images/humeco.png"
 import T4E from "../assets/images/t4e.png"
+import U4E from "../assets/images/united4earth.jpg"
 
 const partnersList = [
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
@@ -32,6 +33,11 @@ const partnersList = [
     name: "COP2 étudiante",
     site: "https://cop2etudiante.org/",
     logo: COP2,
+  },
+  {
+    name: "Unis pour la Planète",
+    site: "https://www.facebook.com/groups/unis.pour.la.planete/",
+    logo: U4E,
   },
   {
     name: "Together 4 Earth",

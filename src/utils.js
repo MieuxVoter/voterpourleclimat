@@ -21,11 +21,6 @@ export const shuffleList = a => {
 }
 
 export const shuffleOutPlace = a => {
-  const keys = Object.keys(a)
-  const b = {}
-  for (let i = keys.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[b[keys[i]], b[keys[j]]] = [a[keys[j]], a[keys[i]]]
-  }
-  return b
+  const b = { ...a }
+  return shuffle(b)
 }

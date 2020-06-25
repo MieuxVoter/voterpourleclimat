@@ -6,12 +6,14 @@ import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import {
   Segment,
+  Transition,
   Grid,
   Breadcrumb,
   Icon,
   Responsive,
   Message,
   Button,
+  Container,
 } from "semantic-ui-react"
 import * as CONSTANTS from "../../constants"
 import * as ROUTES from "../../constants/routes"
@@ -21,7 +23,7 @@ import PersoModal from "./ModalPerso"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
 import Progress from "../Progress"
-import { shuffle } from "../../utils"
+import { shuffleList } from "../../utils"
 import "./index.css"
 
 const P = styled.div`
@@ -56,8 +58,8 @@ const MessageDone = () => {
               cette thématique !
             </Message.Header>
             <p>
-              Vous pouvez cependant continuer de voter dans les autres
-              thématiques.
+              Vous pouvez continuer de voter dans les{" "}
+              <Link to={ROUTES.LANDING}>autres thématiques</Link>.
             </p>
           </Message>
         </Grid.Row>
@@ -92,6 +94,7 @@ class Ballot extends React.Component {
       openedModal: false,
       loading: true,
       progress: 0,
+      visible: false,
     }
     this.allVotes = {}
   }
@@ -110,11 +113,13 @@ class Ballot extends React.Component {
     }
 
     const numDones = this.done().length
+    shuffleList(votes)
 
     this.setState({
       progress: Math.floor((numDones / this.numProposal()) * 100),
-      votes,
       loading: false,
+      votes,
+      visible: !this.state.visible,
     })
   }
 
@@ -148,7 +153,6 @@ class Ballot extends React.Component {
           }
         }
       }
-      shuffle(this.allVotes)
       this.setBallot()
     })
   }
@@ -167,7 +171,7 @@ class Ballot extends React.Component {
     const value = parseInt(event.currentTarget.getAttribute("data-grade-value"))
     const votes = [...this.state.votes]
     votes[proposalId].vote = value
-    const proposal = Object.keys(this.allVotes)[proposalId]
+    const proposal = votes[proposalId].proposal
     this.allVotes[proposal].vote = value
     const numDones = this.done().length
     this.setState({
@@ -208,7 +212,7 @@ class Ballot extends React.Component {
           icon: "vote yea",
           title: "Vote enregistré",
           description:
-            "Félicitations ! Votre vote a bien été pris en compte ! Vous pouvez cependant continuer de voter.",
+            "Félicitations ! Votre vote a bien été pris en compte ! D'autres mesures vous sont proposées dans votre bulletin de vote.",
           animation: "bounce",
           time: 5000,
         })
@@ -240,7 +244,7 @@ class Ballot extends React.Component {
   }
 
   render() {
-    const { votes, loading, progress } = this.state
+    const { votes, loading, progress, visible } = this.state
     if (votes.length === 0 && !loading) return <MessageDone />
 
     const { name, description, grades, icon, groupUrl } = this.props
@@ -306,10 +310,8 @@ class Ballot extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            {loading ? (
-              <LoadingMessage />
-            ) : (
-              <>
+            <Transition animation="glow" duration={1000} visible={visible}>
+              <Container style={{ paddingTop: "1em" }}>
                 <Responsive maxWidth={Responsive.onlyTablet.maxWidth}>
                   <BallotMobile
                     grades={grades}
@@ -329,8 +331,8 @@ class Ballot extends React.Component {
                     valid={validBallot}
                   />
                 </Responsive>
-              </>
-            )}
+              </Container>
+            </Transition>
           </Grid.Row>
         </Grid>
       </Segment>

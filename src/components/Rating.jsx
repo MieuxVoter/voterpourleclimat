@@ -8,10 +8,8 @@ const Rating = ({ value }) => (
         name = "half"
       } else if (i >= value) {
         name = "outline"
-        console.log("FOO")
       }
 
-      console.log(i, value)
       return <i key={i} className={`teal star ${name} icon`} />
     })}
   </span>

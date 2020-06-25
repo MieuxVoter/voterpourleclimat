@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react"
+import { Segment, Grid, Container, Loader } from "semantic-ui-react"
 import firebase from "./Firebase"
 
 const connect = () => {
@@ -91,9 +92,15 @@ export const UserProvider = props => {
 
   if (loading) {
     return (
-      <div className="ui active inverted">
-        <div className="ui text loader">Chargement</div>
-      </div>
+      <Segment vertical>
+        <Grid container stackable verticalAlign="middle">
+          <Grid.Row>
+            <Container style={{ margin: "5em 0" }}>
+              <Loader active inline="centered" />
+            </Container>
+          </Grid.Row>
+        </Grid>
+      </Segment>
     )
   }
 

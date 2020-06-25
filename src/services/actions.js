@@ -5,7 +5,6 @@ import { useUser, useAuth } from "./User"
  * Store vote in the database
  */
 export const castVote = (votes, collectionName, uid) => {
-  console.log(collectionName, uid, votes)
   const voteDoc = firebase.firestore().collection(collectionName).doc(uid)
   return voteDoc.set(votes)
 }
