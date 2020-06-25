@@ -9,7 +9,7 @@ import Lvsl from "../assets/images/LVSL-violet.png"
 import CPLC from "../assets/images/cplc.png"
 import Humeco from "../assets/images/humeco.png"
 import T4E from "../assets/images/t4e.png"
-import U4E from "../assets/images/united4earth.jpg"
+import U4E from "../assets/images/united4earth.png"
 
 const partnersList = [
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
