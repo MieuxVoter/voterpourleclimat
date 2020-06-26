@@ -65,7 +65,8 @@ const VotesCounter = ({ nbVotes }) => {
       </Big>
       <Big>Votes ont été enregistrés. Et vous ?</Big>
       <Big>
-        Rejoignez cet élan démocratique et faites entendre la voix citoyenne !
+        Rejoignez les 15212 Français·es dans cet élan démocratique et faites
+        entendre la voix citoyenne !
       </Big>
     </>
   )
@@ -104,7 +105,7 @@ const LandingPage = () => (
           </Grid.Column>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={6}>
-            <p>Choisissez une thématique</p>
+            <p>Cliquez sur une thématique pour voter</p>
 
             {Object.keys(randomThemes).map(themeIndex => {
               const theme = randomThemes[themeIndex]
@@ -175,7 +176,7 @@ const LandingPage = () => (
             />
           </Grid.Column>
           <Grid.Column width={6}>
-            <VotesCounter nbVotes={125231} />
+            <VotesCounter nbVotes={256121} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image
