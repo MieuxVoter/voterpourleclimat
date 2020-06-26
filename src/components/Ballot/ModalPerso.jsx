@@ -23,7 +23,6 @@ class RequestInfo extends Component {
     // TODO: check carefully each field is OK
     return (
       this.state.name !== "" &&
-      this.state.mail !== "" &&
       this.state.age !== "" &&
       this.state.zipCode !== ""
     )
@@ -111,7 +110,7 @@ class RequestInfo extends Component {
             />
             <Form.Input
               fluid
-              label="Courriel"
+              label="Courriel (facultatif, pour recevoir les résultats)"
               name="mail"
               type="email"
               placeholder="Veuillez ajouter votre courriel"
