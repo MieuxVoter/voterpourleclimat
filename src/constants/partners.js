@@ -11,14 +11,26 @@ import Humeco from "../assets/images/humeco.png"
 import T4E from "../assets/images/t4e.png"
 import U4E from "../assets/images/united4earth.png"
 import Elementerre from "../assets/images/elementerre.png"
+import makesense from "../assets/images/makesense.png"
+import uplc from "../assets/images/uplc.jpg"
 
 const partnersList = [
+  {
+    name: "makesense",
+    site: "https://makesense.org/",
+    logo: makesense,
+  },
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
   { name: "On Est Prêt", site: "https://www.onestpret.com/", logo: OnEstPret },
   {
     name: "Citoyens pour le Climat",
     site: "https://citoyenspourleclimat.org/",
     logo: CPLC,
+  },
+  {
+    name: "Unis Pour Le Climat",
+    site: "https://www.facebook.com/groups/unispourleclimat/about/ ",
+    logo: uplc,
   },
   {
     name: "CliMates",

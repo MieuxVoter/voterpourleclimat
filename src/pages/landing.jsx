@@ -65,7 +65,7 @@ const VotesCounter = ({ nbVotes }) => {
       </Big>
       <Big>Votes ont été enregistrés. Et vous ?</Big>
       <Big>
-        Rejoignez les 15212 Français·es dans cet élan démocratique et faites
+        Rejoignez les 17012 Français·es dans cet élan démocratique et faites
         entendre la voix citoyenne !
       </Big>
     </>
@@ -176,7 +176,7 @@ const LandingPage = () => (
             />
           </Grid.Column>
           <Grid.Column width={6}>
-            <VotesCounter nbVotes={256121} />
+            <VotesCounter nbVotes={334342} />
           </Grid.Column>
           <Grid.Column width={2}>
             <Image
