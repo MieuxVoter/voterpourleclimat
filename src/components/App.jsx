@@ -1,5 +1,5 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import Layout from "./layout"
 import Landing from "../pages/landing"
 import JeVote from "../pages/je-vote"
@@ -16,17 +16,19 @@ import * as ROUTES from "../constants/routes"
 function App() {
   return (
     <Layout>
-      <Route path={ROUTES.JE_VOTE} component={JeVote} />
-      <Route path={ROUTES.PRIVACY_POLICY} component={PrivatePolicy} />
-      <Route path={ROUTES.TERMS} component={Terms} />
-      <Route path={ROUTES.SE_NOURRIR} component={SeNourrir} />
-      <Route path={ROUTES.SE_DEPLACER} component={SeDeplacer} />
-      <Route path={ROUTES.SE_LOGER} component={SeLoger} />
-      <Route path={ROUTES.CONSOMMER} component={Consommer} />
-      <Route path={ROUTES.PRODUIRE} component={Produire} />
-      <Route path={ROUTES.CONSTITUTION} component={Constitution} />
+      <Switch>
+        <Route path={ROUTES.JE_VOTE} component={JeVote} />
+        <Route path={ROUTES.PRIVACY_POLICY} component={PrivatePolicy} />
+        <Route path={ROUTES.TERMS} component={Terms} />
+        <Route path={ROUTES.SE_NOURRIR} component={SeNourrir} />
+        <Route path={ROUTES.SE_DEPLACER} component={SeDeplacer} />
+        <Route path={ROUTES.SE_LOGER} component={SeLoger} />
+        <Route path={ROUTES.CONSOMMER} component={Consommer} />
+        <Route path={ROUTES.PRODUIRE} component={Produire} />
+        <Route path={ROUTES.CONSTITUTION} component={Constitution} />
 
-      <Route component={Landing} />
+        <Route component={Landing} />
+      </Switch>
     </Layout>
   )
 }
