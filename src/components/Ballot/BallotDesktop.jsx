@@ -33,6 +33,7 @@ const BallotDesktop = ({ grades, votes, onClick, handleSubmit, valid }) => {
                   <a
                     href={vote.objective.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                     style={{ color: "#03B37F" }}
                   >
                     En savoir plus sur l'objectif.

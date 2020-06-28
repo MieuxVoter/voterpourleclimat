@@ -1,14 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import {
-  Segment,
-  Button,
-  Icon,
-  Grid,
-  Header,
-  Container,
-  List,
-} from "semantic-ui-react"
+import { Segment, Grid, Header, Container, List } from "semantic-ui-react"
 import Social from "./Social"
 import * as ROUTES from "../constants/routes"
 import partners from "../constants/partners"

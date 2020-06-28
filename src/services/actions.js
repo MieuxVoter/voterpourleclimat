@@ -1,5 +1,4 @@
 import firebase from "./Firebase"
-import { useUser, useAuth } from "./User"
 
 /**
  * Store vote in the database

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
-import { Form, Button, Message, Modal, Label } from "semantic-ui-react"
+import { Form, Button, Message, Modal } from "semantic-ui-react"
 import { saveInfo } from "../../services/actions"
 import * as ROUTES from "../../constants/routes"
 import { withUser } from "../../services/User"

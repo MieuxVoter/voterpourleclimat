@@ -1,7 +1,6 @@
 import MieuxVoter from "../assets/images/mieux-voter.png"
 import OnEstPret from "../assets/images/onestpret.png"
 import COP2 from "../assets/images/cop2.png"
-import RAC from "../assets/images/rac.png"
 import More from "../assets/images/more.png"
 import GreenGlobal from "../assets/images/the-green-global-project.png"
 import CliMates from "../assets/images/climates.png"
@@ -13,6 +12,7 @@ import U4E from "../assets/images/united4earth.png"
 import Elementerre from "../assets/images/elementerre.png"
 import makesense from "../assets/images/makesense.png"
 import uplc from "../assets/images/uplc.jpg"
+import fresqueduclimat from "../assets/images/lafresque.png"
 
 const partnersList = [
   {
@@ -26,6 +26,11 @@ const partnersList = [
     name: "Citoyens pour le Climat",
     site: "https://citoyenspourleclimat.org/",
     logo: CPLC,
+  },
+  {
+    name: "La Fresque du Climat",
+    site: "http://fresqueduclimat.org/",
+    logo: fresqueduclimat,
   },
   {
     name: "Unis Pour Le Climat",

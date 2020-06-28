@@ -1,5 +1,5 @@
-import React, { Fragment } from "react"
-import { Image, Header } from "semantic-ui-react"
+import React from "react"
+import { Image } from "semantic-ui-react"
 import partners from "../constants/partners"
 
 // <div class="ui icon button" data-tooltip="Add users to your feed" data-inverted="">

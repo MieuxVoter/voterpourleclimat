@@ -24,7 +24,14 @@
     <meta name="twitter:site" content="@VoterPourLeClimat" />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/MieuxVoter/voterpourleclimat/master/public/twitter_card.png">
     <meta name="twitter:title" content="Votez sur les propositions de la Convention Citoyenne pour le Climat">
-
+    <script>
+	const href = window.location.href;
+	if (href.includes("/share/")) {
+		const uid = href.split("/").pop()
+		document.querySelector('meta[property="og:image"]').setAttribute("content", `https://progress.voterpourleclimat.com/card/${uid}`);
+		document.querySelector('meta[property="og:url"]').setAttribute("content", `https://voterpourleclimat.fr/share/${uid}`);
+	}
+    </script>
     <title>Voter sur les propositions de la Convention Citoyenne pour le Climat</title>
   </head>
   <body>

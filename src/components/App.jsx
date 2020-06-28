@@ -16,8 +16,6 @@ import * as ROUTES from "../constants/routes"
 function App() {
   return (
     <Layout>
-      <Route exact path={ROUTES.LANDING} component={Landing} />
-
       <Route path={ROUTES.JE_VOTE} component={JeVote} />
       <Route path={ROUTES.PRIVACY_POLICY} component={PrivatePolicy} />
       <Route path={ROUTES.TERMS} component={Terms} />
@@ -27,6 +25,8 @@ function App() {
       <Route path={ROUTES.CONSOMMER} component={Consommer} />
       <Route path={ROUTES.PRODUIRE} component={Produire} />
       <Route path={ROUTES.CONSTITUTION} component={Constitution} />
+
+      <Route component={Landing} />
     </Layout>
   )
 }

@@ -50,7 +50,7 @@ export const useUser = () => {
       .catch(err => setError(err))
 
     return () => {}
-  }, [auth])
+  }, [auth, loading])
 
   return {
     error,

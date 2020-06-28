@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Segment, Label, Grid, Button, Card } from "semantic-ui-react"
+import React from "react"
+import { Grid, Button, Card } from "semantic-ui-react"
 import Rating from "../Rating"
 
 const displayGrade = (
@@ -77,7 +77,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => (
               <Card.Content extra>
                 <Button.Group className="attached mini top two">
                   {grades.map((grade, gradeId) => {
-                    if (gradeId >= 2) return
+                    if (gradeId >= 2) return null
                     return displayGrade(
                       vote,
                       index,
@@ -90,7 +90,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => (
                 </Button.Group>
                 <Button.Group className="attached mini bottom two">
                   {grades.map((grade, gradeId) => {
-                    if (gradeId < 2 || gradeId >= 4) return
+                    if (gradeId < 2 || gradeId >= 4) return null
                     return displayGrade(
                       vote,
                       index,
@@ -103,7 +103,7 @@ const BallotMobile = ({ grades, votes, onClick, handleSubmit, valid }) => (
                 </Button.Group>
                 <Button.Group className="attached mini bottom two">
                   {grades.map((grade, gradeId) => {
-                    if (gradeId < 4) return
+                    if (gradeId < 4) return null
                     return displayGrade(
                       vote,
                       index,

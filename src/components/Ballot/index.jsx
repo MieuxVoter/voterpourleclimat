@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 import { SemanticToastContainer, toast } from "react-semantic-toasts"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import {
@@ -25,12 +24,6 @@ import BallotDesktop from "./BallotDesktop"
 import Progress from "../Progress"
 import { shuffleList } from "../../utils"
 import "./index.css"
-
-const P = styled.div`
-  font-size: 1rem;
-  text-align: justify;
-  margin: 1em;
-`
 
 /**
  * Check if the user gives enough info to be allowed to vote

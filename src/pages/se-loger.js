@@ -1,5 +1,4 @@
 import React from "react"
-import { useUser } from "../services/User"
 import Ballot from "../components/Ballot"
 import { SE_LOGER as theme } from "../constants/themes"
 

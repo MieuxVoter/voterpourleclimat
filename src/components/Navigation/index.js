@@ -1,23 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import {
-  Container,
-  Visibility,
-  Button,
-  Segment,
-  Icon,
-  Menu,
-  Sidebar,
-  Responsive,
-} from "semantic-ui-react"
+import { Menu, Responsive } from "semantic-ui-react"
 import * as ROUTES from "../../constants/routes"
 import NavMobile from "./NavMobile"
 
-const leftItems = [
-  <Link to={ROUTES.LANDING} class="item">
-    Voter pour le climat
-  </Link>,
-]
 const rightItems = [
   <Link to={ROUTES.SE_NOURRIR} class="item">
     Se nourrir
@@ -45,30 +31,11 @@ const NavDesktop = ({ items }) => (
         ))}
       </Menu.Menu>
     </Menu>
-    {/*  <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-    <Menu pointed inverted className="teal">
-      <Menu.Menu position="center">
-      </Menu.Menu>
-    </Menu>
-  </Responsive> */}
   </Responsive>
 )
 
-const NavBarChildren = ({ children }) => (
-  <Container style={{ marginTop: "5em" }}>{children}</Container>
-)
-
 class Navigation extends React.Component {
-  state = {
-    visible: false,
-  }
-
-  handleToggle = () => this.setState({ visible: !this.state.visible })
-
   render() {
-    const { children } = this.props
-    const { visible } = this.state
-
     return (
       <div>
         <NavMobile items={rightItems}></NavMobile>

@@ -1,15 +1,26 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { Icon, Segment, Image, Grid, Header, Button } from "semantic-ui-react"
+import {
+  Icon,
+  Segment,
+  Progress,
+  Image,
+  Grid,
+  Header,
+  Button,
+} from "semantic-ui-react"
 import styled from "styled-components"
 import "../index.css"
-import megaphone from "../assets/images/megaphone.png"
-import barChart from "../assets/images/bar-chart.png"
+import Step from "../components/Step"
 import timeLeft from "../assets/images/time-left.png"
-import Social from "../components/Social"
 import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
 import { shuffleOutPlace } from "../utils"
+
+const numVotes = 385213
+const numVoters = 17012
+const goalVotes = 1000000
+const goalVoters = 100000
 
 const Em = styled.span`
   text-transform: uppercase;
@@ -43,32 +54,26 @@ const Timer = () => {
   )
 }
 
-const VotesCounter = ({ nbVotes }) => {
-  const [displayedNbVotes, setDisplayedNbVotes] = useState(0)
+const DynamicProgress = ({ value, total, unit }) => {
+  const [displayedValue, setDisplayedValue] = useState(0)
 
-  const delta = Math.floor(nbVotes / 400)
+  const delta = Math.floor(value / 400)
   setTimeout(() =>
-    setDisplayedNbVotes(
-      displayedNbVotes >= nbVotes ? nbVotes : displayedNbVotes + delta,
+    setDisplayedValue(
+      displayedValue >= value ? value : displayedValue + delta,
       10
     )
   )
 
-  const nbVotesFormated = new Intl.NumberFormat("fr-FR").format(
-    displayedNbVotes
-  )
-
+  const formattedValue = new Intl.NumberFormat("fr-FR").format(displayedValue)
   return (
-    <>
-      <Big>
-        <Em className="ui teal text">{nbVotesFormated}</Em>
-      </Big>
-      <Big>Votes ont été enregistrés. Et vous ?</Big>
-      <Big>
-        Rejoignez les 17012 Français·es dans cet élan démocratique et faites
-        entendre la voix citoyenne !
-      </Big>
-    </>
+    <Progress
+      percent={Math.ceil((displayedValue / total) * 100)}
+      progress="percent"
+      indicating
+    >
+      Déjà {formattedValue} {unit} !
+    </Progress>
   )
 }
 
@@ -85,7 +90,11 @@ const LandingPage = () => (
             <p>
               La Convention Citoyenne pour le Climat vient de rendre publiques
               ses{" "}
-              <a href="https://propositions.conventioncitoyennepourleclimat.fr">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://propositions.conventioncitoyennepourleclimat.fr"
+              >
                 propositions
               </a>{" "}
               afin de réduire les émissions françaises de gaz à effet de serre
@@ -95,13 +104,24 @@ const LandingPage = () => (
             <blockquote>
               L’enjeu, c’est que le débat qui a eu lieu à 150 se diffuse à 44
               millions d’électeurs.{" "}
-              <a href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764"
+              >
                 Cyril Dion
               </a>
             </blockquote>
             <Header>
               VOTEZ sur ces propositions pour faire entendre votre voix
             </Header>
+            Atteignons 100 000 participants et 1 000 000 de votes enregistrés.
+            <DynamicProgress
+              value={numVoters}
+              total={goalVoters}
+              unit="participants"
+            />
+            <DynamicProgress value={numVotes} total={goalVotes} unit="votes" />
           </Grid.Column>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={6}>
@@ -162,44 +182,7 @@ const LandingPage = () => (
       </Grid>
     </Segment>
 
-    <Segment
-      style={{ padding: "5em 1em", backgroundColor: "#eaeaea" }}
-      vertical
-    >
-      <Grid container stackable>
-        <Grid.Row>
-          <Grid.Column width={2}>
-            <Image
-              src={barChart}
-              style={{ maxWidth: "60%" }}
-              className="teal large"
-            />
-          </Grid.Column>
-          <Grid.Column width={6}>
-            <VotesCounter nbVotes={334342} />
-          </Grid.Column>
-          <Grid.Column width={2}>
-            <Image
-              src={megaphone}
-              style={{ maxWidth: "60%" }}
-              className="teal large"
-            />
-          </Grid.Column>
-          <Grid.Column width={6}>
-            <Big>
-              <Em className="ui teal text">PARLEZ-EN !</Em>
-            </Big>
-            <Big>
-              À nous de porter notre voix toujours plus haut, toujours plus fort
-              ! Invitez vos connaissances à rejoindre le préférendum.{" "}
-            </Big>
-            <Big>
-              <Social />
-            </Big>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <Step />
 
     <Segment vertical style={{ margin: "5em 0" }}>
       <Grid container stackable verticalAlign="middle">
