@@ -29,7 +29,7 @@ const StepForProcess = () => {
       emoji: ":loudspeaker:",
       header: "Partager",
       content: "votre engagement",
-      href: `https://www.facebook.com/sharer/sharer.php?u=voterpourleclimat.fr${ROUTES.SHARE}/${user.uid}`,
+      href: `https://www.facebook.com/sharer/sharer.php?u=https://progress.voterpourleclimat.com/card/${user.uid}`,
     },
     {
       emoji: ":incoming_envelope:",

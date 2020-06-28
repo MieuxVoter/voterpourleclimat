@@ -113,7 +113,10 @@ const LandingPage = () => (
               </a>
             </blockquote>
             <Header>
-              VOTEZ sur ces propositions pour faire entendre votre voix
+              <Link to={randomThemes[Object.keys(randomThemes)[0]].to}>
+                VOTEZ
+              </Link>{" "}
+              sur ces propositions pour faire entendre votre voix
             </Header>
             Atteignons 100 000 participants et 1 000 000 de votes enregistrés.
             <DynamicProgress
@@ -125,7 +128,7 @@ const LandingPage = () => (
           </Grid.Column>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={6}>
-            <p>Cliquez sur une thématique pour voter</p>
+            <p>Choississez une thématique pour voter</p>
 
             {Object.keys(randomThemes).map(themeIndex => {
               const theme = randomThemes[themeIndex]
