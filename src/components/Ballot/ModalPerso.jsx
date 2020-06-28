@@ -16,6 +16,8 @@ class RequestInfo extends Component {
       mail: "",
       age: "",
       zipCode: "",
+      canDisplayName: "",
+      canSendMail: "",
     }
   }
 
@@ -50,6 +52,8 @@ class RequestInfo extends Component {
       mail: this.state.mail,
       age: this.state.age,
       zipCode: this.state.zipCode,
+      canDisplayName: this.state.canDisplayName,
+      canSendMail: this.state.canSendMail,
     }
 
     updateUser(model, this.props.user.uid)
@@ -97,7 +101,7 @@ class RequestInfo extends Component {
 
           <Message
             header="Pourquoi collectons-nous ces données ?"
-            content="Afin que notre voix citoyenne soit entendue, nous utilisons ces données pour construire des résultats représentatifs. Nous vous enverrons les résultats par courriel."
+            content="Afin que notre voix citoyenne soit entendue, nous utilisons ces données pour construire des résultats représentatifs. Nous supprimons vos données personnelles à la fin de la consultation."
           />
           <Form>
             <Form.Input
@@ -141,6 +145,16 @@ class RequestInfo extends Component {
             <Form.Checkbox
               name="terms"
               label="J'accepte la politique de confidentialité"
+              onChange={this.handleChange}
+            />
+            <Form.Checkbox
+              name="canDisplayName"
+              label="J'accepte que ma participation soit rendue publique"
+              onChange={this.handleChange}
+            />
+            <Form.Checkbox
+              name="canSendMail"
+              label="J'accepte de recevoir des courriels concernant la consultation. Nous ne transmettrons JAMAIS votre courriel à une tierce personne."
               onChange={this.handleChange}
             />
           </Form>
