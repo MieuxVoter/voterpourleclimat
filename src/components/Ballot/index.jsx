@@ -19,6 +19,7 @@ import * as ROUTES from "../../constants/routes"
 import { castVote, loadVote } from "../../services/actions"
 import { UserContext } from "../../services/User"
 import PersoModal from "./ModalPerso"
+import NextModal from "./ModalNext"
 import BallotMobile from "./BallotMobile"
 import BallotDesktop from "./BallotDesktop"
 import Progress from "../Progress"
@@ -29,7 +30,7 @@ import "./index.css"
  * Check if the user gives enough info to be allowed to vote
  */
 const canUserVote = user => {
-  return user.mail && user.name && user.zipCode && user.age
+  return user.name && user.zipCode && user.age
 }
 
 const LoadingMessage = () => {
@@ -88,6 +89,7 @@ class Ballot extends React.Component {
       loading: true,
       progress: 0,
       visible: false,
+      confirmNext: false,
     }
     this.allVotes = {}
   }
@@ -127,6 +129,7 @@ class Ballot extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.context.user)
     loadVote(this.props.collectionName, this.context.user.uid).then(doc => {
       this.allVotes = {}
       for (let proposalId in this.props.proposals) {
@@ -200,15 +203,17 @@ class Ballot extends React.Component {
 
     castVote(toStore, this.props.collectionName, this.context.user.uid)
       .then(() => {
-        toast({
-          type: "success",
-          icon: "vote yea",
-          title: "Vote enregistré",
-          description:
-            "Félicitations ! Votre vote a bien été pris en compte ! D'autres mesures vous sont proposées dans votre bulletin de vote.",
-          animation: "bounce",
-          time: 5000,
-        })
+        if (!this.context.user.noConfirm) {
+          toast({
+            type: "success",
+            icon: "vote yea",
+            title: "Vote enregistré",
+            description:
+              "Félicitations ! Votre vote a bien été pris en compte ! D'autres mesures vous sont proposées dans votre bulletin de vote.",
+            animation: "bounce",
+            time: 5000,
+          })
+        }
         this.setBallot()
       })
       .catch(error => {
@@ -223,7 +228,10 @@ class Ballot extends React.Component {
           time: 5000,
         })
       })
-    this.setState({ loading: true })
+    this.setState({
+      loading: true,
+      confirmNext: !this.context.user.noConfirm,
+    })
   }
 
   check() {
@@ -247,6 +255,11 @@ class Ballot extends React.Component {
     return (
       <Segment vertical style={{ margin: "2em 0" }}>
         <SemanticToastContainer />
+
+        <NextModal
+          isOpened={this.state.confirmNext}
+          close={() => this.setState({ confirmNext: false })}
+        />
         <PersoModal
           isOpened={this.state.openedModal}
           close={() => this.setState({ openedModal: false })}

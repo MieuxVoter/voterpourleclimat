@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
 import { Form, Button, Message, Modal } from "semantic-ui-react"
-import { saveInfo } from "../../services/actions"
+import { updateUser } from "../../services/actions"
 import * as ROUTES from "../../constants/routes"
 import { withUser } from "../../services/User"
 
@@ -52,7 +52,7 @@ class RequestInfo extends Component {
       zipCode: this.state.zipCode,
     }
 
-    saveInfo(model, this.props.user.uid)
+    updateUser(model, this.props.user.uid)
       .then(() => {
         this.setState({ loading: false })
         this.props.setUser({ ...this.props.user, ...model })

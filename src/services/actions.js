@@ -11,8 +11,17 @@ export const castVote = (votes, collectionName, uid) => {
 /*
  * Store info about the user in the database
  */
-export const saveInfo = (infos, uid) => {
-  return firebase.firestore().collection("user").doc(uid).set(infos)
+export const updateUser = (infos, uid) => {
+  const model = {
+    name: infos.name ? infos.name : "",
+    mail: infos.mail ? infos.mail : "",
+    age: infos.age ? infos.age : "",
+    zipCode: infos.zipCode ? infos.zipCode : "",
+    noConfirm: infos.noConfirm ? infos.noConfirm : false,
+    canSendMail: infos.canSendMail ? infos.canSendMail : false,
+    canDisplayName: infos.canDisplayName ? infos.canDisplayName : false,
+  }
+  return firebase.firestore().collection("user").doc(uid).set(model)
 }
 
 /*
