@@ -1,5 +1,5 @@
 import React from "react"
-import { Image } from "semantic-ui-react"
+import { Image, Grid } from "semantic-ui-react"
 import partners from "../constants/partners"
 
 // <div class="ui icon button" data-tooltip="Add users to your feed" data-inverted="">
@@ -7,15 +7,15 @@ import partners from "../constants/partners"
 // </div>
 
 const Partners = () => (
-  <div class="ui stackable padded equal middle aligned six column centered grid">
+  <Grid className="ui stackable padded equal middle aligned six column centered">
     {partners.map((partner, partnerId) => (
-      <div class="column" data-tooltip={partner.name} key={partnerId}>
+      <Grid.Column data-tooltip={partner.name} key={partnerId}>
         <a href={partner.site} rel="noopener noreferrer" target="_blank">
-          <Image size="small" src={partner.logo} />
+          <Image size="small" centered src={partner.logo} />
         </a>
-      </div>
+      </Grid.Column>
     ))}
-  </div>
+  </Grid>
 )
 
 export default Partners
