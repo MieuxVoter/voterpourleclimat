@@ -13,6 +13,7 @@ import Elementerre from "../assets/images/elementerre.png"
 import makesense from "../assets/images/makesense.png"
 import uplc from "../assets/images/uplc.jpg"
 import fresqueduclimat from "../assets/images/lafresque.png"
+import WARN from "../assets/images/WARN_1.png"
 
 const partnersList = [
   {
@@ -71,6 +72,11 @@ const partnersList = [
     name: "The Global Green Project",
     site: "https://www.facebook.com/TheGreenGlobalProject",
     logo: GreenGlobal,
+  },
+  {
+    name: "We Are Ready Now",
+    site: "http://wearereadynow.net/",
+    logo: WARN,
   },
   {
     name: "Elementerre",
