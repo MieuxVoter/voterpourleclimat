@@ -17,8 +17,8 @@ import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
 import { shuffleOutPlace } from "../utils"
 
-const numVotes = 485023
-const numVoters = 18753
+const numVotes = 513503
+const numVoters = 20501
 const goalVotes = 1000000
 const goalVoters = 100000
 
