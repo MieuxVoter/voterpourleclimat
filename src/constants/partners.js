@@ -19,6 +19,7 @@ import Colibris from "../assets/images/colibris.png"
 import REFEDD from "../assets/images/refedd.png"
 import ISC from "../assets/images/isc.svg"
 import MPP from "../assets/images/mpp.png"
+import HuffPost from "../assets/images/huffpost-logo.png"
 
 const partnersList = [
   {
@@ -65,6 +66,11 @@ const partnersList = [
     name: "The Global Green Project",
     site: "https://www.facebook.com/TheGreenGlobalProject",
     logo: GreenGlobal,
+  },
+  {
+    name: "Huffington Post",
+    site: "http://huffingtonpost.fr/",
+    logo: HuffPost,
   },
   {
     name: "HUMECO",
