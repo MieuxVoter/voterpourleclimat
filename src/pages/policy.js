@@ -9,12 +9,22 @@ const PrivatePolicy = () => (
           <Header>Introduction</Header>
           <p>
             Dans le cadre de son activité, le collectif Voter Pour Le Climat,
-            représenté par Pierre-Louis Guhur, résidant au 50 rue Jeanne d'Arc,
-            à Paris 75013, est amené à collecter et à traiter des informations
-            dont certaines sont qualifiées de "données personnelles". Voter Pour
-            Le Climat attache une grande importance au respect de la vie privée,
-            et n'utilise que des données de manière responsable et
-            confidentielle et dans une finalité précise.
+            représenté par Pierre-Louis Guhur, est amené à collecter et à
+            traiter des informations dont certaines sont qualifiées de "données
+            personnelles". Voter Pour Le Climat attache une grande importance au
+            respect de la vie privée, et n'utilise que des données de manière
+            responsable et confidentielle et dans une finalité précise.
+          </p>
+          <Header>RGPD</Header>
+          <p>
+            Les informations personnelles soumises via les formulaires du site
+            <a href="http://voterpourleclimat.fr">voterpourleclimat.fr</a>{" "}
+            restent confidentielles et seront détruites un mois après la clôture
+            du vote afin de nous laisser le temps d'analyser les résultats. Si
+            néanmoins, pour quelque raison que ce soit, vous souhaitez que nous
+            supprimions les informations soumises avant cette date, vous pouvez
+            en faire la demande en envoyant un mail à rgpd@mieuxvoter.fr à
+            partir de l'adresse concernée par ce retrait d'informations.
           </p>
           <Header>Données personnelles</Header>
           <p>
@@ -47,7 +57,8 @@ const PrivatePolicy = () => (
           </p>
           <Header>Durée de conservation</Header>
           <p>
-            Les données seront sauvegardées durant une durée maximale de 1 mois.
+            Les données seront sauvegardées durant une durée maximale de 1 mois
+            après la clôture du vote.
           </p>
           <Header>Cookies</Header>
           <p>Aucun cookie de type "web analytics" est utilisé.</p>
@@ -62,9 +73,7 @@ const PrivatePolicy = () => (
             également retirer votre consentement au traitement de vos données.
           </p>
           <Header>Responsable du collectif Voter Pour Le Climat </Header>
-          <p>
-            Pierre-Louis Guhur - 06 43 13 87 96 - pierre.louis.guhur@gmail.com
-          </p>
+          <p>Pierre-Louis Guhur - voterpourleclimat@mieuxvoter.fr</p>
         </Grid.Column>
       </Grid.Row>
     </Grid>

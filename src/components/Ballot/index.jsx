@@ -129,7 +129,6 @@ class Ballot extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.context.user)
     loadVote(this.props.collectionName, this.context.user.uid).then(doc => {
       this.allVotes = {}
       for (let proposalId in this.props.proposals) {
@@ -223,7 +222,7 @@ class Ballot extends React.Component {
           icon: "bug",
           title: "Erreur de l'enregistrement",
           description:
-            "Merci de contacter notre équipe sur contact@voterpourleclimat.fr",
+            "Merci de contacter notre équipe sur pierre-louis@mieuxvoter.fr",
           animation: "bounce",
           time: 5000,
         })

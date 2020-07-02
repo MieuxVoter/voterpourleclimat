@@ -19,7 +19,7 @@ const displayGrade = (
 
   let or = null
   if (!isLast) {
-    or = <div class="or"></div>
+    or = <div className="or"></div>
   }
 
   const btn = (

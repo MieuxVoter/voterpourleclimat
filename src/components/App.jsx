@@ -10,6 +10,7 @@ import Consommer from "../pages/consommer"
 import Produire from "../pages/produire"
 import Constitution from "../pages/constitution"
 import PrivatePolicy from "../pages/policy"
+import NousContacter from "../pages/contact"
 import Terms from "../pages/legal"
 import * as ROUTES from "../constants/routes"
 
@@ -26,6 +27,7 @@ function App() {
         <Route path={ROUTES.CONSOMMER} component={Consommer} />
         <Route path={ROUTES.PRODUIRE} component={Produire} />
         <Route path={ROUTES.CONSTITUTION} component={Constitution} />
+        <Route path={ROUTES.NOUS_CONTACTER} component={NousContacter} />
 
         <Route component={Landing} />
       </Switch>

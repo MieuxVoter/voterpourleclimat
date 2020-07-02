@@ -75,3 +75,19 @@
     padding-top: 20px;
     z-index: 1;
 }
+
+
+.video-responsive { 
+overflow:hidden; 
+  padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+position:relative; 
+height:0;
+}
+
+.video-responsive iframe {
+left:0; 
+top:0; 
+height:100%;
+width:100%;
+position:absolute;
+}

@@ -13,9 +13,16 @@ const Footer = () => (
           <Grid.Column width={3}>
             <Header inverted as="h4" content="À propos" />
             <List link inverted>
-              <List.Item as="a" href="mailto:app@mieuxvoter.fr">
-                Nous contacter
-              </List.Item>
+              <List.Item
+                as={Link}
+                to={ROUTES.PRIVACY_POLICY}
+                content="Politique de confidentialité"
+              />
+              <List.Item
+                as={Link}
+                to={ROUTES.NOUS_CONTACTER}
+                content="Nous contacter"
+              />
               <List.Item as={Link} to={ROUTES.TERMS}>
                 Mentions légales
               </List.Item>

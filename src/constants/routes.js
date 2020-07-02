@@ -1,5 +1,6 @@
 export const LANDING = "/"
 export const PRIVACY_POLICY = "/politique-confidentialite"
+export const NOUS_CONTACTER = "/nous-contacter"
 export const SHARE = "/share"
 export const TERMS = "/mentions-legales"
 export const JE_VOTE = "/je-vote"

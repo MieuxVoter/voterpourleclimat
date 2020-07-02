@@ -67,14 +67,16 @@ const LandingPage = () => (
               d'au moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de
               justice sociale.
             </p>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Paq_7JwFFr8"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div className="video-responsive">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Paq_7JwFFr8"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </Grid.Column>
           <Grid.Column width={1}></Grid.Column>
           <Grid.Column width={7}>
@@ -147,7 +149,7 @@ const LandingPage = () => (
               verticalAlign="middle"
             />
           </Grid.Column>
-          <Grid.Column width={5}>
+          <Grid.Column width={6}>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -164,7 +166,7 @@ const LandingPage = () => (
               </div>
             </a>
           </Grid.Column>
-          <Grid.Column width={3} textAlign="right"></Grid.Column>
+          <Grid.Column width={2} textAlign="right"></Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
