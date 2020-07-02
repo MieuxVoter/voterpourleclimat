@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react"
 import { Segment, Grid, Container, Loader } from "semantic-ui-react"
 import firebase from "./Firebase"
+import { loadUser } from "./actions"
 
 const connect = () => {
   firebase
@@ -35,8 +36,7 @@ export const useUser = () => {
       return () => {}
     }
 
-    const userDoc = firebase.firestore().collection("user").doc(auth.user.uid)
-    userDoc
+    const userDoc = loadUser(auth.user.uid)
       .get()
       .then(doc => {
         if (doc.exists) {

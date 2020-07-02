@@ -30,7 +30,7 @@ import "./index.css"
  * Check if the user gives enough info to be allowed to vote
  */
 const canUserVote = user => {
-  return user.name && user.zipCode && user.age
+  return user.name
 }
 
 const LoadingMessage = () => {
@@ -92,6 +92,7 @@ class Ballot extends React.Component {
       confirmNext: false,
     }
     this.allVotes = {}
+    this.previousVotes = []
   }
 
   setBallot() {
@@ -147,6 +148,9 @@ class Ballot extends React.Component {
             this.allVotes[proposal].vote = data[proposal]
           }
         }
+        if ("votes" in data) {
+          this.previousVotes = data.votes
+        }
       }
       this.setBallot()
     })
@@ -199,6 +203,8 @@ class Ballot extends React.Component {
         toStore[proposal] = this.allVotes[proposal].vote
       }
     }
+    toStore.votes = this.previousVotes ? this.previousVotes : []
+    toStore.votes.push({ date: new Date().getTime(), votes: this.state.votes })
 
     castVote(toStore, this.props.collectionName, this.context.user.uid)
       .then(() => {

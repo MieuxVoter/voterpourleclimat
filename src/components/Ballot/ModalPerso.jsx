@@ -25,6 +25,7 @@ class RequestInfo extends Component {
       mail: "",
       age: "",
       zipCode: "",
+      gender: "",
       canDisplayName: "",
       canSendMail: "",
       openPortal: "none",
@@ -33,11 +34,7 @@ class RequestInfo extends Component {
 
   check() {
     // TODO: check carefully each field is OK
-    return (
-      this.state.name !== "" &&
-      this.state.age !== "" &&
-      this.state.zipCode !== ""
-    )
+    return this.state.name !== ""
   }
 
   handleChange = event => {
@@ -61,6 +58,7 @@ class RequestInfo extends Component {
       name: this.state.name,
       mail: this.state.mail,
       age: this.state.age,
+      gender: this.state.gender,
       zipCode: this.state.zipCode,
       canDisplayName: this.state.canDisplayName,
       canSendMail: this.state.canSendMail,
@@ -152,6 +150,7 @@ class RequestInfo extends Component {
                   htmlFor: "form-select-control-gender",
                 }}
                 placeholder="Sexe"
+                name="gender"
                 search
                 searchInput={{ id: "form-select-control-gender" }}
               />
