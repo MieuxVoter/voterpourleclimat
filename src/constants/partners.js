@@ -18,6 +18,7 @@ import CNRS from "../assets/images/cnrs.svg"
 import Colibris from "../assets/images/colibris.png"
 import REFEDD from "../assets/images/refedd.png"
 import ISC from "../assets/images/isc.svg"
+import MPP from "../assets/images/mpp.png"
 
 const partnersList = [
   {
@@ -82,6 +83,11 @@ const partnersList = [
   },
   { name: "Mieux Voter", site: "https://mieuxvoter.fr", logo: MieuxVoter },
   { name: "On Est Prêt", site: "https://www.onestpret.com/", logo: OnEstPret },
+  {
+    name: "Ma Petite Planète",
+    site: "https://mapetiteplanete.org/",
+    logo: MPP,
+  },
   {
     name: "REseau Français Étudiant pour le Développement Durable",
     site: "https://refedd.org/",

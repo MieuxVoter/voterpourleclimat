@@ -4,55 +4,20 @@ import {
   Icon,
   Segment,
   Progress,
-  Image,
   Grid,
+  Image,
   Header,
   Button,
 } from "semantic-ui-react"
-import styled from "styled-components"
 import "../index.css"
 import Step from "../components/Step"
-import timeLeft from "../assets/images/time-left.png"
 import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
 import { shuffleOutPlace } from "../utils"
+import cyrilDion from "../assets/images/cyril-dion.jpg"
+import { numVoters, numVotes, goalVoters, goalVotes } from "../constants/stats"
 
-const numVotes = 513503
-const numVoters = 20501
-const goalVotes = 1000000
-const goalVoters = 100000
-
-const Em = styled.span`
-  text-transform: uppercase;
-  font-weight: bolder;
-  font-size: 1.3em;
-`
-const Big = styled.p`
-  font-size: 1.4em;
-`
 const randomThemes = shuffleOutPlace(themes)
-
-const twoDigits = number => number.toString().padStart(2, "0")
-
-const Timer = () => {
-  const [time, setTime] = useState(new Date())
-  const end = new Date(1594684799000)
-  const remaining = new Date(end - time)
-  setTimeout(() => setTime(new Date()), 1000)
-
-  return (
-    <>
-      <Big>
-        <Em>{twoDigits(remaining.getDate())}</Em> jours
-      </Big>
-      <Big>
-        <Em>{twoDigits(remaining.getHours())}</Em>:
-        <Em>{twoDigits(remaining.getMinutes())}</Em>:
-        <Em>{twoDigits(remaining.getSeconds())}</Em> restants
-      </Big>
-    </>
-  )
-}
 
 const DynamicProgress = ({ value, total, unit }) => {
   const [displayedValue, setDisplayedValue] = useState(0)
@@ -68,6 +33,7 @@ const DynamicProgress = ({ value, total, unit }) => {
   const formattedValue = new Intl.NumberFormat("fr-FR").format(displayedValue)
   return (
     <Progress
+      data-tooltip="Mise à jour quotidiennement"
       percent={Math.ceil((displayedValue / total) * 100)}
       progress="percent"
       indicating
@@ -101,35 +67,34 @@ const LandingPage = () => (
               d'au moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de
               justice sociale.
             </p>
-            <blockquote>
-              L’enjeu, c’est que le débat qui a eu lieu à 150 se diffuse à 44
-              millions d’électeurs.{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764"
-              >
-                Cyril Dion
-              </a>
-            </blockquote>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Paq_7JwFFr8"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Grid.Column>
+          <Grid.Column width={1}></Grid.Column>
+          <Grid.Column width={7}>
             <Header>
               <Link to={randomThemes[Object.keys(randomThemes)[0]].to}>
                 VOTEZ
               </Link>{" "}
-              sur ces propositions pour faire entendre votre voix
+              pour faire entendre votre voix
             </Header>
             Atteignons 100 000 participants et 1 000 000 de votes enregistrés.
+            {
+              //    <Icon circular size="small" color="teal" inverted name="question" />
+            }
             <DynamicProgress
               value={numVoters}
               total={goalVoters}
               unit="participants"
             />
             <DynamicProgress value={numVotes} total={goalVotes} unit="votes" />
-          </Grid.Column>
-          <Grid.Column width={2}></Grid.Column>
-          <Grid.Column width={6}>
             <p>Choississez une thématique pour voter</p>
-
             {Object.keys(randomThemes).map(themeIndex => {
               const theme = randomThemes[themeIndex]
               return (
@@ -166,26 +131,43 @@ const LandingPage = () => (
       </Grid.Row>
     </Segment>
 
-    <Segment inverted style={{ padding: "4em" }} vertical>
+    <Step />
+
+    <Segment inverted vertical>
       <Grid columns="equal" stackable>
         <Grid.Row>
-          <Grid.Column textAlign="right">
-            <Big>Fin de la consultation</Big>
-            <Big>
-              Le <Em>13 juillet</Em> à <Em>minuit</Em>.
-            </Big>
+          <Grid.Column width={5} textAlign="right"></Grid.Column>
+          <Grid.Column width={2} textAlign="center" verticalAlign="middle">
+            <Image
+              src={cyrilDion}
+              centered
+              circular
+              style={{ maxWidth: "200px" }}
+              size="medium"
+              verticalAlign="middle"
+            />
           </Grid.Column>
-          <Grid.Column width={2}>
-            <Image src={timeLeft} size="tiny" centered className="teal" />
+          <Grid.Column width={5}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764"
+            >
+              <div class="blockquote-wrapper">
+                <div class="blockquote">
+                  <h1>
+                    L’enjeu, c’est que le débat qui a eu lieu à 150 se diffuse à
+                    44 millions d’électeurs.
+                  </h1>
+                  <h4>&mdash; Cyril Dion</h4>
+                </div>
+              </div>
+            </a>
           </Grid.Column>
-          <Grid.Column width={7}>
-            <Timer />
-          </Grid.Column>
+          <Grid.Column width={3} textAlign="right"></Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-
-    <Step />
 
     <Segment vertical style={{ margin: "5em 0" }}>
       <Grid container stackable verticalAlign="middle">
