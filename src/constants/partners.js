@@ -20,6 +20,7 @@ import REFEDD from "../assets/images/refedd.png"
 import ISC from "../assets/images/isc.svg"
 import MPP from "../assets/images/mpp.png"
 import HuffPost from "../assets/images/huffpost-logo.png"
+import LAMSADE from "../assets/images/lamsade.jpg"
 
 const partnersList = [
   {
@@ -82,6 +83,12 @@ const partnersList = [
     site: "https://iscpif.fr/",
     logo: ISC,
   },
+  //  {
+  //    name:
+  //      "Laboratoire d’Analyse et de Modélisation de Systèmes pour l’Aide à la Décision",
+  //    site: "https://lamsade.dauphine.fr",
+  //    logo: LAMSADE,
+  //  },
   {
     name: "makesense",
     site: "https://makesense.org/",

@@ -36,15 +36,15 @@ export const CountDown = () => {
 const Timer = () => {
   return (
     <Segment inverted vertical>
-      <Grid columns="equal" stackable>
+      <Grid columns="equal">
         <Grid.Row>
           <Grid.Column textAlign="right">
             <Big>Fin de la consultation</Big>
             <Big>
-              Le <Em>13 juillet</Em> à <Em>minuit</Em>.
+              Le <Em>14 juillet</Em>
             </Big>
           </Grid.Column>
-          <Grid.Column width={2}>
+          <Grid.Column width={2} verticalAlign="middle">
             <Image src={timeLeft} size="tiny" centered className="teal" />
           </Grid.Column>
           <Grid.Column width={7}>
