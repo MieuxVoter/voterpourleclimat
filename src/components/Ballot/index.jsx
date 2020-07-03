@@ -93,9 +93,11 @@ class Ballot extends React.Component {
     }
     this.allVotes = {}
     this.previousVotes = []
+    this.start = undefined
   }
 
   setBallot() {
+    this.start = new Date().getTime()
     let counter = 0
     let votes = []
     for (const proposal of Object.keys(this.allVotes)) {
@@ -204,7 +206,11 @@ class Ballot extends React.Component {
       }
     }
     toStore.votes = this.previousVotes ? this.previousVotes : []
-    toStore.votes.push({ date: new Date().getTime(), votes: this.state.votes })
+    toStore.votes.push({
+      date: new Date().getTime(),
+      start: this.start,
+      votes: this.state.votes,
+    })
 
     castVote(toStore, this.props.collectionName, this.context.user.uid)
       .then(() => {
