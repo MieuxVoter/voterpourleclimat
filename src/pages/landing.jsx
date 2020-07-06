@@ -10,6 +10,7 @@ import {
   Button,
 } from "semantic-ui-react"
 import "../index.css"
+import styled from "styled-components"
 import Step from "../components/Step"
 import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
@@ -19,6 +20,11 @@ import ccc from "../assets/images/ccc.jpg"
 import { numVoters, numVotes, goalVoters, goalVotes } from "../constants/stats"
 
 const randomThemes = shuffleOutPlace(themes)
+
+const Caption = styled.h6`
+  text-align: center;
+  color: grey;
+`
 
 const DynamicProgress = ({ value, total, unit }) => {
   const [displayedValue, setDisplayedValue] = useState(0)
@@ -68,8 +74,9 @@ const LandingPage = () => (
               d'au moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de
               justice sociale.
             </p>
+            {/*
             <div className="video-responsive">
-              {/*<iframe
+              <iframe
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/Paq_7JwFFr8"
@@ -77,9 +84,12 @@ const LandingPage = () => (
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-              */}
-              <Image src={ccc} centered />
             </div>
+              */}
+            <Image src={ccc} centered />
+            <Caption>
+              Photo : © Katrin Baumann / Convention citoyenne pour le climat
+            </Caption>
           </Grid.Column>
           <Grid.Column width={1}></Grid.Column>
           <Grid.Column width={7}>
