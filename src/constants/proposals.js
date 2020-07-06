@@ -83,6 +83,10 @@ export const SE_NOURRIR = [
     objectiveId: "sn5",
   },
   {
+    proposal: "Engrais azotés : augmenter de la Taxe Générale sur les Activités Polluantes (TGAP)",
+    objectiveId: "sn5",
+  },
+  {
     proposal:
       "Réformer l'enseignement et la formation agricole : intégrer au tronc commun obligatoire l'enseignement de l'agroécologie, imposer des stages dans des exploitations qui appliquent les méthodes de l'agroécologie, ouvrir la formation continue sur les pratiques agroécologiques pour tous les agriculteurs, former les conseillers techniques aux pratiques de l'agroécologie.",
     objectiveId: "sn6",
@@ -164,11 +168,6 @@ export const SE_NOURRIR = [
     proposal:
       "Concevoir une nouvelle solidarité nationale alimentaire pour permettre aux ménages modestes d’avoir accès à une alimentation durable",
     objectiveId: "sn11",
-  },
-  {
-    proposal:
-      "Réformer le fonctionnement des labels en supprimant les labels privés et en mettant en place un label pour les produits issus de l’agriculture agro écologique",
-    objectiveId: "sn12",
   },
   {
     proposal:
@@ -638,6 +637,11 @@ export const PRODUIRE = [
     objectiveId: "pt3",
   },
   {
+    proposal:
+      "Faire évoluer la gouvernance de la CDC pour soutenir une logique de financement des investissements verts",
+    objectiveId: "pt3",
+  },
+  {
     proposal: "Accompagner les salariés et les entreprises dans la transition",
     objectiveId: "pt4",
   },
@@ -659,6 +663,10 @@ export const PRODUIRE = [
   {
     proposal:
       "Conditionner les aides publiques aux entreprises à l'évolution positive du bilan gaz à effet de serre",
+    objectiveId: "pt5",
+  },
+  {   proposal:
+      "Bonus pour les entreprises ayant une évolution positive du bilan gaz à effet de serre",
     objectiveId: "pt5",
   },
   {
