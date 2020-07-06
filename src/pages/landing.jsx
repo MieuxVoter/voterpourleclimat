@@ -15,6 +15,7 @@ import Partners from "../components/Partners"
 import * as themes from "../constants/themes"
 import { shuffleOutPlace } from "../utils"
 import cyrilDion from "../assets/images/cyril-dion.jpg"
+import ccc from "../assets/images/ccc.jpg"
 import { numVoters, numVotes, goalVoters, goalVotes } from "../constants/stats"
 
 const randomThemes = shuffleOutPlace(themes)
@@ -68,7 +69,7 @@ const LandingPage = () => (
               justice sociale.
             </p>
             <div className="video-responsive">
-              <iframe
+              {/*<iframe
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/Paq_7JwFFr8"
@@ -76,6 +77,8 @@ const LandingPage = () => (
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
+              */}
+              <Image src={ccc} centered />
             </div>
           </Grid.Column>
           <Grid.Column width={1}></Grid.Column>
