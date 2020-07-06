@@ -316,15 +316,18 @@ export const SE_DEPLACER = [
   {
     proposal: "Inciter à utiliser des moyens de transports doux ou partagés",
     objectiveId: "sd1",
+    proposalId: "sd-a1.1",
   },
   {
     proposal:
       "Réduire les incitations à l’utilisation de la voiture, en réformant le système d’indemnité kilométrique de l’impôt sur le revenu.",
     objectiveId: "sd1",
+    proposalId: "sd-a1.2",
   },
   {
     proposal: "Créer des parkings relais",
     objectiveId: "sd2",
+    proposalId: "sd-a2.1",
   },
   {
     proposal:
