@@ -1,18 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "react-semantic-toasts/styles/react-semantic-alert.css"
-import {
-  Form,
-  Button,
-  Select,
-  Segment,
-  Header,
-  Message,
-  Modal,
-  Portal,
-} from "semantic-ui-react"
+import { Form, Button, Select, Message, Modal } from "semantic-ui-react"
 import { updateUser } from "../../services/actions"
-import * as ROUTES from "../../constants/routes"
 import { withUser } from "../../services/User"
 
 class RequestInfo extends Component {
@@ -26,9 +16,10 @@ class RequestInfo extends Component {
       age: "",
       zipCode: "",
       gender: "",
-      canDisplayName: "",
-      canSendMail: "",
+      canDisplayName: false,
+      canSendMail: false,
       openPortal: "none",
+      terms: false,
     }
   }
 
@@ -37,10 +28,14 @@ class RequestInfo extends Component {
     return this.state.name !== ""
   }
 
-  handleChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
+  handleChange = (e, target) => {
+    let { name, value, checked } = target
+    if (checked !== undefined) {
+      value = checked
+    }
+    console.log(this.state)
+    console.log(target, value, name)
+
     this.setState({
       [name]: value,
     })
@@ -71,15 +66,6 @@ class RequestInfo extends Component {
         this.props.validate()
       })
       .catch(error => console.log(error))
-  }
-
-  handleChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    this.setState({
-      [name]: value,
-    })
   }
 
   handleClose = () => this.setState({ openPortal: "none" })
@@ -152,6 +138,7 @@ class RequestInfo extends Component {
                 placeholder="Sexe"
                 name="gender"
                 search
+                onChange={this.handleChange}
                 searchInput={{ id: "form-select-control-gender" }}
               />
             </Form.Group>
@@ -190,7 +177,7 @@ class RequestInfo extends Component {
           />
           <Button
             content="Pourquoi ce formulaire ?"
-            disabled={this.state.openPortal == "block"}
+            disabled={this.state.openPortal === "block"}
             color="black"
             onClick={this.handleOpen}
           />

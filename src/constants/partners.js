@@ -20,7 +20,7 @@ import REFEDD from "../assets/images/refedd.png"
 import ISC from "../assets/images/isc.svg"
 import MPP from "../assets/images/mpp.png"
 import HuffPost from "../assets/images/huffpost-logo.png"
-import LAMSADE from "../assets/images/lamsade.jpg"
+// import LAMSADE from "../assets/images/lamsade.jpg"
 
 const partnersList = [
   {

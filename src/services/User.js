@@ -36,7 +36,7 @@ export const useUser = () => {
       return () => {}
     }
 
-    const userDoc = loadUser(auth.user.uid)
+    loadUser(auth.user.uid)
       .get()
       .then(doc => {
         if (doc.exists) {

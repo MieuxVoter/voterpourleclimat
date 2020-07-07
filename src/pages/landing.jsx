@@ -7,6 +7,7 @@ import {
   Grid,
   Image,
   Header,
+  Responsive,
   Button,
 } from "semantic-ui-react"
 import "../index.css"
@@ -50,6 +51,21 @@ const DynamicProgress = ({ value, total, unit }) => {
   )
 }
 
+const Description = () => (
+  <p>
+    La Convention Citoyenne pour le Climat vient de rendre publiques ses{" "}
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://propositions.conventioncitoyennepourleclimat.fr"
+    >
+      propositions
+    </a>{" "}
+    afin de réduire les émissions françaises de gaz à effet de serre d'au moins
+    40 % d'ici 2030 (par rapport à 1990) dans un esprit de justice sociale.
+  </p>
+)
+
 const LandingPage = () => (
   <>
     <Segment
@@ -60,60 +76,45 @@ const LandingPage = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header>150 citoyens, 149 propositions émises</Header>
-            <p>
-              La Convention Citoyenne pour le Climat vient de rendre publiques
-              ses{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://propositions.conventioncitoyennepourleclimat.fr"
-              >
-                propositions
-              </a>{" "}
-              afin de réduire les émissions françaises de gaz à effet de serre
-              d'au moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de
-              justice sociale.
-            </p>
-            {/*
-            <div className="video-responsive">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/Paq_7JwFFr8"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-              */}
-            <Image src={ccc} centered />
-            <Caption>
-              Photo : © Katrin Baumann / Convention citoyenne pour le climat
-            </Caption>
+            <Responsive {...Responsive.onlyMobile}>
+              <Image src={ccc} centered />
+              <Caption>
+                Photo : © Katrin Baumann / Convention citoyenne pour le climat
+              </Caption>
+              <Description />
+            </Responsive>
+            <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+              <Description />
+              <Image src={ccc} centered />
+              <Caption>
+                Photo : © Katrin Baumann / Convention citoyenne pour le climat
+              </Caption>
+            </Responsive>
           </Grid.Column>
           <Grid.Column width={1}></Grid.Column>
           <Grid.Column width={7}>
             <Header>
               <Link to={randomThemes[Object.keys(randomThemes)[0]].to}>
-                VOTEZ
+                Donnez votre avis
               </Link>{" "}
               pour faire entendre votre voix
             </Header>
             Atteignons 100 000 participants et 1 000 000 de votes enregistrés.
             {
               //    <Icon circular size="small" color="teal" inverted name="question" />
+              // <DynamicProgress
+              //   value={numVoters}
+              //   total={goalVoters}
+              //   unit="participants"
+              // />
             }
-            <DynamicProgress
-              value={numVoters}
-              total={goalVoters}
-              unit="participants"
-            />
             <DynamicProgress value={numVotes} total={goalVotes} unit="votes" />
-            <p>Choississez une thématique pour voter</p>
+            <p>Choississez une thématique pour donner votre avis</p>
             {Object.keys(randomThemes).map(themeIndex => {
               const theme = randomThemes[themeIndex]
               return (
                 <Button
+                  key={themeIndex}
                   fluid
                   className="dashed teal basic"
                   as={Link}
@@ -149,7 +150,11 @@ const LandingPage = () => (
     <Step />
 
     <Segment inverted vertical>
-      <Grid columns="equal" stackable>
+      <Grid
+        columns="equal"
+        style={{ marginLeft: "3em", marginRight: "3em" }}
+        stackable
+      >
         <Grid.Row>
           <Grid.Column width={5} textAlign="right"></Grid.Column>
           <Grid.Column width={2} textAlign="center" verticalAlign="middle">
@@ -157,7 +162,6 @@ const LandingPage = () => (
               src={cyrilDion}
               centered
               circular
-              style={{ maxWidth: "200px" }}
               size="medium"
               verticalAlign="middle"
             />
@@ -168,8 +172,8 @@ const LandingPage = () => (
               rel="noopener noreferrer"
               href="https://www.liberation.fr/france/2020/06/20/cyril-dion-l-enjeu-c-est-que-le-debat-qui-a-eu-lieu-a-150-se-diffuse-a-44-millions-d-electeurs_1791764"
             >
-              <div class="blockquote-wrapper">
-                <div class="blockquote">
+              <div className="blockquote-wrapper">
+                <div className="blockquote">
                   <h1>
                     L’enjeu, c’est que le débat qui a eu lieu à 150 se diffuse à
                     44 millions d’électeurs.

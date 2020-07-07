@@ -12,6 +12,7 @@ export const castVote = (votes, collectionName, uid) => {
  * Store info about the user in the database
  */
 export const updateUser = (infos, uid) => {
+  console.log(infos)
   const db = firebase.firestore()
   const batch = db.batch()
 

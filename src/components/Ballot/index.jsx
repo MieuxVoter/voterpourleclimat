@@ -33,14 +33,6 @@ const canUserVote = user => {
   return user.name
 }
 
-const LoadingMessage = () => {
-  return (
-    <div className="ui active inverted">
-      <div className="ui text loader">Chargement du bulletin de vote</div>
-    </div>
-  )
-}
-
 const MessageDone = () => {
   return (
     <Segment vertical>

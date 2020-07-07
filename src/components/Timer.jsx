@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Segment, Image, Grid, Label, Icon } from "semantic-ui-react"
+import { Segment, Image, Grid } from "semantic-ui-react"
 import styled from "styled-components"
 import timeLeft from "../assets/images/time-left.png"
 
