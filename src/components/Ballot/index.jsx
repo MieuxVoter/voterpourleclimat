@@ -115,8 +115,6 @@ class Ballot extends React.Component {
       }
     }
 
-    shuffleList(votes)
-
     this.setState({
       progress: Math.floor((numDones / this.numProposal()) * 100),
       loading: false,
