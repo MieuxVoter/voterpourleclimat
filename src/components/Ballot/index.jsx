@@ -92,7 +92,20 @@ class Ballot extends React.Component {
     this.start = new Date().getTime()
     let counter = 0
     let votes = []
-    for (const proposal of Object.keys(this.allVotes)) {
+
+    // Fix to remove the old first fourth proposals to be in first page
+    const numDones = this.done().length
+    const proposals = Object.keys(this.allVotes)
+    if (numDones === 0) {
+      for (let k = 0; k < this.props.displayProposals; ++k) {
+        if (proposals.length <= this.props.displayProposals) break
+        proposals.shift()
+      }
+    }
+
+    shuffleList(proposals)
+
+    for (const proposal of proposals) {
       const vote = this.allVotes[proposal]
       if (vote.vote === null) {
         if (counter < this.props.displayProposals) {
@@ -101,9 +114,6 @@ class Ballot extends React.Component {
         }
       }
     }
-
-    const numDones = this.done().length
-    shuffleList(votes)
 
     this.setState({
       progress: Math.floor((numDones / this.numProposal()) * 100),
