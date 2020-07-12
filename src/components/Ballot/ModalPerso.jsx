@@ -132,10 +132,10 @@ class RequestInfo extends Component {
                 control={Select}
                 options={genderOptions}
                 label={{
-                  children: "Sexe",
+                  children: "Genre",
                   htmlFor: "form-select-control-gender",
                 }}
-                placeholder="Sexe"
+                placeholder="Genre"
                 name="gender"
                 search
                 onChange={this.handleChange}
