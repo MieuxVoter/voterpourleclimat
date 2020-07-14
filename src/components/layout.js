@@ -10,7 +10,7 @@ import * as ROUTES from "../constants/routes"
 const Layout = ({ children, banner = true }) => (
   <BrowserRouter>
     <>
-      <Route exact path={ROUTES.LANDING} render={() => <Timer />} />
+      {/*      <Route exact path={ROUTES.LANDING} render={() => <Timer />} /> */}
       {banner ? <Banner /> : <Navigation />}
       <div className="site-content">
         <UserProvider>{children}</UserProvider>
