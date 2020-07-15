@@ -1,4 +1,4 @@
-export const numVotes = 1446561
-export const numVoters = 21532
-export const goalVotes = 1500000
+export const numVotes = 1825121
+export const numVoters = 28031
+export const goalVotes = 2000000
 export const goalVoters = 50000

@@ -41,12 +41,12 @@ const DynamicProgress = ({ value, total, unit }) => {
   const formattedValue = new Intl.NumberFormat("fr-FR").format(displayedValue)
   return (
     <Progress
-      data-tooltip="Mise à jour quotidiennement"
+      data-tooltip="Mise à jour le 15/07/2020"
       percent={Math.ceil((displayedValue / total) * 100)}
       progress="percent"
       indicating
     >
-      Déjà {formattedValue} {unit} !
+      Déjà {formattedValue} {unit} au 15 juillet !
     </Progress>
   )
 }
@@ -97,17 +97,31 @@ const LandingPage = () => (
               <Link to={randomThemes[Object.keys(randomThemes)[0]].to}>
                 Donnez votre avis
               </Link>{" "}
-              pour faire entendre votre voix
+              sur les propositions
             </Header>
-            Atteignons 100 000 participants et 1 000 000 de votes enregistrés.
+            <p>
+              Un rapport sur les avis exprimés entre le 23 juin et 14 juillet
+              2020 sera publié le jeudi 16 juillet.
+            </p>
+            <p>
+              La consultation reste active pour découvrir cette méthode de vote
+              innovante.
+            </p>
+            <p>
+              Tous les avis exprimés seront pris en compte dans le rapport
+              scientifique à paraître à l’automne.
+            </p>
+            <p>
+              Atteignons 50 000 participants et 2 000 000 de votes enregistrés.
+            </p>
             {
               //    <Icon circular size="small" color="teal" inverted name="question" />
-              // <DynamicProgress
-              //   value={numVoters}
-              //   total={goalVoters}
-              //   unit="participants"
-              // />
             }
+            <DynamicProgress
+              value={numVoters}
+              total={goalVoters}
+              unit="participants"
+            />
             <DynamicProgress value={numVotes} total={goalVotes} unit="votes" />
             <p>Choississez une thématique pour donner votre avis</p>
             {Object.keys(randomThemes).map(themeIndex => {
