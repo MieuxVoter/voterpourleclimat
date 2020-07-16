@@ -78,7 +78,7 @@ const ResultCard = ({ rank, measure }) => {
       <Card.Content>
         <Label size="large" className={`${grade.color} right floated`}>
           {grade.name}
-          <div className="detail"># {rank}</div>
+          <div className="detail"># {rank + 1}</div>
         </Label>
         <Card.Header>{measure.measure}</Card.Header>
         <Card.Description style={{ marginBottom: "1em" }}>
