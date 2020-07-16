@@ -52,18 +52,54 @@ const DynamicProgress = ({ value, total, unit }) => {
 }
 
 const Description = () => (
-  <p>
-    La Convention Citoyenne pour le Climat vient de rendre publiques ses{" "}
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://propositions.conventioncitoyennepourleclimat.fr"
-    >
-      propositions
-    </a>{" "}
-    afin de réduire les émissions françaises de gaz à effet de serre d'au moins
-    40 % d'ici 2030 (par rapport à 1990) dans un esprit de justice sociale.
-  </p>
+  <>
+    <p>
+      La Convention Citoyenne pour le Climat a publié en juin ses{" "}
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://propositions.conventioncitoyennepourleclimat.fr"
+      >
+        propositions
+      </a>{" "}
+      afin de réduire les émissions françaises de gaz à effet de serre d'au
+      moins 40 % d'ici 2030 (par rapport à 1990) dans un esprit de justice
+      sociale.
+    </p>
+    <p>
+      Grâce à votre immense participation entre le 23 juin et 14 juillet, nous
+      avons collecté plus de 1.6 millions d'avis, puis nous avons transmis ces
+      résultats aux médias et à nos représentants.
+    </p>
+    <p style={{ textAlign: "center" }}>
+      <Button
+        icon
+        size="large"
+        className="teal"
+        labelPosition="left"
+        as="a"
+        href="https://resultats.voterpourleclimat.com"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Icon name="poll" />
+        Résultats
+      </Button>
+      <Button
+        icon
+        size="large"
+        className="yellow"
+        labelPosition="left"
+        as="a"
+        href="https://drive.google.com/file/d/16t4LPcWFJmAnUR6rX17XeBZ_2owi2IYN/view?usp=drivesdk"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Icon name="diagnoses" />
+        Notre analyse
+      </Button>
+    </p>
+  </>
 )
 
 const LandingPage = () => (
@@ -76,6 +112,7 @@ const LandingPage = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header>150 citoyens, 149 propositions émises</Header>
+
             <Responsive {...Responsive.onlyMobile}>
               <Image src={ccc} centered />
               <Caption>
@@ -99,10 +136,6 @@ const LandingPage = () => (
               </Link>{" "}
               sur les propositions
             </Header>
-            <p>
-              Un rapport sur les avis exprimés entre le 23 juin et 14 juillet
-              2020 sera publié le jeudi 16 juillet.
-            </p>
             <p>
               La consultation reste active pour découvrir cette méthode de vote
               innovante.
