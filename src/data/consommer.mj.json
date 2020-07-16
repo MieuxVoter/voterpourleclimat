@@ -1,0 +1,283 @@
+[
+  {
+    "measure": "Mise en place progressive d\u2019un syst\u00e8me de consigne de verre (lavable et r\u00e9utilisable) jusqu\u2019\u00e0 une mise en place g\u00e9n\u00e9ralis\u00e9e en 2025.",
+    "counts_per_grade": {
+      "1": 152,
+      "2": 78,
+      "3": 293,
+      "4": 1786,
+      "5": 9576,
+      "-1": 87
+    },
+    "normalized": {
+      "1": 0.012789230122002525,
+      "2": 0.006562894404711822,
+      "3": 0.02465292385359697,
+      "4": 0.15027345393352967,
+      "5": 0.805721497686159
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Contr\u00f4ler et sanctionner plus efficacement et rapidement les atteintes aux r\u00e8gles en mati\u00e8re environnementale",
+    "counts_per_grade": {
+      "1": 188,
+      "2": 73,
+      "3": 328,
+      "4": 2050,
+      "5": 8796,
+      "-1": 120
+    },
+    "normalized": {
+      "1": 0.01644075207695671,
+      "2": 0.006383909051158723,
+      "3": 0.028683865325754263,
+      "4": 0.17927415828596416,
+      "5": 0.7692173152601661
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "R\u00e9guler la publicit\u00e9 pour limiter fortement les incitations quotidiennes et non-choisies \u00e0 la consommation.",
+    "counts_per_grade": {
+      "1": 346,
+      "2": 192,
+      "3": 621,
+      "4": 2450,
+      "5": 10588,
+      "-1": 137
+    },
+    "normalized": {
+      "1": 0.024371346059026557,
+      "2": 0.01352398394026907,
+      "3": 0.043741635556807774,
+      "4": 0.1725716700711418,
+      "5": 0.7457913643727548
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Interdire de mani\u00e8re efficace et op\u00e9rante la publicit\u00e9 des produits les plus \u00e9metteurs de GES, sur tous les supports publicitaires",
+    "counts_per_grade": {
+      "1": 400,
+      "2": 245,
+      "3": 756,
+      "4": 2555,
+      "5": 10176,
+      "-1": 204
+    },
+    "normalized": {
+      "1": 0.028304557033682422,
+      "2": 0.017336541183130483,
+      "3": 0.05349561279365978,
+      "4": 0.1807953580526465,
+      "5": 0.7200679309368808
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Sensibiliser l'ensemble de la population fran\u00e7aise en reliant compr\u00e9hension de l\u2019urgence climatique et passage \u00e0 l\u2019action",
+    "counts_per_grade": {
+      "1": 271,
+      "2": 92,
+      "3": 444,
+      "4": 2431,
+      "5": 8299,
+      "-1": 161
+    },
+    "normalized": {
+      "1": 0.023489642021322702,
+      "2": 0.0079743434168328,
+      "3": 0.03848487475080177,
+      "4": 0.2107133570252232,
+      "5": 0.7193377827858195
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Favoriser le d\u00e9veloppement les emballages biosourc\u00e9s compostables pour assurer la transition avant la fin de l\u2019emballage plastique \u00e0 usage unique",
+    "counts_per_grade": {
+      "1": 154,
+      "2": 137,
+      "3": 588,
+      "4": 2482,
+      "5": 8464,
+      "-1": 100
+    },
+    "normalized": {
+      "1": 0.013023255813953489,
+      "2": 0.011585623678646935,
+      "3": 0.049725158562367866,
+      "4": 0.20989429175475688,
+      "5": 0.7157716701902749
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Modifier le code de l\u2019\u00e9ducation pour une g\u00e9n\u00e9ralisation de l\u2019\u00e9ducation \u00e0 l\u2019environnement et au d\u00e9veloppement durable (EEDD) dans le mod\u00e8le scolaire fran\u00e7ais",
+    "counts_per_grade": {
+      "1": 298,
+      "2": 108,
+      "3": 435,
+      "4": 2499,
+      "5": 8204,
+      "-1": 163
+    },
+    "normalized": {
+      "1": 0.025814275814275815,
+      "2": 0.009355509355509356,
+      "3": 0.037681912681912684,
+      "4": 0.21647609147609148,
+      "5": 0.7106722106722106
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Mettre en place progressivement une obligation de l\u2019implantation du vrac dans tous les magasins et l\u2019imposition d\u2019un pourcentage aux centrales d\u2019achat.",
+    "counts_per_grade": {
+      "1": 234,
+      "2": 163,
+      "3": 659,
+      "4": 2705,
+      "5": 8015,
+      "-1": 218
+    },
+    "normalized": {
+      "1": 0.01987092391304348,
+      "2": 0.01384171195652174,
+      "3": 0.05596127717391304,
+      "4": 0.22970448369565216,
+      "5": 0.6806216032608695
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Renforcer les modalit\u00e9s d\u2019\u00e9ducation \u00e0 l\u2019environnement et au d\u00e9veloppement durable en en faisant une mission transversale des enseignants.",
+    "counts_per_grade": {
+      "1": 307,
+      "2": 157,
+      "3": 673,
+      "4": 2825,
+      "5": 7536,
+      "-1": 203
+    },
+    "normalized": {
+      "1": 0.026700295703600625,
+      "2": 0.013654548617150809,
+      "3": 0.05853191859453818,
+      "4": 0.24569490346147155,
+      "5": 0.6554183336232389
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "D\u00e9velopper puis mettre en place un score carbone sur tous les produits de consommation et les services",
+    "counts_per_grade": {
+      "1": 293,
+      "2": 191,
+      "3": 843,
+      "4": 3763,
+      "5": 9034,
+      "-1": 202
+    },
+    "normalized": {
+      "1": 0.020744831492495043,
+      "2": 0.013523081280090625,
+      "3": 0.05968564146134239,
+      "4": 0.2664259416595865,
+      "5": 0.6396205041064854
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Renforcer et centraliser l\u2019\u00e9valuation et le suivi des politiques publiques en mati\u00e8re environnementale",
+    "counts_per_grade": {
+      "1": 209,
+      "2": 122,
+      "3": 543,
+      "4": 3241,
+      "5": 6992,
+      "-1": 452
+    },
+    "normalized": {
+      "1": 0.018816962276042137,
+      "2": 0.010984064103718376,
+      "3": 0.04888808859277933,
+      "4": 0.29179796524714147,
+      "5": 0.6295129197803188
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Remplacer une part significative de la Taxe d\u2019Enl\u00e8vement des Ordures M\u00e9nag\u00e8res (TEOM) par des modalit\u00e9s plus justes et favorisant les comportements \u00e9coresponsables",
+    "counts_per_grade": {
+      "1": 257,
+      "2": 135,
+      "3": 611,
+      "4": 3284,
+      "5": 6845,
+      "-1": 589
+    },
+    "normalized": {
+      "1": 0.023086597197269135,
+      "2": 0.012127200862378729,
+      "3": 0.05488681279195113,
+      "4": 0.29500538986704994,
+      "5": 0.614893999281351
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Rendre obligatoire l\u2019affichage des \u00e9missions de gaz \u00e0 effet de serre dans les commerces et lieux de consommation ainsi que dans les publicit\u00e9s pour les marques",
+    "counts_per_grade": {
+      "1": 385,
+      "2": 249,
+      "3": 1159,
+      "4": 3749,
+      "5": 8492,
+      "-1": 296
+    },
+    "normalized": {
+      "1": 0.027433376086646716,
+      "2": 0.01774262505344164,
+      "3": 0.08258515034915206,
+      "4": 0.2671369531138663,
+      "5": 0.6051018953968933
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  },
+  {
+    "measure": "Mettre en place des mentions pour inciter \u00e0 moins consommer",
+    "counts_per_grade": {
+      "1": 431,
+      "2": 284,
+      "3": 1313,
+      "4": 3043,
+      "5": 6718,
+      "-1": 276
+    },
+    "normalized": {
+      "1": 0.0365595046229536,
+      "2": 0.02409025362626177,
+      "3": 0.11137501060310459,
+      "4": 0.2581219781151921,
+      "5": 0.5698532530324879
+    },
+    "majority_grade": 5,
+    "with_no_opinion": true
+  }
+]
+
