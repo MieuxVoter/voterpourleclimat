@@ -1,14 +1,19 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import {
   Card,
+  Responsive,
   Segment,
   Grid,
+  Button,
   Header,
   Label,
   Accordion,
+  Breadcrumb,
   Icon,
 } from "semantic-ui-react"
 import { grades } from "../constants"
+import * as ROUTES from "../constants/routes"
 import Consommer from "../data/consommer.mj.json"
 import Produire from "../data/produire.mj.json"
 import SeLoger from "../data/seLoger.mj.json"
@@ -25,6 +30,39 @@ const themes = {
   "Se nourrir": SeNourrir,
   Produire: Constitution,
 }
+
+const QuickAccess = ({ mobile }) => (
+  <>
+    <Button
+      icon
+      size="large"
+      className="teal"
+      labelPosition="left"
+      as="a"
+      fluid={mobile}
+      href="https://resultats.voterpourleclimat.com"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <Icon name="filter" />
+      Filtrer les résultats
+    </Button>
+    <Button
+      icon
+      fluid={mobile}
+      size="large"
+      className="yellow"
+      labelPosition="left"
+      as="a"
+      href="https://drive.google.com/file/d/16t4LPcWFJmAnUR6rX17XeBZ_2owi2IYN/view?usp=drivesdk"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <Icon name="diagnoses" />
+      Notre analyse
+    </Button>
+  </>
+)
 
 const ResultCard = ({ rank, measure }) => {
   let grade
@@ -123,9 +161,30 @@ class ResultPage extends React.Component {
       <Segment vertical style={{ margin: "5em 0" }}>
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
+            <Grid.Column width={8}>
+              <Breadcrumb size="large">
+                <Breadcrumb.Section as={Link} to={ROUTES.LANDING}>
+                  Voter pour le climat
+                </Breadcrumb.Section>
+                <Breadcrumb.Divider icon="right chevron" />
+                <Breadcrumb.Section active>
+                  <Icon name="poll" className="teal" />
+                  {"  "}
+                  <span className="ui teal text">Résultats</span>
+                </Breadcrumb.Section>
+              </Breadcrumb>
+            </Grid.Column>
+            <Grid.Column textAlign="right" width={8}>
+              <Responsive {...Responsive.onlyMobile}>
+                <QuickAccess mobile={true} />
+              </Responsive>
+              <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                <QuickAccess mobile={false} />
+              </Responsive>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
             <Grid.Column width={16}>
-              <Header as="h1">Résultats</Header>
-              <p>Cliquez sur un thème pour afficher les résultats</p>
               {Object.keys(themes).map((name, index) => {
                 const ref = React.createRef()
                 console.log(this.themeRefs)

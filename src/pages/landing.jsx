@@ -19,6 +19,7 @@ import { shuffleOutPlace } from "../utils"
 import cyrilDion from "../assets/images/cyril-dion.jpg"
 import ccc from "../assets/images/ccc.jpg"
 import { numVoters, numVotes, goalVoters, goalVotes } from "../constants/stats"
+import * as ROUTES from "../constants/routes"
 
 const randomThemes = shuffleOutPlace(themes)
 
@@ -77,10 +78,8 @@ const Description = () => (
         size="large"
         className="teal"
         labelPosition="left"
-        as="a"
-        href="https://resultats.voterpourleclimat.com"
-        target="_blank"
-        rel="noreferrer noopener"
+        as={Link}
+        to={ROUTES.RESULTS}
       >
         <Icon name="poll" />
         Résultats
